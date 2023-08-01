@@ -6,3 +6,10 @@ Das fertige Produkt soll sein:
 - einfach in der Produktion
 - ausfallsichere redundante Software
 - Leistungsstark (schnell)
+
+
+# To-do
+- [ ] PCB designen
+- [ ] CAD designen
+- [ ] Hardware bestellen
+

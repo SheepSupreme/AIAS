@@ -3,4 +3,8 @@ Das Verzeichnis dient der Navigation innerhalb des Projektes mithilfe des Obsidi
 ## Inhaltsverzeichnis
 [[Dokumentationen]]
 [[Tutorials]]
-[[README]]
+[SCBS README](SCBS/README)
+[LukiStepper README](SCBS/LukiStepper/README)
+[[SCBS/Ideen]]
+
+
