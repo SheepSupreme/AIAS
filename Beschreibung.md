@@ -13,8 +13,11 @@ Die Implementierung eines automatisierten Kommissionierungssystem ermöglicht de
 ## Untersuchungsanliegen der individuellen Themenstellung
 
 ### Bewegungssystem
+Eine Platform, die über ein Riemenband von einem Nema 17 Steppermotor getreiben wird. Um den Motor anzusteuern kommt der Steppermotordriver DRV8825 zum Einsatz. Der ermöglicht eine einfache Bedienung des Motors über den Arudino und ist fähig, zu Microsteppen. Auch im Bewegungssystem inkludiert sind die Endschalter(Limitswitches) die nur bei der Kalibrierungssequenz verwendet werden um den Bereich zu festzustellen, in dem die Platform Operieren darf.
 
 ### Steuerung
+Die Steuerung erfolgt über einen Rotary Encoder der gedrückt werden kann. Diese einfache Steuermethode wurde gewählt, weil die Anzahl der Bauteile so möglichst gering ist und der Rotary Encoder relativ intuitiv ist.
+
 
 ### User Interface
 
