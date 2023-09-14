@@ -13,10 +13,14 @@ SpeedyStepper stepper;
 #include <Adafruit_GFX.h>       // Root library
 #include <Adafruit_SSD1306.h>   // Library for using a specific display
 
-#define nEnable 9
-#define CLK 8
-#define DT 7
-#define SW 6
+#define nEnable 4
+#define CLK 10
+#define DT 11
+#define SW 12
+#define M0 5
+#define M1 6
+#define M2 7
+
 
 int calibration_sequence = 0;
 int pos_max;
@@ -51,6 +55,8 @@ void setup() {
   pinMode(DT, INPUT_PULLUP);
 	pinMode(SW, INPUT_PULLUP);
   pinMode(nEnable,OUTPUT);
+  // 1/4 Step Betrieb
+  digitalWrite(M1, HIGH);   
 
 	// Setup Serial Monitor
 	Serial.begin(9600);
