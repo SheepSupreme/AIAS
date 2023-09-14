@@ -40,8 +40,22 @@ Zuständigkeit: PLEVA Philip
 
 
 ### Entwicklung der Spannungsversorgung
+Die Spannungsversorgung besteht aus 2 DC Spannungsausgängen mit jeweils 40V und 9V. Die 40V werden durch Transformation und Gleichrichtung erzielt. Mit einem DC/DC Buckconverter wird die Spannung von 9V erzielt und dient als Spannungsquelle für den Arduino.
 
 ### Systementwicklung und harmonische Zusammenführung der individuellen AKS Körper
 Einzelnde Teile werden zusammengeführt und in ein funktionstüchtiges System gewandelt, dass möglichst schnell und optimiert ist.
 
 PLEVA Philip & GREGOR Lukas
+
+
+## Meilensteine:
+|Iterration   |Verantwortlich|Fälligkeitsdatum   |
+|---|---|---|
+|- Entwicklung der für den Steppermotor zuständige Software   |GREGOR Lukas   | 20.10.23   |  
+|- Fertigstellung des Bewegungssystems   |GREGOR Lukas   |31.10.23   | 
+|- Implementierung von Steuer und Anzeige-Elementen | GREGOR Lukas, PLEVA Philip|1.12.23|
+|- Implementierung des QR-Code Lesers|PLEVA Philip|1.1.24|
+|- Implementierung des Drücker-Mechanismuses|PLEVA Philip, GREGOR Lukas|1.2.24
+
+## Beträuer:
+Prof. Dipl. -Ing.Ahmet Kilic
