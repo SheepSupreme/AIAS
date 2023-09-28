@@ -24,6 +24,7 @@ class LukiStepper
     void moveRelativeInSteps(long distanceToMoveInSteps);
     void moveToPositionInSteps(long absolutePositionToMoveToInSteps);
     void setupMoveInSteps(long absolutePositionToMoveToInSteps);
+    void setupRelativeMoveInSteps(long distanceToMoveInSteps);
     bool motionComplete();
     float getCurrentVelocityInStepsPerSecond(); 
     bool processMovement(void);
@@ -40,9 +41,11 @@ class LukiStepper
     byte stepPin;
     byte directionPin;
     float calibrationSpeed;
+    long distanceToMoveInSteps;
     float desiredSpeed_InStepsPerSecond;
     float acceleration_InStepsPerSecondPerSecond;
     long targetPosition_InSteps;
+    bool zero;
     bool startNewMove;
     float desiredStepPeriod_InUS;
     long decelerationDistance_InSteps;
