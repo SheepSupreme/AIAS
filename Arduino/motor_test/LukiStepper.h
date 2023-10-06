@@ -41,11 +41,9 @@ class LukiStepper
     byte stepPin;
     byte directionPin;
     float calibrationSpeed;
-    long distanceToMoveInSteps;
     float desiredSpeed_InStepsPerSecond;
     float acceleration_InStepsPerSecondPerSecond;
     long targetPosition_InSteps;
-    bool zero;
     bool startNewMove;
     float desiredStepPeriod_InUS;
     long decelerationDistance_InSteps;

@@ -45,13 +45,18 @@ void setup()
   //
 
   stepper.connectToPins(MOTOR_STEP_PIN, MOTOR_DIRECTION_PIN);
-  stepper.setSpeedInStepsPerSecond(10000);
+  stepper.setSpeedInStepsPerSecond(16000);
   stepper.setAccelerationInStepsPerSecondPerSecond(250000);
+  digitalWrite(nEnable, LOW);
+  digitalWrite(M0,HIGH);
+  digitalWrite(M1,HIGH);
+  digitalWrite(M2,HIGH);
+  stepper.calibration(1, 16000, 200000, S1, false);
+  stepper.calibration(-1, 16000, 200000, S1, true);
+  digitalWrite(M0,LOW);
+  digitalWrite(M1,HIGH);
+  digitalWrite(M2,LOW);
   digitalWrite(nEnable, HIGH);
-  stepper.calibration(1, 1000, 200000, S1, false);
-  stepper.calibration(-1, 1000, 200000, S1, true);
-  digitalWrite(nEnable, HIGH);
-  Serial.println(digitalRead(nEnable));
 
 }
 

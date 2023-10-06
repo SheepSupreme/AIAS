@@ -48,7 +48,7 @@ LukiStepper::LukiStepper()
   directionPin = 2;
   currentPosition_InSteps = 0;
   desiredSpeed_InStepsPerSecond = 16000;
-  calibrationSpeed = 2000;
+  calibrationSpeed = 8000;
   acceleration_InStepsPerSecondPerSecond = 250000;
   currentStepPeriod_InUS = 0.0;
 }
@@ -66,6 +66,23 @@ void LukiStepper::connectToPins(byte stepPinNumber, byte directionPinNumber)
   digitalWrite(directionPin, LOW);
 }
 
+void LukiStepper::setCurrentPositionInSteps(long currentPositionInSteps)
+{
+  currentPosition_InSteps = currentPositionInSteps;
+}
+
+
+
+//
+// get the current position of the motor in steps, this functions is updated
+// while the motor moves
+//  Exit:  a signed motor position in steps returned
+//
+long LukiStepper::getCurrentPositionInSteps()
+{
+  return(currentPosition_InSteps);
+}
+
 
 void LukiStepper::setSpeedInStepsPerSecond(float speedInStepsPerSecond)
 {
@@ -79,19 +96,6 @@ void LukiStepper::setAccelerationInStepsPerSecondPerSecond(
 }
 
 
-void LukiStepper::setupRelativeMoveInSteps(long distanceToMoveInSteps)
-{
-  setupMoveInSteps(currentPosition_InSteps + distanceToMoveInSteps);
-}
-
-void LukiStepper::moveToPositionInSteps(long absolutePositionToMoveToInSteps)
-{
-  setupMoveInSteps(absolutePositionToMoveToInSteps);
-  
-  while(!processMovement())
-    ;
-}
-
 void LukiStepper::moveRelativeInSteps(long distanceToMoveInSteps)
 {
   setupRelativeMoveInSteps(distanceToMoveInSteps);
@@ -100,9 +104,48 @@ void LukiStepper::moveRelativeInSteps(long distanceToMoveInSteps)
     ;
 }
 
+
+
+//
+// setup a move relative to the current position, units are in steps, no motion  
+// occurs until processMove() is called.  Note: this can only be called when the 
+// motor is stopped
+//  Enter:  distanceToMoveInSteps = signed distance to move relative to the current  
+//          position in steps
+//
+void LukiStepper::setupRelativeMoveInSteps(long distanceToMoveInSteps)
+{
+  setupMoveInSteps(currentPosition_InSteps + distanceToMoveInSteps);
+}
+
+
+
+//
+// move to the given absolute position, units are in steps, this function does not 
+// return until the move is complete
+//  Enter:  absolutePositionToMoveToInSteps = signed absolute position to move to  
+//            in units of steps
+//
+void LukiStepper::moveToPositionInSteps(long absolutePositionToMoveToInSteps)
+{
+  setupMoveInSteps(absolutePositionToMoveToInSteps);
+  
+  while(!processMovement())
+    ;
+}
+
+
+
+//
+// setup a move, units are in steps, no motion occurs until processMove() is called
+// Note: this can only be called when the motor is stopped
+//  Enter:  absolutePositionToMoveToInSteps = signed absolute position to move to in 
+//          units of steps
+//
 void LukiStepper::setupMoveInSteps(long absolutePositionToMoveToInSteps)
 {
   long distanceToTravel_InSteps;
+  
   
   //
   // save the target location
@@ -163,108 +206,48 @@ void LukiStepper::setupMoveInSteps(long absolutePositionToMoveToInSteps)
   startNewMove = true;
 }
 
-
-
-
-
-bool LukiStepper::calibration(long directionTowardsendStop, 
-  float calibrationSpeed, long maxDistanceToMoveInSteps, int endStop, bool zero)
+bool LukiStepper::calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endStop, bool zero)
 {
+ 
+  pinMode(endStop, INPUT_PULLUP);
 
-  bool limitSwitchFlag;
-  
-  
-  //
-  // setup the home switch input pin
-  //
-  pinMode(endStop, INPUT_PULLUP);            //move this out of the function
- 
- 
   //
   // if the endStop is not already set, move toward it
   //
-  if (digitalRead(endStop) == HIGH)
+  if (digitalRead(endStop) == LOW)
   {
     //
     // move toward the home switch
     //
     setSpeedInStepsPerSecond(calibrationSpeed);
     setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop);
-    limitSwitchFlag = false;
-    digitalWrite(nEnable,LOW);
     while(!processMovement())
     {
-      if (digitalRead(endStop) == LOW)
+      if (digitalRead(endStop) == HIGH)
       {
-        limitSwitchFlag = true;
-        digitalWrite(nEnable,HIGH);
         break;
       }
     }
-    
-    //
-    // check if switch never detected
-    //
-    if (limitSwitchFlag == false)
-      return(false);
   }
-  delay(25);
+  delay(1);
 
 
   //
   // the switch has been detected, now move away from the switch
   //
+  setSpeedInStepsPerSecond(calibrationSpeed/4);
   setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop * -1);
-  limitSwitchFlag = false;
-  digitalWrite(nEnable,LOW);
-  while(!processMovement())
-  {
-    if (digitalRead(endStop) == HIGH)
-    {
-      limitSwitchFlag = true;
-      digitalWrite(nEnable,HIGH);
-      break;
-    }
-  }
-  delay(25);
-  
-  //
-  // check if switch never detected
-  //
-  if (limitSwitchFlag == false)
-    return(false);
-
-
-  //
-  // have now moved off the switch, move toward it again but slower
-  //
-  setSpeedInStepsPerSecond(speedInStepsPerSecond/8);
-  setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop);
-  limitSwitchFlag = false;
-  digitalWrite(nEnable,LOW);
   while(!processMovement())
   {
     if (digitalRead(endStop) == LOW)
     {
-      limitSwitchFlag = true;
-      digitalWrite(nEnable, HIGH)
       break;
     }
   }
-  delay(25);
-  
-  //
-  // check if switch never detected
-  //
-  if (limitSwitchFlag == false)
-    return(false);
+  delay(1);
 
-
-  //
-  // successfully homed, set the current position to 0
-  //
   if (zero){
-  setCurrentPositionInSteps(0L);    
+    setCurrentPositionInSteps(0L);    
   }
 
   //

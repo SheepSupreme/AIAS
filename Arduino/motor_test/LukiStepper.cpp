@@ -95,17 +95,6 @@ void LukiStepper::setAccelerationInStepsPerSecondPerSecond(
     acceleration_InStepsPerSecondPerSecond = accelerationInStepsPerSecondPerSecond;
 }
 
-
-void LukiStepper::moveRelativeInSteps(long distanceToMoveInSteps)
-{
-  setupRelativeMoveInSteps(distanceToMoveInSteps);
-  
-  while(!processMovement())
-    ;
-}
-
-
-
 //
 // setup a move relative to the current position, units are in steps, no motion  
 // occurs until processMove() is called.  Note: this can only be called when the 
@@ -116,7 +105,18 @@ void LukiStepper::moveRelativeInSteps(long distanceToMoveInSteps)
 void LukiStepper::setupRelativeMoveInSteps(long distanceToMoveInSteps)
 {
   setupMoveInSteps(currentPosition_InSteps + distanceToMoveInSteps);
+
 }
+
+
+void LukiStepper::moveRelativeInSteps(long distanceToMoveInSteps)
+{
+  setupRelativeMoveInSteps(distanceToMoveInSteps);
+  
+  while(!processMovement())
+    ;
+}
+
 
 
 
@@ -208,7 +208,7 @@ void LukiStepper::setupMoveInSteps(long absolutePositionToMoveToInSteps)
 
 bool LukiStepper::calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endStop, bool zero)
 {
- 
+
   pinMode(endStop, INPUT_PULLUP);
 
   //
