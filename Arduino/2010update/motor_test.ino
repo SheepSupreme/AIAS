@@ -93,14 +93,14 @@ void setup()
 
   //Kalibrierung mit Microstepping
   digitalWrite(nEnable, LOW);
-  digitalWrite(M0,HIGH);
+  digitalWrite(M0,LOW);
   digitalWrite(M1,HIGH);
   digitalWrite(M2,HIGH);
   display.print("Calibration");
   display.display();
   Serial.println("start calibration"); // Waypoint
-  stepper.calibration(-1, 16000, 200000, S1, true);
-  stepper.calibration(1, 16000, 200000, S2, false);
+  stepper.calibration(-1, 8000, 200000, S1, S2, true);
+  stepper.calibration(1, 8000, 200000, S1, S2, false);
   digitalWrite(nEnable, HIGH);
 
   //Umstellung auf 1/4 Step-Betrieb
@@ -114,8 +114,8 @@ void setup()
   Serial.print("end calibration"); // Waypoint
   Serial.println("start manual"); // Waypoint
 
-  stepper.setSpeedInStepsPerSecond(16000);
-  stepper.setAccelerationInStepsPerSecondPerSecond(250000);
+  stepper.setSpeedInStepsPerSecond(10000);                      // max possible 16.000
+  stepper.setAccelerationInStepsPerSecondPerSecond(100000);     // max possible 250.000
 
   control();
 }

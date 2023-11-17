@@ -211,15 +211,17 @@ void LukiStepper::setupMoveInSteps(long absolutePositionToMoveToInSteps)
   startNewMove = true;
 }
 
-bool LukiStepper::calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endStop, bool zero)
+bool LukiStepper::calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endstop1, int endstop2, bool zero)
 {
 
-  pinMode(endStop, INPUT_PULLUP);
+  pinMode(endstop1, INPUT_PULLUP);
+  pinMode(endstop2, INPUT_PULLUP);
+
 
   //
-  // if the endStop is not already set, move toward it
+  // if the endstop1 is not already set, move toward it
   //
-  if (digitalRead(endStop) == LOW)
+  if (digitalRead(endstop1) == LOW && digitalRead(endstop2) == LOW)
   {
     //
     // move toward the home switch
@@ -228,23 +230,23 @@ bool LukiStepper::calibration(long directionTowardsendStop, float calibrationSpe
     setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop);
     while(!processMovement())
     {
-      if (digitalRead(endStop) == HIGH)
+      if (digitalRead(endstop1) == HIGH || digitalRead(endstop2) == HIGH)
       {
         break;
       }
     }
   }
-  delay(1);
+  delay(10);
 
 
   //
   // the switch has been detected, now move away from the switch
   //
-  setSpeedInStepsPerSecond(calibrationSpeed/4);
+  setSpeedInStepsPerSecond(calibrationSpeed);
   setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop * -1);
   while(!processMovement())
   {
-    if (digitalRead(endStop) == LOW)
+    if (digitalRead(endstop1) == LOW && digitalRead(endstop2) == LOW)
     {
       break;
     }
