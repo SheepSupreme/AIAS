@@ -112,14 +112,13 @@ void LukiStepper::setupRelativeMoveInSteps(long distanceToMoveInSteps)
 void LukiStepper::moveRelativeInSteps(long distanceToMoveInSteps, int endstop_1 , int endstop_2)
 {
   setupRelativeMoveInSteps(distanceToMoveInSteps);
-  
-  pinMode(endstop_1, INPUT_PULLUP);
-  pinMode(endstop_2, INPUT_PULLUP);
 
-  while(!processMovement()){
-    if (digitalRead(endstop_1)==HIGH || digitalRead(endstop_2)==HIGH)
-    return 0;
+  while(digitalRead(endstop_1)!=HIGH && digitalRead(endstop_2)!=HIGH){
+    if(processMovement()){
+      return 0;
+    }
   }
+
 }
 
 
@@ -211,47 +210,26 @@ void LukiStepper::setupMoveInSteps(long absolutePositionToMoveToInSteps)
   startNewMove = true;
 }
 
-bool LukiStepper::calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endstop1, int endstop2, bool zero)
+bool LukiStepper::calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endstop, bool zero)
 {
-
-  pinMode(endstop1, INPUT_PULLUP);
-  pinMode(endstop2, INPUT_PULLUP);
 
 
   //
   // if the endstop1 is not already set, move toward it
   //
-  if (digitalRead(endstop1) == LOW && digitalRead(endstop2) == LOW)
-  {
-    //
-    // move toward the home switch
-    //
-    setSpeedInStepsPerSecond(calibrationSpeed);
-    setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop);
-    while(!processMovement())
-    {
-      if (digitalRead(endstop1) == HIGH || digitalRead(endstop2) == HIGH)
-      {
-        break;
-      }
-    }
+  setSpeedInStepsPerSecond(calibrationSpeed);
+  setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop);
+  
+  while(digitalRead(endstop)!=HIGH){
+    processMovement();
   }
   delay(10);
-
-
-  //
-  // the switch has been detected, now move away from the switch
-  //
-  setSpeedInStepsPerSecond(calibrationSpeed);
-  setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop * -1);
-  while(!processMovement())
-  {
-    if (digitalRead(endstop1) == LOW && digitalRead(endstop2) == LOW)
-    {
-      break;
-    }
+  
+  setupRelativeMoveInSteps(maxDistanceToMoveInSteps * directionTowardsendStop*-1);
+  while(digitalRead(endstop)==HIGH){
+    processMovement();
   }
-  delay(1);
+  delay(10);
 
   if (zero){
     setCurrentPositionInSteps(0L);    

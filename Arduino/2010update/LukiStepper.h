@@ -20,7 +20,7 @@ class LukiStepper
     long getCurrentPositionInSteps();
     void setSpeedInStepsPerSecond(float speedInStepsPerSecond);
     void setAccelerationInStepsPerSecondPerSecond(float accelerationInStepsPerSecondPerSecond);
-    bool calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endStop1, int endStop2, bool zero);
+    bool calibration(long directionTowardsendStop, float calibrationSpeed, long maxDistanceToMoveInSteps, int endStop1, bool zero);
     void moveRelativeInSteps(long distanceToMoveInSteps, int endstop_1, int endstop_2);
     void moveToPositionInSteps(long absolutePositionToMoveToInSteps);
     void setupMoveInSteps(long absolutePositionToMoveToInSteps);
