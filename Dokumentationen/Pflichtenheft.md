@@ -1,12 +1,11 @@
 
-
 Projekt-Titel: **Automatisiertes Kommissionierungssystem**
 Projektleiter: Lukas GREGOR
 weitere Teilnehmer: Philip PLEVA
 Projektbetreuer: Ahmet KILIC
 
 
-<div class="page"/> 
+<div style = "page-break-before: always;"></div>
 
 # Verzeichnis
 
@@ -14,7 +13,7 @@ Projektbetreuer: Ahmet KILIC
 - [Projektbeschreibung](#projektbeschreibung)
 - [Arbeitsumfang](#arbeitsumfang)
 	- [Lineares Bewegungssystem](#lineares-bewegungssystem)
-		- [Schrittmotor Treiber Träger DRV8825](#schrittmotor-treiber-träger-drv8825)
+		- [Schrittmotor Treiber DRV8825](#schrittmotor-treiber-drv8825)
 			- [Modi](#modi)
 			- [Implementierung](#implementierung)
 		- [Schrittmotor NEMA 17](#schrittmotor-nema-17)
@@ -22,12 +21,11 @@ Projektbetreuer: Ahmet KILIC
 			- [Implementierung](#implementierung-1)
 		- [Endschalter](#endschalter)
 		- [Winkel](#winkel)
-		- [weitere Hardware](#weitere-hardware)
 		- [Software](#software)
 	- [User Interface](#user-interface)
 
 
-<div class="page"/> 
+<div style = "page-break-before: before;"></div>
 
 
 # Projektbeschreibung
@@ -36,7 +34,6 @@ Das **Automatisierte Automatisiertes Kommissionierungssystem** verfolgt das Ziel
 Kommissionierung mit der Hardware zu automatisieren ist nur eine von vielen Bereichen in dem Schrittmotor getriebene Maschinen eingesetzt werden können und der Bedarf nach solchen Systemen ist stehts wachsend.
 
 
-<div class="page"/> 
 
 
 # Arbeitsumfang
@@ -76,17 +73,17 @@ subgraph User Interface
     L([fa:fa-television OLED Display])
 	end
 ```
-<div class="page"/> 
+<div style = "page-break-before: always;"></div>
 
 ## Lineares Bewegungssystem
 
 ![Normal3](<../Concept Art/Normal3.png>)
 *Abbildung 3: Lineares Bewegungssystem*
 
-<div class="page"/> 
+<div style = "page-break-before: always;"></div>
 
-### Schrittmotor Treiber Träger DRV8825
-[DRV8825 Schrittmotor Treiber Träger Datenblatt](https://www.tme.eu/Document/1dd18faf1196df48619105e397146fdf/POLOLU-2133.pdf)
+### Schrittmotor Treiber DRV8825
+[DRV8825 Schrittmotor Treiber Datenblatt](https://www.tme.eu/Document/1dd18faf1196df48619105e397146fdf/POLOLU-2133.pdf)
 
 Der DRV8825 bietet eine Lösung für die Ansteuerung von bipolaren Schrittmotoren. Der Treiber ist in der Lage, einen Strom von 2,5A zu steuern.
 Der DRV8825 IC ermöglicht über nur 2 Anschlusspins (**DIR, STEP**) eine vereinfachte Kommunikation mit dem Schrittmotor.
@@ -113,17 +110,14 @@ In der unveränderten, für den Steppermotor geschriebene Software wird ausschli
 Der **1/4 step-Betrieb** ist optimal für den regulären Betrieb des Bewegungssystems da eine hohe Geschwindigkeit erzielt werden kann, ohne Fehler zu riskieren, die bei zu niedrigen Schrittmotor-Betrieben vorkommen können und den Motor zum Halten verleiten.
 
 #### Implementierung
-Beim Anschaltvorgang kann es vorallem bei langen Leitungen zu hohen Spitzenspannungen kommen welche gefährlich für die auf dem Träger eingebauten Keramikkondesatoren sind. Als Sicherheitsmaßnahme wird so knapp wie möglich an der Versorgungsspannung ein ELKO eingebaut der laut Hersteller mindestens 47uF haben soll.
+Beim Anschaltvorgang kann es vorallem bei langen Leitungen zu hohen Spitzenspannungen kommen welche gefährlich für die auf dem eingebauten Keramikkondesatoren sind. Als Sicherheitsmaßnahme wird so knapp wie möglich an der Versorgungsspannung ein ELKO eingebaut der laut Hersteller mindestens 47uF haben soll.
 
-![Abbildung 3: DRV8825 Treiber](image-1.png)
+![image](/assets/image-1.png)
 *Abbildung 3: DRV8825 Treiber*
-
-![Betriebsmodi Tabelle](image-2.png)
+![image](/assets/image.png)
 *Abbildung 4: Betriebsmodi Tabelle*
 
 Die Tabelle zeigt alle wählbaren Betriebsmodi für den Steppermotor und welche Ausgänge angesteuert werden müssen um die gewünschte Konfiguration einzustellen.
-
-
 
 
 
@@ -153,24 +147,13 @@ Das Bewegungssystem hat 2 Endschalter, die auf beiden Winkeln installiert sind u
 Die Endschalter werden in der NC (Normaly Closed) Konfiguration angeschlossen um vorbeugend Defekt bei Drahtbruch zu verhindern.
 ### Winkel
 Der Winkel der als Verbindung zwischen Boden und der Schiene dient wurde selbständig designed und gefertigt um Anforderungen zu treffen und Endschalter darauf installieren zu können. 
-
-### weitere Hardware
-
+ 
 
 ### Software
+
+
 [Beschleunigung Rampen Algorithmus](https://embdev.net/attachment/47239/LeibRamp.pdf)
 
 
 ## User Interface
-
-
-
-
-
-
-
-
-
-
-
 
