@@ -59,7 +59,7 @@ void setup()
   pinMode(M1, OUTPUT);
   pinMode(M2, OUTPUT);
   digitalWrite(M0,LOW);
-  digitalWrite(M1,LOW);
+  digitalWrite(M1,HIGH);
   digitalWrite(M2,LOW);
 
   // Rotary Encoder Pin dekleration
@@ -91,12 +91,9 @@ void setup()
   stepper.setAccelerationInStepsPerSecondPerSecond(250000);
 
 
-
-
   //Kalibrierung mit Microstepping
   digitalWrite(nEnable, LOW);
-  digitalWrite(M0,LOW);
-  digitalWrite(M1,HIGH);
+
   digitalWrite(M2,HIGH);
   display.print("Calibration");
   display.display();
@@ -107,8 +104,6 @@ void setup()
   digitalWrite(nEnable, HIGH);
 
   //Umstellung auf 1/4 Step-Betrieb
-  digitalWrite(M0,LOW);
-  digitalWrite(M1,HIGH);
   digitalWrite(M2,LOW);
   stepper.setCurrentPositionInSteps(stepper.getCurrentPositionInSteps()/8);
   pos_max = stepper.getCurrentPositionInSteps();
