@@ -208,3 +208,8 @@ Mit diesem Befehl bewegt sich der Motor um einen relativen Wert, der über den D
 
 ## User Interface
 
+### Drehgeber
+Der Drehgeber engl(Rotary Encoder) ist ein Eingabegerät, dass sich in beide Richtungen ohne uneingeschränkt drehen lässt.
+Da er keinen Angschlagpunkt besitzt, ist der Drehgeber perfekt für Anwendungen geeingnet, bei denen ein bestimmten Wert einzustellen ist.
+
+
