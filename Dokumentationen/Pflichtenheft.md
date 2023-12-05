@@ -139,7 +139,7 @@ Diese Auflösung ist für unsere Anwendung ausreichend. Über eine Veränderung 
 | Spezifikation   | Wert        |
 | --------------- | ----------- |
 | Strom           | 2A          |
-| Innenwiderstand | 1,3$\Omega$ |
+| Innenwiderstand | 1,3$\omega$ |
 | Drehmoment      | 0.55Nm      |
 
 Die Welle des Stepper-Motors über ein Kunststoffband mit der auf der Schiene laufenden Plattform verbunden. Der Motor hat 2 Phasen und somit 4 Anschlussdrähte über die er mit dem DRV8825 verbunden ist. 
