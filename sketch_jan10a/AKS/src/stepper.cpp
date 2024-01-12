@@ -8,8 +8,10 @@ Stepper::Stepper(){
     nEnable_pin = 4;
     step_pin = 3;
     direction_pin = 2;
+
     _speed = 200;
     _accel = 200;
+
 }
 
 void Stepper::pin_init(byte step_pin, byte direction_pin){

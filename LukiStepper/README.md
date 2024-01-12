@@ -1,1 +1,0 @@
-Steppermotor library based on the SpeedyStepper library and optimized and modified for a particular electronics project.

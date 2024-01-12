@@ -12,6 +12,7 @@ class Stepper
         byte nEnable_pin;
         byte step_pin;
         byte direction_pin;
+
         int _speed;
         int _accel;
         bool _dir;

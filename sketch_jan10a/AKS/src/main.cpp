@@ -18,7 +18,6 @@ void setup()
   Serial.begin(9600);
 
   NEMA17.pin_init(3,2);
-
 }
 
 void loop()
