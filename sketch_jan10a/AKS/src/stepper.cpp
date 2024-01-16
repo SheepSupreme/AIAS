@@ -30,11 +30,12 @@ void Stepper::pin_init(byte nEnable_pin_nmbr, byte step_pin_nmbr, byte direction
     digitalWrite(nEnable_pin,HIGH);
 }
 
-void Stepper::change_microstep_resolution(short int _microstep_resolution)
+void Stepper::change_microstep_resolution(short int resolution)
 {
-    digitalWrite(M0, microstep_table[_microstep_resolution][0]);
-    digitalWrite(M1, microstep_table[_microstep_resolution][1]);
-    digitalWrite(M2, microstep_table[_microstep_resolution][2]);
+    _microstep_resolution = microstep_table[resolution][3];
+    digitalWrite(M0, microstep_table[resolution][0]);
+    digitalWrite(M1, microstep_table[resolution][1]);
+    digitalWrite(M2, microstep_table[resolution][2]);
 }
 
 void Stepper::setup_move(int absolute_pos)
@@ -61,51 +62,37 @@ void Stepper::setup_move(int absolute_pos)
 }
 
 
-bool Stepper::endstop_contact(unsigned int endstop_offset, int direction, bool home)
+void Stepper::endstop_contact(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel)
 {   
-    _dir = direction;
-    if(digitalRead(endstop1_pin)&&digitalRead(endstop2_pin)){
-        _dir = -_dir;
-        int endstop_position = _current_position;
-        while((digitalRead(endstop1_pin)&&digitalRead(endstop2_pin))&&_current_position*direction < (endstop_position*direction+endstop_offset)){
-            move();
-        }
-        if (home){_current_position = 0;}
-        return true;
+    relative_in_steps(direction*max_calibration_travel);
+    delay(2);
+    relative_in_steps(direction*endstop_offset*_microstep_resolution);
+    if (home){
+        _current_position = 0;
     }
-    return false;
+    else{
+        endstop_position = _current_position;
+    }
 }
 
 
 void Stepper::calibration(unsigned int endstop_offset)
 {   
 
-    running_period_US = 1000000/_speed_calibration;
+    _speed = _speed_calibration;
 
-    while(!endstop_contact(endstop_offset, -1, true)){
-        move();
-    }
+    endstop_contact(endstop_offset, -1, true, 1E8);
 
-    while(!endstop_contact(endstop_offset, 1, false)){
-        move();
-    }
-
-    _dir = -1;
-    while(!(digitalRead(endstop1_pin)&&digitalRead(endstop2_pin))){
-        move();
-    }
-
+    endstop_contact(endstop_offset, 1, false, 1E8);
 }
 
 void Stepper::change_profile(int speed, int accel)
 {
     _speed = speed;
     _accel = accel;
-    Serial.println(_speed);
-    Serial.println(_accel);
 }
 
-void Stepper::relative_in_steps(int relative_steps)
+void Stepper::relative_in_steps(double relative_steps)
 {
     setup_move(_current_position + relative_steps);
     digitalWrite(nEnable_pin,LOW);
@@ -124,9 +111,6 @@ void Stepper::endstop_trigger()
     if(digitalRead(endstop1_pin) == LOW){
         _interrupt = true;
     }
-    else{
-        _interrupt = false;
-    }
 }
 
 bool Stepper::move()
@@ -138,6 +122,7 @@ bool Stepper::move()
     digitalWrite(direction_pin,max(0,_dir));
 
     if(_interrupt){
+        _interrupt = false;
         return true;
     }
 
@@ -157,7 +142,6 @@ bool Stepper::move()
 
     if(distance_2_target == deceleration_distance){
         multiplier = -1;
-        Serial.println("stop");
     }
     if(this_move_period < running_period_US){
         this_move_period = running_period_US;

@@ -20,6 +20,14 @@
 			],
 			"group": "build",
 			"detail": "compiler: C:\\msys64\\ucrt64\\bin\\g++.exe"
+		},
+		{
+			"type": "PlatformIO",
+			"task": "Pre-Debug (megaatmega2560)",
+			"problemMatcher": [
+				"$platformio"
+			],
+			"label": "PlatformIO: Pre-Debug (megaatmega2560)"
 		}
 	]
 }
