@@ -22,11 +22,13 @@ Projektbetreuer: Ahmet KILIC
 		- [Endschalter](#endschalter)
 		- [Winkel](#winkel)
 		- [Software](#software)
+			- [Stepper Klasse](#stepper-klasse)
 			- [Bibliotheken](#bibliotheken)
 			- [Programmablauf](#programmablauf)
 				- [Kalibrierung](#kalibrierung)
 				- [Manuelle Steuerung](#manuelle-steuerung)
 	- [User Interface](#user-interface)
+		- [Drehgeber](#drehgeber)
 
 
 <div style = "page-break-after: always;"></div>
@@ -152,7 +154,7 @@ Beim Beschleunigen auf hohe Umdrehungszahlen ist es möglich, dass der Schritte 
 
 ### Endschalter
 Das Bewegungssystem hat 2 Endschalter, die auf beiden Winkeln installiert sind und den Bereich vorgeben, in dem sich die Plattform frei bewegen darf. Die Endschalter kommen eigentlich nur  bei der Kalibrierung zu Einsatz aber behalten ihre Funktion über den ganzen Programmablauf bei um sicher zu stellen, dass bei Fehlern die Plattform nicht über die physikalischen Grenzen fährt und Teile des Systems oder sich selbst beschädigt. 
-Die Endschalter werden in der NC (Normaly Closed) Konfiguration angeschlossen um vorbeugend Defekt bei Drahtbruch zu verhindern.
+Die Endschalter werden in der NC (Normaly Closed) Konfiguration angeschlossen um vorbeugend Defekt bei Drahtbruch zu verhindern. Bei der Konfiguration der Endschalter mit dem Befehl `pinmode(endstop_pin,INPUT_PULLUP)`wird der auf der Arduino-Platine enthaltene Pullup-Widerstand dazu geschalten.
 <br>
 
 ### Winkel
@@ -160,6 +162,12 @@ Der Winkel der als Verbindung zwischen Boden und der Schiene dient wurde selbst�
 <br>
 
 ### Software
+Die Software, die das gesamte System antreibt besteht aus einem Hauptprogramm **main.cpp**, dass auf Klassen und deren Methoden zugreifen kann und diese in der gewünschten Reihenfolge ausführt. 
+
+#### Stepper Klasse
+Die Stepper Klasse ist für den speziellen Betrieb von Schritt-Motoren mit Endschaltern geschrieben worden. Sie besteht aus Funktionen für die einfache Bedienung des Schritt-Motors, die Einstellung und Änderung des Bewegungs-Profils und der Kalibrierung des Bewegungssystems. Alle Bewegungen sind mit einem Interrupt abgesichert, der ausgelöst wird, wenn einer der Endschalter betätigt wird.
+
+	
 
 #### Bibliotheken
 Das Projekt verwendet über 2. Wesentliche Bibliotheken.
