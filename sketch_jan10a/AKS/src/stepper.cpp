@@ -1,6 +1,8 @@
 
 #include "stepper.h"
 
+volatile bool Stepper::_interrupt = false;
+
 Stepper::Stepper(){
     M0 = 5;
     M1 = 6;
@@ -10,6 +12,8 @@ Stepper::Stepper(){
     direction_pin = 2;
     _speed = 200;
     _accel = 200;
+    pinMode(endstop1_pin,INPUT_PULLUP);
+    attachInterrupt(digitalPinToInterrupt(endstop1_pin),endstop_trigger,FALLING);
 }
 
 void Stepper::pin_init(byte nEnable_pin_nmbr, byte step_pin_nmbr, byte direction_pin_nmbr){
@@ -73,15 +77,10 @@ bool Stepper::endstop_contact(unsigned int endstop_offset, int direction, bool h
 }
 
 
-void Stepper::calibration(byte endstop1_pin_nmbr, byte endstop2_pin_nmbr, unsigned int endstop_offset)
+void Stepper::calibration(unsigned int endstop_offset)
 {   
 
     running_period_US = 1000000/_speed_calibration;
-    endstop1_pin = endstop1_pin_nmbr;
-    endstop2_pin = endstop2_pin_nmbr;
-
-    pinMode(endstop1_pin,INPUT_PULLUP);
-    pinMode(endstop2_pin,INPUT_PULLUP);
 
     while(!endstop_contact(endstop_offset, -1, true)){
         move();
@@ -120,6 +119,15 @@ void Stepper::relative_in_steps(int relative_steps)
     digitalWrite(nEnable_pin,HIGH);
 }
 
+void Stepper::endstop_trigger()
+{
+    if(digitalRead(endstop1_pin) == LOW){
+        _interrupt = true;
+    }
+    else{
+        _interrupt = false;
+    }
+}
 
 bool Stepper::move()
 {
@@ -129,8 +137,7 @@ bool Stepper::move()
 
     digitalWrite(direction_pin,max(0,_dir));
 
-    if(_current_position == absolute_position)
-    {
+    if(_interrupt){
         return true;
     }
 
@@ -162,7 +169,6 @@ bool Stepper::move()
     delayMicroseconds(2);
     this_move_period = this_move_period*(1.0-multiplier*(_accel/1E12)*this_move_period*this_move_period);
     _current_position = _current_position + _dir;
-
 
     digitalWrite(step_pin,LOW);
 
