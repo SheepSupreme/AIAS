@@ -12,8 +12,10 @@ Stepper::Stepper(){
     direction_pin = 2;
     _speed = 200;
     _accel = 200;
-    pinMode(endstop1_pin,INPUT_PULLUP);
+    pinMode(endstop1_pin, INPUT_PULLUP);
+    pinMode(endstop2_pin, INPUT_PULLUP);
     attachInterrupt(digitalPinToInterrupt(endstop1_pin),endstop_trigger,FALLING);
+    attachInterrupt(digitalPinToInterrupt(endstop2_pin),endstop_trigger,FALLING);
 }
 
 void Stepper::pin_init(byte nEnable_pin_nmbr, byte step_pin_nmbr, byte direction_pin_nmbr){
@@ -38,29 +40,11 @@ void Stepper::change_microstep_resolution(short int resolution)
     digitalWrite(M2, microstep_table[resolution][2]);
 }
 
-void Stepper::setup_move(int absolute_pos)
+void Stepper::change_profile(int speed, int accel)
 {
-    absolute_position = absolute_pos;
-    multiplier = 1;
-    // first period in US
-    this_move_period = 1000000.0/sqrt(2.0*_accel);
-    running_period_US = 1000000.0/_speed;
-    deceleration_distance = (_speed*_speed)/(2.0*_accel);
-
-    relative_distance = absolute_position - _current_position;
-    if (relative_distance < 0){
-        _dir = -1;
-    }
-    else if(relative_distance > 0){
-        _dir = 1;
-    }
-
-    if (abs(relative_distance)/2 < deceleration_distance){
-        deceleration_distance = abs(relative_distance)/2;
-    }
-    new_move = true;
+    _speed = speed;
+    _accel = accel;
 }
-
 
 void Stepper::endstop_contact(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel)
 {   
@@ -86,11 +70,30 @@ void Stepper::calibration(unsigned int endstop_offset)
     endstop_contact(endstop_offset, 1, false, 1E8);
 }
 
-void Stepper::change_profile(int speed, int accel)
+void Stepper::setup_move(int absolute_pos)
 {
-    _speed = speed;
-    _accel = accel;
+    absolute_position = absolute_pos;
+    // first period in US
+    this_move_period = 1000000.0/sqrt(2.0*_accel);
+    running_period_US = 1000000.0/_speed;
+    deceleration_distance = (_speed*_speed)/(2.0*_accel);
+
+    relative_distance = absolute_position - _current_position;
+    if (relative_distance < 0){
+        _dir = -1;
+    }
+    else if(relative_distance > 0){
+        _dir = 1;
+    }
+
+    if (abs(relative_distance)/2 < deceleration_distance){
+        deceleration_distance = abs(relative_distance)/2;
+    }
+    new_move = true;
 }
+
+
+
 
 void Stepper::relative_in_steps(double relative_steps)
 {
@@ -108,7 +111,7 @@ void Stepper::relative_in_steps(double relative_steps)
 
 void Stepper::endstop_trigger()
 {
-    if(digitalRead(endstop1_pin) == LOW){
+    if(digitalRead(endstop1_pin) == LOW || digitalRead(endstop2_pin == LOW)){
         _interrupt = true;
     }
 }
@@ -127,6 +130,7 @@ bool Stepper::move()
     }
 
     if(new_move){
+        multiplier = 1;
         last_move_time_US = micros();
         new_move = false;
     }
