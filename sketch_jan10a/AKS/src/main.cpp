@@ -17,11 +17,10 @@ void setup()
   pinMode(LED_BUILTIN, OUTPUT);
 
   Serial.begin(9600);
-  NEMA17.pin_init(4,3,2);
   NEMA17.change_microstep_resolution(2);
   NEMA17.change_profile(10000,30000);
   
-  NEMA17.relative_in_steps(600);
+  NEMA17.move_relative(600);
   NEMA17.calibration(50);
 
   Serial.print("Runtime:");

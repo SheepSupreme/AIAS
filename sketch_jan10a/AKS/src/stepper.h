@@ -6,7 +6,7 @@
 class Stepper
 {
     public:
-        Stepper(); //Constructor decleration
+        Stepper(uint8_t pin_dir = 2, uint8_t pin_step = 3, uint8_t pin_nEnable = 4, uint8_t pin_M0 = 5, uint8_t pin_M1 = 6, uint8_t pin_M2 =7); //Constructor decleration
 
         byte M0;
         byte M1;
@@ -22,13 +22,12 @@ class Stepper
 
         //methods
         //paramenter
-        void pin_init(byte nEnable_pin_nmbr, byte step_pin_nmbr, byte direction_pin_nmbr);
         void change_profile(int speed, int accel);
         void change_microstep_resolution(short int resolution);
         //movement
         void calibration(unsigned int endstop_offset);
-        void endstop_contact(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel);
-        void relative_in_steps(double relative_steps);
+        void calibration_direction(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel);
+        void move_relative(double relative_steps);
         void setup_move(int absolute_pos);
         bool move();
         //interrupt fn
@@ -41,7 +40,7 @@ class Stepper
 
         static volatile bool _interrupt;
 
-        static const int endstop1_pin = 20;
+        static const int endstop1_pin = 20; //maybe include in class initialization
         static const int endstop2_pin = 21;
 
         int multiplier; //acceleration or deceleration

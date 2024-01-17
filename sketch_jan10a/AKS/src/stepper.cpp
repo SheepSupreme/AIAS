@@ -3,33 +3,25 @@
 
 volatile bool Stepper::_interrupt = false;
 
-Stepper::Stepper(){
-    M0 = 5;
-    M1 = 6;
-    M2 = 7;
-    nEnable_pin = 4;
-    step_pin = 3;
-    direction_pin = 2;
+Stepper::Stepper(uint8_t pin_dir = 2, uint8_t pin_step = 3, uint8_t pin_nEnable = 4, uint8_t pin_M0 = 5, uint8_t pin_M1 = 6, uint8_t pin_M2 =7){
+    step_pin = pin_step;
+    direction_pin = pin_dir;
+    nEnable_pin = pin_nEnable;
+    M0 = pin_M0;
+    M1 = pin_M1;
+    M2 = pin_M2;
     _speed = 200;
     _accel = 200;
-    pinMode(endstop1_pin, INPUT_PULLUP);
-    pinMode(endstop2_pin, INPUT_PULLUP);
-    attachInterrupt(digitalPinToInterrupt(endstop1_pin),endstop_trigger,FALLING);
-    attachInterrupt(digitalPinToInterrupt(endstop2_pin),endstop_trigger,FALLING);
-}
-
-void Stepper::pin_init(byte nEnable_pin_nmbr, byte step_pin_nmbr, byte direction_pin_nmbr){
-    step_pin = step_pin_nmbr;
-    direction_pin = direction_pin_nmbr;
-    nEnable_pin = nEnable_pin_nmbr;
 
     pinMode(step_pin,OUTPUT);
     digitalWrite(step_pin,LOW);
     pinMode(direction_pin,OUTPUT);
     digitalWrite(direction_pin,LOW);
 
-    pinMode(nEnable_pin,OUTPUT);
-    digitalWrite(nEnable_pin,HIGH);
+    pinMode(endstop1_pin, INPUT_PULLUP);
+    pinMode(endstop2_pin, INPUT_PULLUP);
+    attachInterrupt(digitalPinToInterrupt(endstop1_pin),endstop_trigger,FALLING);
+    attachInterrupt(digitalPinToInterrupt(endstop2_pin),endstop_trigger,FALLING);
 }
 
 void Stepper::change_microstep_resolution(short int resolution)
@@ -46,11 +38,11 @@ void Stepper::change_profile(int speed, int accel)
     _accel = accel;
 }
 
-void Stepper::endstop_contact(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel)
+void Stepper::calibration_direction(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel)
 {   
-    relative_in_steps(direction*max_calibration_travel);
+    move_relative(direction*max_calibration_travel); //move towards the endstop
     delay(2);
-    relative_in_steps(direction*endstop_offset*_microstep_resolution);
+    move_relative(direction*endstop_offset*_microstep_resolution); //move away from endstop (endstop_offset in [Fullstep distance])
     if (home){
         _current_position = 0;
     }
@@ -65,9 +57,9 @@ void Stepper::calibration(unsigned int endstop_offset)
 
     _speed = _speed_calibration;
 
-    endstop_contact(endstop_offset, -1, true, 1E8);
+    calibration_direction(endstop_offset, -1, true, 1E8);
 
-    endstop_contact(endstop_offset, 1, false, 1E8);
+    calibration_direction(endstop_offset, 1, false, 1E8);
 }
 
 void Stepper::setup_move(int absolute_pos)
@@ -78,7 +70,7 @@ void Stepper::setup_move(int absolute_pos)
     running_period_US = 1000000.0/_speed;
     deceleration_distance = (_speed*_speed)/(2.0*_accel);
 
-    relative_distance = absolute_position - _current_position;
+    relative_distance = absolute_position - _current_position; //Investigate
     if (relative_distance < 0){
         _dir = -1;
     }
@@ -95,7 +87,7 @@ void Stepper::setup_move(int absolute_pos)
 
 
 
-void Stepper::relative_in_steps(double relative_steps)
+void Stepper::move_relative(double relative_steps)
 {
     setup_move(_current_position + relative_steps);
     digitalWrite(nEnable_pin,LOW);
