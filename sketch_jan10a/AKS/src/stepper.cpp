@@ -3,7 +3,7 @@
 
 volatile bool Stepper::_interrupt = false;
 
-Stepper::Stepper(uint8_t pin_dir = 2, uint8_t pin_step = 3, uint8_t pin_nEnable = 4, uint8_t pin_M0 = 5, uint8_t pin_M1 = 6, uint8_t pin_M2 =7){
+Stepper::Stepper(int pin_dir = 2, int pin_step = 3, int pin_nEnable = 4, int pin_M0 = 5, int pin_M1 = 6, int pin_M2 = 7){
     step_pin = pin_step;
     direction_pin = pin_dir;
     nEnable_pin = pin_nEnable;
@@ -38,11 +38,11 @@ void Stepper::change_profile(int speed, int accel)
     _accel = accel;
 }
 
-void Stepper::calibration_direction(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel)
+void Stepper::calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel)
 {   
     move_relative(direction*max_calibration_travel); //move towards the endstop
-    delay(2);
-    move_relative(direction*endstop_offset*_microstep_resolution); //move away from endstop (endstop_offset in [Fullstep distance])
+    delay(100);
+    move_relative(-direction*endstop_offset*_microstep_resolution); //move away from endstop (endstop_offset in [Fullstep distance])
     if (home){
         _current_position = 0;
     }
@@ -55,14 +55,18 @@ void Stepper::calibration_direction(unsigned int endstop_offset, int direction, 
 void Stepper::calibration(unsigned int endstop_offset)
 {   
 
+    double _speed_copy = _speed;
     _speed = _speed_calibration;
 
     calibration_direction(endstop_offset, -1, true, 1E8);
 
     calibration_direction(endstop_offset, 1, false, 1E8);
+
+    _speed = _speed_copy;
 }
 
-void Stepper::setup_move(int absolute_pos)
+
+void Stepper::setup_move(double absolute_pos)
 {
     absolute_position = absolute_pos;
     // first period in US
@@ -83,8 +87,6 @@ void Stepper::setup_move(int absolute_pos)
     }
     new_move = true;
 }
-
-
 
 
 void Stepper::move_relative(double relative_steps)
@@ -112,7 +114,7 @@ bool Stepper::move()
 {
     unsigned int period_last_step;
     unsigned int current_time_US;
-    unsigned int distance_2_target;
+    int distance_2_target;
 
     digitalWrite(direction_pin,max(0,_dir));
 
