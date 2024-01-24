@@ -189,7 +189,7 @@ Diese besteht aus der 2-fachen Kalibrierungsfunktion `Stepper::calibration_direc
 
 
 #### Stepper-Modi
-Der DRV8825 Schrittmotor-Treiber verfügt über einer Zahlreichen Auswahl an Betriebs-Modi, die durch Micro-Stepping freigeschlatet werden. Über den Befehl `Stepper::change_microstep_resolution()` kann der Betrieb gewechselt werden. 
+Der DRV8825 Schrittmotor-Treiber verfügt über einer Zahlreichen Auswahl an Betriebs-Modi, die durch Micro-Stepping freigeschlatet werden. Über den Befehl `Stepper::change_microstep_resolution()` kann der Betrieb gewechselt werden.
 
 ```cpp
 	int microstep_table[8][4] = 
@@ -203,30 +203,12 @@ Der DRV8825 Schrittmotor-Treiber verfügt über einer Zahlreichen Auswahl an Bet
 	{1,1,1,32}};   //7 = 1/32-Step-Betrieb
 ```
 
-
-``` cpp
-  // Microstepping-Betrieb
-  digitalWrite(M2,HIGH);
-```
-Mit nur einem Befehl lässt sich die Betriebskonfiguration von 1/4 auf 1/32 umstellen. Siehe *Abbildung 5*.
-
-```cpp
-  // Kalibrierungssequenz
-  digitalWrite(nEnable, LOW);
-  stepper.calibration(-1, 16000, 200000, S1, true);
-  stepper.calibration(1, 16000, 200000, S2, false);
-  digitalWrite(nEnable, HIGH);
-```
-Mit `digitalWrite(nEnable, LOW)` wird der DRV8825 in Betrieb gesetzt. und es wird die Kalibrierungssequenz gestartet. Nachdem die Kalibrierung abgeschlossen ist, wird der PIN *nEnable* wieder HIGH gesetzt.
-
 #### Manuelle Steuerung
-
-``` cpp
-digitalWrite(nEnable,LOW);
-stepper.moveRelativeInSteps(counter - stepper.getCurrentPositionInSteps(),S1,S2);
-digitalWrite(nEnable,HIGH);
-```
-Mit diesem Befehl bewegt sich der Motor um einen relativen Wert, der über den Drehgeber manuell eingestellt wurde in die ausgewählte Richtung. Es wird vor jedem Schritt der Zustand der Endschalter geprüft, um bei fehlerhaften Versetzungen trotzdem sofort anhalten zu können, wenn die Platform ihren zulässigen Bereich verlässt.
+Für die manuelle Steuerung stehen 2 Funktionen zu Verfügung.
+- `Stepper::move_relative()`
+- `Stepper::move_absolute()`
+Deren Funktion ist selbsterklärend. Es lässt sich eine absolute Position auswählen die der Motor anfahren soll oder eine
+relative Distanz um die sich der Motor in eine Richtung drehen soll.
 
 ## User Interface
 
