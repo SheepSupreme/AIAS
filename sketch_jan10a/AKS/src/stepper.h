@@ -3,10 +3,11 @@
 
 #include <Arduino.h>
 
+
 class Stepper
 {
     public:
-        Stepper(uint8_t pin_dir = 2, uint8_t pin_step = 3, uint8_t pin_nEnable = 4, uint8_t pin_M0 = 5, uint8_t pin_M1 = 6, uint8_t pin_M2 =7); //Constructor decleration
+        Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin_M1, int pin_M2); //Constructor decleration
 
         byte M0;
         byte M1;
@@ -16,41 +17,45 @@ class Stepper
         byte direction_pin;
 
         //positions
-        signed long int _current_position;
-        signed int absolute_position;
-        signed int endstop_position;
+        double _current_position = 1E7;
+        double absolute_position;
+        signed int endstop_position =1E9;
 
         //methods
         //paramenter
         void change_profile(int speed, int accel);
         void change_microstep_resolution(short int resolution);
         //movement
-        void calibration(unsigned int endstop_offset);
-        void calibration_direction(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel);
+        void calibration(unsigned int endstop_offset = 0);
+        void calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel);
         void move_relative(double relative_steps);
-        void setup_move(int absolute_pos);
+        void move_absolute(uint32_t position);
+        void setup_move(double absolute_pos);
+        void out_ofRange();
+        bool buttonPressed(int btn_pin,bool &btn_state);
         bool move();
-        //interrupt fn
-        static void endstop_trigger();
 
     private:
+        uint32_t DEBOUNCE_DELAY = 100;
         int _accel;
         double _speed;
         double _speed_calibration = 300;
 
-        static volatile bool _interrupt;
+        unsigned int lastDebounceTime = 0;
 
+        bool endstop1_lastState = HIGH;
+        bool endstop2_lastState = HIGH;
         static const int endstop1_pin = 20; //maybe include in class initialization
         static const int endstop2_pin = 21;
 
         int multiplier; //acceleration or deceleration
-        unsigned int deceleration_distance;
-        signed int relative_distance;
+        int deceleration_distance;
+        double relative_distance;
         unsigned int first_period_US;
         double this_move_period;
         unsigned int running_period_US;
         unsigned int last_move_time_US;
-        unsigned int _microstep_resolution;
+        int _microstep_resolution;
         int _dir;
         bool new_move;
         

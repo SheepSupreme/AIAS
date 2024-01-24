@@ -1,9 +1,7 @@
 
 #include "stepper.h"
 
-volatile bool Stepper::_interrupt = false;
-
-Stepper::Stepper(uint8_t pin_dir = 2, uint8_t pin_step = 3, uint8_t pin_nEnable = 4, uint8_t pin_M0 = 5, uint8_t pin_M1 = 6, uint8_t pin_M2 =7){
+Stepper::Stepper(int pin_dir = 2, int pin_step = 3, int pin_nEnable = 4, int pin_M0 = 5, int pin_M1 = 6, int pin_M2 = 7){
     step_pin = pin_step;
     direction_pin = pin_dir;
     nEnable_pin = pin_nEnable;
@@ -20,8 +18,6 @@ Stepper::Stepper(uint8_t pin_dir = 2, uint8_t pin_step = 3, uint8_t pin_nEnable 
 
     pinMode(endstop1_pin, INPUT_PULLUP);
     pinMode(endstop2_pin, INPUT_PULLUP);
-    attachInterrupt(digitalPinToInterrupt(endstop1_pin),endstop_trigger,FALLING);
-    attachInterrupt(digitalPinToInterrupt(endstop2_pin),endstop_trigger,FALLING);
 }
 
 void Stepper::change_microstep_resolution(short int resolution)
@@ -38,35 +34,46 @@ void Stepper::change_profile(int speed, int accel)
     _accel = accel;
 }
 
-void Stepper::calibration_direction(unsigned int endstop_offset, int direction, bool home, double max_calibration_travel)
+void Stepper::calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel)
 {   
-    move_relative(direction*max_calibration_travel); //move towards the endstop
-    delay(2);
-    move_relative(direction*endstop_offset*_microstep_resolution); //move away from endstop (endstop_offset in [Fullstep distance])
-    if (home){
-        _current_position = 0;
+    move_relative(direction*endstop_position); //move towards the endstop
+    if(!home){
+      endstop_position = _current_position;
+      move_relative(-direction*endstop_position);
     }
-    else{
-        endstop_position = _current_position;
+    if(home){
+      move_relative(-direction*endstop_position);
+      _current_position = 0;
     }
+    move_relative(-direction*endstop_offset);
 }
 
 
-void Stepper::calibration(unsigned int endstop_offset)
+void Stepper::calibration(unsigned int endstop_offset = 0)
 {   
 
+    double _speed_copy = _speed;
     _speed = _speed_calibration;
 
-    calibration_direction(endstop_offset, -1, true, 1E8);
+    calibration_direction(endstop_offset, -1, true, 1E6);
 
-    calibration_direction(endstop_offset, 1, false, 1E8);
+    calibration_direction(endstop_offset, 1, false, 1E6);
+
+    _speed = _speed_copy;
 }
 
-void Stepper::setup_move(int absolute_pos)
+
+void Stepper::setup_move(double absolute_pos)
 {
     absolute_position = absolute_pos;
-    // first period in US
-    this_move_period = 1000000.0/sqrt(2.0*_accel);
+    
+    //Test if target position is in calibrated range
+    if(absolute_position < 0 || absolute_position > (_current_position+endstop_position)){
+      absolute_position = _current_position;
+      out_ofRange();
+    }
+    
+    this_move_period = 1000000.0/sqrt(2.0*_accel); // first period in US
     running_period_US = 1000000.0/_speed;
     deceleration_distance = (_speed*_speed)/(2.0*_accel);
 
@@ -84,42 +91,67 @@ void Stepper::setup_move(int absolute_pos)
     new_move = true;
 }
 
-
-
+void Stepper::out_ofRange(){
+  Serial.println("Move not possible due to calibration range restrictions");
+}
 
 void Stepper::move_relative(double relative_steps)
 {
-    setup_move(_current_position + relative_steps);
-    digitalWrite(nEnable_pin,LOW);
-    while(!move()){
-        // Serial.print(_current_position);
-        // Serial.print("   ");
-        // Serial.print(this_move_period);
-        // Serial.print("   ");
-        // Serial.println(deceleration_distance);
-    }
-    digitalWrite(nEnable_pin,HIGH);
+  setup_move(_current_position + relative_steps);
+  digitalWrite(nEnable_pin,LOW);
+  while(!move()){}
+  digitalWrite(nEnable_pin,HIGH);
 }
 
-void Stepper::endstop_trigger()
-{
-    if(digitalRead(endstop1_pin) == LOW || digitalRead(endstop2_pin == LOW)){
-        _interrupt = true;
+void Stepper::move_absolute(uint32_t position){
+  setup_move(position);
+  digitalWrite(nEnable_pin,LOW);
+  while(!move()){}
+  digitalWrite(nEnable_pin,HIGH);
+}
+
+bool Stepper::buttonPressed(int btn_pin,bool &btn_state){
+  bool* last_state = &btn_state;
+  int endstop_pin = btn_pin;
+  int endstop_State = digitalRead(endstop_pin);
+  lastDebounceTime = millis();
+  if(endstop_State != *last_state){
+    while((millis() - lastDebounceTime) < DEBOUNCE_DELAY){
+      int _read = digitalRead(endstop_pin);
+      if(_read != *last_state){
+        lastDebounceTime = millis();
+        *last_state = _read;
+      }
+      *last_state = _read;
     }
+    Serial.println("trigger");
+    return true;
+  }
+  return false;
 }
 
 bool Stepper::move()
 {
     unsigned int period_last_step;
     unsigned int current_time_US;
-    unsigned int distance_2_target;
+    int distance_2_target;
 
-    digitalWrite(direction_pin,max(0,_dir));
-
-    if(_interrupt){
-        _interrupt = false;
+    if(_current_position == absolute_position)
+    {   
         return true;
     }
+
+    if(buttonPressed(endstop1_pin, endstop1_lastState))
+    {   
+        return true;
+    }
+
+    if(buttonPressed(endstop2_pin, endstop2_lastState))
+    {   
+        return true;
+    }
+
+    digitalWrite(direction_pin,abs(min(0,_dir)));
 
     if(new_move){
         multiplier = 1;

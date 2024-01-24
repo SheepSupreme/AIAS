@@ -22,8 +22,8 @@ Projektbetreuer: Ahmet KILIC
 		- [Endschalter](#endschalter)
 		- [Winkel](#winkel)
 		- [Software](#software)
-			- [Stepper Klasse](#stepper-klasse)
 			- [Bibliotheken](#bibliotheken)
+			- [stepper.h](#stepperh)
 			- [Programmablauf](#programmablauf)
 				- [Kalibrierung](#kalibrierung)
 				- [Manuelle Steuerung](#manuelle-steuerung)
@@ -162,20 +162,19 @@ Der Winkel der als Verbindung zwischen Boden und der Schiene dient wurde selbst�
 <br>
 
 ### Software
-Die Software, die das gesamte System antreibt besteht aus einem Hauptprogramm **main.cpp**, dass auf Klassen und deren Methoden zugreifen kann und diese in der gewünschten Reihenfolge ausführt. 
+Die Software, die das gesamte System antreibt besteht aus einem Hauptprogramm **main.cpp**, in dem alle verwendete Bibliotheken inkludiert werden und die Befehle, die von der seriellen Schnittstelle empfangen werden, abgearbeitet werden.
 
-#### Stepper Klasse
-Die Stepper Klasse ist für den speziellen Betrieb von Schritt-Motoren mit Endschaltern geschrieben worden. Sie besteht aus Funktionen für die einfache Bedienung des Schritt-Motors, die Einstellung und Änderung des Bewegungs-Profils und der Kalibrierung des Bewegungssystems. Alle Bewegungen sind mit einem Interrupt abgesichert, der ausgelöst wird, wenn einer der Endschalter betätigt wird.
 
 	
 
 #### Bibliotheken
 Das Projekt verwendet über 2. Wesentliche Bibliotheken.
-Die erste ist die **<Adafruit_SSD1306.h>** Bibliothek, die die Kommunikation mit dem OLED-Display vereinfacht und Unterprogramme enthält, die das designen und programmieren des **User-Interface** erleichtern. Die für die Ansteuerung des Motors zuständige Bibliothek **"LukiStepper.h"**, ist eine speziel für die Anwendung modifizierte Version der **SpeedyStepper.h**-Bibliothek. Sie ist auf dem [Real Time Stepper Motor Linear Ramping Algorithmus](https://embdev.net/attachment/47239/LeibRamp.pdf) aufgebaut.
+Die erste ist die **<Adafruit_SSD1306.h>** Bibliothek, die die Kommunikation mit dem OLED-Display vereinfacht und Unterprogramme enthält, die das designen und programmieren des **User-Interface** erleichtern. Die für die Ansteuerung des Motors zuständige Bibliothek ist **"stepper.h"**.Sie ist mit Hilfe des [Real Time Stepper Motor Linear Ramping Algorithmus](https://embdev.net/attachment/47239/LeibRamp.pdf) aufgebaut.
 
-#### Programmablauf
+#### stepper.h
+Die Stepper Klasse ist für den speziellen Betrieb von Schritt-Motoren mit Endschaltern geschrieben worden. Sie besteht aus Funktionen für die einfache Bedienung des Schritt-Motors, die Einstellung und Änderung des Bewegungs-Profils und der Kalibrierung des Bewegungssystems. Alle Bewegungen sind mit einem Interrupt abgesichert, der ausgelöst wird, wenn einer der Endschalter betätigt wird.
 
-##### Kalibrierung
+#### Kalibrierung
 
 ``` cpp
   // Standart Bewegungsprofil
@@ -205,7 +204,7 @@ Mit nur einem Befehl lässt sich die Betriebskonfiguration von 1/4 auf 1/32 umst
 ```
 Mit `digitalWrite(nEnable, LOW)` wird der DRV8825 in Betrieb gesetzt. und es wird die Kalibrierungssequenz gestartet. Nachdem die Kalibrierung abgeschlossen ist, wird der PIN *nEnable* wieder HIGH gesetzt.
 
-##### Manuelle Steuerung
+#### Manuelle Steuerung
 
 ``` cpp
 digitalWrite(nEnable,LOW);
