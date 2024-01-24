@@ -17,15 +17,22 @@ class Stepper
         byte direction_pin;
 
         //positions
+<<<<<<< HEAD
         double _current_position = 1E7;
         double absolute_position;
         signed int endstop_position =1E9;
+=======
+        double _current_position;
+        double absolute_position;
+        signed int endstop_position;
+>>>>>>> fc690b1021a93759f172358416486aad65dc4fab
 
         //methods
         //paramenter
         void change_profile(int speed, int accel);
         void change_microstep_resolution(short int resolution);
         //movement
+<<<<<<< HEAD
         void calibration(unsigned int endstop_offset = 0);
         void calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel);
         void move_relative(double relative_steps);
@@ -33,6 +40,12 @@ class Stepper
         void setup_move(double absolute_pos);
         void out_ofRange();
         bool buttonPressed(int btn_pin,bool &btn_state);
+=======
+        void calibration(unsigned int endstop_offset);
+        void calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel);
+        void move_relative(double relative_steps);
+        void setup_move(double absolute_pos);
+>>>>>>> fc690b1021a93759f172358416486aad65dc4fab
         bool move();
 
     private:

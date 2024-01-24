@@ -1,6 +1,11 @@
 
 #include "stepper.h"
 
+<<<<<<< HEAD
+=======
+volatile bool Stepper::_interrupt = false;
+
+>>>>>>> fc690b1021a93759f172358416486aad65dc4fab
 Stepper::Stepper(int pin_dir = 2, int pin_step = 3, int pin_nEnable = 4, int pin_M0 = 5, int pin_M1 = 6, int pin_M2 = 7){
     step_pin = pin_step;
     direction_pin = pin_dir;
@@ -36,10 +41,18 @@ void Stepper::change_profile(int speed, int accel)
 
 void Stepper::calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel)
 {   
+<<<<<<< HEAD
     move_relative(direction*endstop_position); //move towards the endstop
     if(!home){
       endstop_position = _current_position;
       move_relative(-direction*endstop_position);
+=======
+    move_relative(direction*max_calibration_travel); //move towards the endstop
+    delay(100);
+    move_relative(-direction*endstop_offset*_microstep_resolution); //move away from endstop (endstop_offset in [Fullstep distance])
+    if (home){
+        _current_position = 0;
+>>>>>>> fc690b1021a93759f172358416486aad65dc4fab
     }
     if(home){
       move_relative(-direction*endstop_position);
@@ -57,7 +70,11 @@ void Stepper::calibration(unsigned int endstop_offset = 0)
 
     calibration_direction(endstop_offset, -1, true, 1E6);
 
+<<<<<<< HEAD
     calibration_direction(endstop_offset, 1, false, 1E6);
+=======
+    calibration_direction(endstop_offset, 1, false, 1E8);
+>>>>>>> fc690b1021a93759f172358416486aad65dc4fab
 
     _speed = _speed_copy;
 }
@@ -91,9 +108,12 @@ void Stepper::setup_move(double absolute_pos)
     new_move = true;
 }
 
+<<<<<<< HEAD
 void Stepper::out_ofRange(){
   Serial.println("Move not possible due to calibration range restrictions");
 }
+=======
+>>>>>>> fc690b1021a93759f172358416486aad65dc4fab
 
 void Stepper::move_relative(double relative_steps)
 {
