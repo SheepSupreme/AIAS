@@ -24,9 +24,9 @@ Projektbetreuer: Ahmet KILIC
 		- [Software](#software)
 			- [Bibliotheken](#bibliotheken)
 			- [stepper.h](#stepperh)
-			- [Programmablauf](#programmablauf)
-				- [Kalibrierung](#kalibrierung)
-				- [Manuelle Steuerung](#manuelle-steuerung)
+			- [Kalibrierung](#kalibrierung)
+			- [Stepper-Modi](#stepper-modi)
+			- [Manuelle Steuerung](#manuelle-steuerung)
 	- [User Interface](#user-interface)
 		- [Drehgeber](#drehgeber)
 
@@ -172,21 +172,36 @@ Das Projekt verwendet über 2. Wesentliche Bibliotheken.
 Die erste ist die **<Adafruit_SSD1306.h>** Bibliothek, die die Kommunikation mit dem OLED-Display vereinfacht und Unterprogramme enthält, die das designen und programmieren des **User-Interface** erleichtern. Die für die Ansteuerung des Motors zuständige Bibliothek ist **"stepper.h"**.Sie ist mit Hilfe des [Real Time Stepper Motor Linear Ramping Algorithmus](https://embdev.net/attachment/47239/LeibRamp.pdf) aufgebaut.
 
 #### stepper.h
-Die Stepper Klasse ist für den speziellen Betrieb von Schritt-Motoren mit Endschaltern geschrieben worden. Sie besteht aus Funktionen für die einfache Bedienung des Schritt-Motors, die Einstellung und Änderung des Bewegungs-Profils und der Kalibrierung des Bewegungssystems. Alle Bewegungen sind mit einem Interrupt abgesichert, der ausgelöst wird, wenn einer der Endschalter betätigt wird.
+Die Stepper Klasse ist für den speziellen Betrieb von Schritt-Motoren mit Endschaltern geschrieben worden. Sie besteht aus Funktionen für die einfache Bedienung des Schritt-Motors, die Einstellung und Änderung des Bewegungs-Profils und der Kalibrierung des Bewegungssystems.
+
+```cpp
+Stepper NEMA17(2,3,4,5,6,7,20,21); // Initialization of object(NEMA17) with the class Stepper
+```
+Hier wird das Objekt NEMA17 mit der am Arduino verwendeten Pinbelegung initialisiert.
 
 #### Kalibrierung
 
 ``` cpp
-  // Standart Bewegungsprofil
-  stepper.setSpeedInStepsPerSecond(16000); //V_max = 16000steps/s
-  stepper.setAccelerationInStepsPerSecondPerSecond(250000); // A_max = 250000steps/s^2
+  NEMA17.calibration(0);
 ```
-Zuerst wird das optimierte Bewegungsprofil, welches pragmatisch ermittelt wurde eingestellt.
-Höhstgeschwindigkeit: **16000steps/s**.
-$$Drehzahl...n = \frac{16000steps/s}{800steps} = 120U/min$$
+Die `Stepper::calibration()` Funktion ist für die Durchführung einer kompletten Kalibration. 
+Diese besteht aus der 2-fachen Kalibrierungsfunktion `Stepper::calibration_direction`, welche die Option freischaltet, In nur eine Richtung zu kalibrieren.
 
-Beschleunigung = **250000steps/s^2**
-$$Beschleunigungszeit...t_a = \frac{16000steps/s}{250000steps/s^2} = 64ms$$
+
+#### Stepper-Modi
+Der DRV8825 Schrittmotor-Treiber verfügt über einer Zahlreichen Auswahl an Betriebs-Modi, die durch Micro-Stepping freigeschlatet werden. Über den Befehl `Stepper::change_microstep_resolution()` kann der Betrieb gewechselt werden. 
+
+```cpp
+	int microstep_table[8][4] = 
+	{{0,0,0,1},   //0 = Full-Step-Betrieb
+	{1,0,0,2},    //1 = Half-Step-Betrieb
+	{0,1,0,4},    //2 = 1/4-Step-Betrieb        
+	{1,1,0,8},    //3 = 1/8-Step-Betrieb
+	{0,0,1,16},    //4 = 1/16-Step-Betrieb
+	{1,0,1,32},    //5 = 1/32-Step-Betrieb
+	{0,1,1,32},    //6 = 1/32-Step-Betrieb
+	{1,1,1,32}};   //7 = 1/32-Step-Betrieb
+```
 
 
 ``` cpp

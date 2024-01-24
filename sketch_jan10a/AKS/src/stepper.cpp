@@ -1,7 +1,7 @@
 
 #include "stepper.h"
 
-Stepper::Stepper(int pin_dir = 2, int pin_step = 3, int pin_nEnable = 4, int pin_M0 = 5, int pin_M1 = 6, int pin_M2 = 7){
+Stepper::Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin_M1, int pin_M2, int es1_pin, int es2_pin){
     step_pin = pin_step;
     direction_pin = pin_dir;
     nEnable_pin = pin_nEnable;
@@ -10,6 +10,8 @@ Stepper::Stepper(int pin_dir = 2, int pin_step = 3, int pin_nEnable = 4, int pin
     M2 = pin_M2;
     _speed = 200;
     _accel = 200;
+    endstop1_pin = es1_pin;
+    endstop2_pin = es2_pin;
 
     pinMode(step_pin,OUTPUT);
     digitalWrite(step_pin,LOW);
@@ -34,30 +36,29 @@ void Stepper::change_profile(int speed, int accel)
     _accel = accel;
 }
 
-void Stepper::calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel)
+void Stepper::calibration_direction(int endstop_offset, int direction, double max_calibration_travel)
 {   
-    move_relative(direction*endstop_position); //move towards the endstop
-    if(!home){
+    move_relative(direction*max_calibration_travel); //move towards the endstop
+    move_relative(-direction*1E3);
+    move_relative(-direction*endstop_offset);
+    if(direction == 1){
       endstop_position = _current_position;
-      move_relative(-direction*endstop_position);
     }
-    if(home){
-      move_relative(-direction*endstop_position);
+    if(direction == -1){
       _current_position = 0;
     }
-    move_relative(-direction*endstop_offset);
 }
 
 
-void Stepper::calibration(unsigned int endstop_offset = 0)
+void Stepper::calibration(unsigned int endstop_offset)
 {   
 
     double _speed_copy = _speed;
     _speed = _speed_calibration;
 
-    calibration_direction(endstop_offset, -1, true, 1E6);
+    calibration_direction(endstop_offset, -1, 1E5);
 
-    calibration_direction(endstop_offset, 1, false, 1E6);
+    calibration_direction(endstop_offset, 1, 1E5);
 
     _speed = _speed_copy;
 }
@@ -68,7 +69,7 @@ void Stepper::setup_move(double absolute_pos)
     absolute_position = absolute_pos;
     
     //Test if target position is in calibrated range
-    if(absolute_position < 0 || absolute_position > (_current_position+endstop_position)){
+    if(absolute_position < 0 || absolute_position > endstop_position){
       out_ofRange();
     }
     

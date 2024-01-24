@@ -3,11 +3,10 @@
 
 #include <Arduino.h>
 
-
 class Stepper
 {
     public:
-        Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin_M1, int pin_M2); //Constructor decleration
+        Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin_M1, int pin_M2, int es1_pin, int es2_pin); //Constructor decleration
 
         byte M0;
         byte M1;
@@ -18,9 +17,9 @@ class Stepper
 
         //positions
 
-        double _current_position = 1E7;
+        double _current_position = 1E5;
         double absolute_position;
-        signed int endstop_position =1E9;
+        double endstop_position =1E6;
 
         //methods
         //paramenter
@@ -28,8 +27,8 @@ class Stepper
         void change_microstep_resolution(short int resolution);
         //movement
 
-        void calibration(unsigned int endstop_offset = 0);
-        void calibration_direction(int endstop_offset, int direction, bool home, double max_calibration_travel);
+        void calibration(unsigned int endstop_offset);
+        void calibration_direction(int endstop_offset, int direction, double max_calibration_travel);
         void move_relative(double relative_steps);
         void move_absolute(uint32_t position);
         void setup_move(double absolute_pos);
@@ -42,14 +41,14 @@ class Stepper
         uint32_t DEBOUNCE_DELAY = 100;
         int _accel;
         double _speed;
-        double _speed_calibration = 300;
+        double _speed_calibration = 600;
 
         unsigned int lastDebounceTime = 0;
 
         bool endstop1_lastState = HIGH;
         bool endstop2_lastState = HIGH;
-        static const int endstop1_pin = 20; //maybe include in class initialization
-        static const int endstop2_pin = 21;
+        int endstop1_pin;
+        int endstop2_pin;
 
         int multiplier; //acceleration or deceleration
         int deceleration_distance;
