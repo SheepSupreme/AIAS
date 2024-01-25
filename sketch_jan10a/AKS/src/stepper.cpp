@@ -7,7 +7,7 @@ Stepper::Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin
     nEnable_pin = pin_nEnable;
     M0 = pin_M0;
     M1 = pin_M1;
-    M2 = pin_M2;
+    M2 = pin_M2; 
     _speed = 200;
     _accel = 200;
     endstop1_pin = es1_pin;
@@ -24,7 +24,11 @@ Stepper::Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin
 
 void Stepper::change_microstep_resolution(short int resolution)
 {
-    _microstep_resolution = microstep_table[resolution][3];
+    endstop_position = endstop_position*(_microstep_resolution/(1.0f/microstep_table[resolution][3]));
+    _speed_calibration = _speed_calibration*(_microstep_resolution/(1.0f/microstep_table[resolution][3]));
+    _current_position = _current_position*(_microstep_resolution/(1.0f/microstep_table[resolution][3]));
+
+    _microstep_resolution = 1.0f/microstep_table[resolution][3]; //current resolution e.g. 1/4
     digitalWrite(M0, microstep_table[resolution][0]);
     digitalWrite(M1, microstep_table[resolution][1]);
     digitalWrite(M2, microstep_table[resolution][2]);
@@ -56,9 +60,9 @@ void Stepper::calibration(unsigned int endstop_offset)
     double _speed_copy = _speed;
     _speed = _speed_calibration;
 
-    calibration_direction(endstop_offset, -1, 1E5);
+    calibration_direction(endstop_offset/_microstep_resolution, -1, 1E5);
 
-    calibration_direction(endstop_offset, 1, 1E5);
+    calibration_direction(endstop_offset/_microstep_resolution, 1, 1E5);
 
     _speed = _speed_copy;
 }

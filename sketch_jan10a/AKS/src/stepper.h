@@ -41,7 +41,7 @@ class Stepper
         uint32_t DEBOUNCE_DELAY = 100;
         int _accel;
         double _speed;
-        double _speed_calibration = 600;
+        double _speed_calibration = 400;
 
         unsigned int lastDebounceTime = 0;
 
@@ -57,11 +57,11 @@ class Stepper
         double this_move_period;
         unsigned int running_period_US;
         unsigned int last_move_time_US;
-        int _microstep_resolution;
+        float _microstep_resolution = 1.0f;
         int _dir;
         bool new_move;
         
-        int microstep_table[8][4] = 
+        float microstep_table[8][4] = 
         {{0,0,0,1},   //0 = Full-Step-Betrieb
         {1,0,0,2},    //1 = Half-Step-Betrieb
         {0,1,0,4},    //2 = 1/4-Step-Betrieb        
