@@ -1,8 +1,9 @@
 
-#include "stepper.h"
 #include "display.h"
+#include "stepper.h"
 
-Stepper NEMA17(2,3,4,5,6,7,20,21);
+Stepper NEMA17(2,3,4,5,6,7,8,9);
+display SSD1306;
 
 void setup()
 {
@@ -11,10 +12,15 @@ void setup()
 
   Serial.begin(9600);
   NEMA17.change_microstep_resolution(1);
-  NEMA17.change_profile(12000,30000);
+  NEMA17.change_profile(5000,30000);
+
+  SSD1306.begin();
+ 
+  NEMA17.calibration(50);
+  NEMA17.move_absolute(0);
 
   //Different Stepper-Modes
-  // NEMA17.calibration(50);
+  // SSD1306.status_calibration();
   // delay(1000);
   // NEMA17.change_microstep_resolution(2);
   // NEMA17.move_relative(-800);

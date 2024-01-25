@@ -17,6 +17,8 @@ Stepper::Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin
     digitalWrite(step_pin,LOW);
     pinMode(direction_pin,OUTPUT);
     digitalWrite(direction_pin,LOW);
+    pinMode(nEnable_pin,OUTPUT);
+    digitalWrite(nEnable_pin,HIGH);
 
     pinMode(endstop1_pin, INPUT_PULLUP);
     pinMode(endstop2_pin, INPUT_PULLUP);
@@ -71,7 +73,7 @@ void Stepper::calibration(unsigned int endstop_offset)
 void Stepper::setup_move(double absolute_pos)
 {
     absolute_position = absolute_pos;
-    
+
     //Test if target position is in calibrated range
     if(absolute_position < 0 || absolute_position > endstop_position){
       out_ofRange();

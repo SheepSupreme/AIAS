@@ -6,7 +6,7 @@
 #include <Wire.h>
 #include <SPI.h>
 #include <Fonts/Picopixel.h>
-#include <string>
+#include <string.h>
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -18,10 +18,11 @@ class display{
     display();
     void update_display(String input, uint8_t x, uint8_t y, uint8_t size);
     void status_calibration();
+    void status_errorRange();
     void status_position(int position);
     void begin();
   private:
-    Adafruit_SSD1306 display;
+    Adafruit_SSD1306 OLED;
 };
 
 #endif
