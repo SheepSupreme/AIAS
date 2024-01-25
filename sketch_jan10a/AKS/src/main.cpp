@@ -1,5 +1,6 @@
 
 #include "stepper.h"
+#include "display.h"
 
 Stepper NEMA17(2,3,4,5,6,7,20,21);
 

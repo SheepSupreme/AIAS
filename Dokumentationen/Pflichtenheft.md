@@ -27,7 +27,7 @@ Projektbetreuer: Ahmet KILIC
 			- [Kalibrierung](#kalibrierung)
 			- [Stepper-Modi](#stepper-modi)
 			- [Manuelle Steuerung](#manuelle-steuerung)
-	- [User Interface](#user-interface)
+	- [Status-Anzeige](#status-anzeige)
 		- [Drehgeber](#drehgeber)
 
 
@@ -189,7 +189,7 @@ Diese besteht aus der 2-fachen Kalibrierungsfunktion `Stepper::calibration_direc
 
 
 #### Stepper-Modi
-Der DRV8825 Schrittmotor-Treiber verfügt über einer Zahlreichen Auswahl an Betriebs-Modi, die durch Micro-Stepping freigeschlatet werden. Über den Befehl `Stepper::change_microstep_resolution()` kann der Betrieb gewechselt werden.
+Der DRV8825 Schrittmotor-Treiber verfügt über einer Zahlreichen Auswahl an Betriebs-Modi, die durch Micro-Stepping freigeschlatet werden. Über den Befehl `Stepper::change_microstep_resolution()` wird auf einen Array mit der jeweiligen Stepper-Modi zugegriffen und die Pins(M0,M1,M2) werden aktualisiert.
 
 ```cpp
 	int microstep_table[8][4] = 
@@ -208,9 +208,9 @@ Für die manuelle Steuerung stehen 2 Funktionen zu Verfügung.
 - `Stepper::move_relative()`
 - `Stepper::move_absolute()`
 Deren Funktion ist selbsterklärend. Es lässt sich eine absolute Position auswählen die der Motor anfahren soll oder eine
-relative Distanz um die sich der Motor in eine Richtung drehen soll.
+relative Distanz, um die sich der Motor in eine Richtung drehen soll.
 
-## User Interface
+## Status-Anzeige
 
 ### Drehgeber
 Der Drehgeber engl(Rotary Encoder) ist ein Eingabegerät, dass sich in beide Richtungen ohne uneingeschränkt drehen lässt.
