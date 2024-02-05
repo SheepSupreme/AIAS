@@ -18,20 +18,24 @@ class Stepper
         //positions
 
         double _current_position = 1E5;
+        double _relative;
         double absolute_position;
-        double endstop_position =1E6;
+        double endstop_position =1E7;
+        double alt_pos;
 
         //methods
+        int relative2absolute(int relative);
+        int absolute2relative(int absolute);
         //paramenter
         void change_profile(int speed, int accel);
         void change_microstep_resolution(short int resolution);
         //movement
 
         void calibration(unsigned int endstop_offset);
-        void calibration_direction(int endstop_offset, int direction, double max_calibration_travel);
+        void calibration_direction(int endstop_offset, int direction);
         void move_relative(double relative_steps);
         void move_absolute(uint32_t position);
-        void setup_move(double absolute_pos);
+        void setup_move(double relative);
         void out_ofRange();
         bool buttonPressed(int btn_pin,bool &btn_state);
 

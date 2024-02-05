@@ -24,6 +24,18 @@ Stepper::Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin
     pinMode(endstop2_pin, INPUT_PULLUP);
 }
 
+int Stepper::relative2absolute(int relative)
+{
+    double absolute = (_current_position + relative);
+    return absolute;
+}
+
+int Stepper::absolute2relative(int absolute)
+{
+    double relative = (absolute - _current_position);
+    return relative;
+}
+
 void Stepper::change_microstep_resolution(short int resolution)
 {
     endstop_position = endstop_position*(_microstep_resolution/(1.0f/microstep_table[resolution][3]));
@@ -42,10 +54,33 @@ void Stepper::change_profile(int speed, int accel)
     _accel = accel;
 }
 
-void Stepper::calibration_direction(int endstop_offset, int direction, double max_calibration_travel)
+void Stepper::calibration_direction(int endstop_offset, int direction)
 {   
-    move_relative(direction*max_calibration_travel); //move towards the endstop
-    move_relative(-direction*1E3);
+    if(direction == -1){
+        alt_pos = _current_position;
+    }
+    else{
+        alt_pos = endstop_position;
+    }
+    
+    setup_move(direction*alt_pos);
+    digitalWrite(nEnable_pin,LOW);
+    while(!move()){}
+    Serial.println("move1 end");
+
+    if(direction == -1){
+        alt_pos = endstop_position;
+    }
+    else{
+        alt_pos = _current_position;
+    }
+
+    setup_move(-direction*alt_pos);
+    Serial.println(alt_pos);
+    while(!move()){}
+    Serial.println("move2 end");
+    digitalWrite(nEnable_pin,HIGH);
+
     move_relative(-direction*endstop_offset);
     if(direction == 1){
       endstop_position = _current_position;
@@ -62,20 +97,22 @@ void Stepper::calibration(unsigned int endstop_offset)
     double _speed_copy = _speed;
     _speed = _speed_calibration;
 
-    calibration_direction(endstop_offset/_microstep_resolution, -1, 1E5);
+    calibration_direction(endstop_offset/_microstep_resolution, -1);
 
-    calibration_direction(endstop_offset/_microstep_resolution, 1, 1E5);
+    calibration_direction(endstop_offset/_microstep_resolution, 1);
 
     _speed = _speed_copy;
 }
 
 
-void Stepper::setup_move(double absolute_pos)
+void Stepper::setup_move(double relative)
 {
-    absolute_position = absolute_pos;
+    _relative = relative;
+    absolute_position = _current_position + _relative;
+    Serial.println(absolute_position);
 
     //Test if target position is in calibrated range
-    if(absolute_position < 0 || absolute_position > endstop_position){
+    if(absolute_position < 0 || absolute_position > endstop_position+_current_position){
       out_ofRange();
     }
     
@@ -83,16 +120,15 @@ void Stepper::setup_move(double absolute_pos)
     running_period_US = 1000000.0/_speed;
     deceleration_distance = (_speed*_speed)/(2.0*_accel);
 
-    relative_distance = absolute_position - _current_position; //Investigate
-    if (relative_distance < 0){
+    if (_relative < 0){
         _dir = -1;
     }
-    else if(relative_distance > 0){
+    else if(_relative > 0){
         _dir = 1;
     }
 
-    if (abs(relative_distance)/2 < deceleration_distance){
-        deceleration_distance = abs(relative_distance)/2;
+    if (abs(_relative)/2 < deceleration_distance){
+        deceleration_distance = abs(_relative)/2;
     }
     new_move = true;
 }
@@ -104,14 +140,14 @@ void Stepper::out_ofRange(){
 
 void Stepper::move_relative(double relative_steps)
 {
-  setup_move(_current_position + relative_steps);
+  setup_move(relative_steps);
   digitalWrite(nEnable_pin,LOW);
   while(!move()){}
   digitalWrite(nEnable_pin,HIGH);
 }
 
 void Stepper::move_absolute(uint32_t position){
-  setup_move(position);
+  setup_move(absolute2relative(position));
   digitalWrite(nEnable_pin,LOW);
   while(!move()){}
   digitalWrite(nEnable_pin,HIGH);
@@ -173,7 +209,7 @@ bool Stepper::move()
     }
     last_move_time_US = micros();
 
-    distance_2_target = abs(absolute_position - _current_position);
+    distance_2_target = abs(absolute2relative(absolute_position));
 
     if(distance_2_target == deceleration_distance){
         multiplier = -1;

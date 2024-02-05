@@ -1,0 +1,185 @@
+{
+  "main": {
+    "id": "b05cd04a428d448f",
+    "type": "split",
+    "children": [
+      {
+        "id": "395fb2fe80768d00",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "462fd570b7e706fe",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Dokumentationen/Pflichtenheft.png"
+              }
+            }
+          },
+          {
+            "id": "3d395552b2a3438e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dokumentationen/Software Dokumentation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6f6743854c44559a",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Dokumentationen/Drawing 2024-02-05 15.11.03.excalidraw.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "025d9d8f2a9b0a32",
+    "type": "split",
+    "children": [
+      {
+        "id": "823ed90ca0a0cba7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "38ee3466935d5491",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "abc447174777e277",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "30dfdb6a5fd2ab11",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6fec7e96215ac6fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "c62ea41ea54716ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88fdb1e1689b37e1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Dokumentationen/Drawing 2024-02-05 15.11.03.excalidraw.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "53cc28dfd086a01b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Dokumentationen/Drawing 2024-02-05 15.11.03.excalidraw.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3a10ea5b31fe6776",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1add381989cbd423",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Dokumentationen/Drawing 2024-02-05 15.11.03.excalidraw.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "38ee3466935d5491",
+  "lastOpenFiles": [
+    "Dokumentationen/Software Dokumentation.md",
+    "Dokumentationen/Drawing 2024-02-05 15.11.03.excalidraw.md",
+    "Excalidraw",
+    "Dokumentationen/Programm Ablauf.md",
+    "Untitled.md",
+    "Dokumentationen/Pflichtenheft.png",
+    "Dokumentationen/Pflichtenheft.pdf",
+    "Dokumentationen/image.png",
+    "Dokumentationen/image-1.png",
+    "Dokumentationen/PDFs.md",
+    "Dokumentationen/Pflichtenheft.md"
+  ]
+}
