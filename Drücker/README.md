@@ -8,4 +8,4 @@ Dafür benötigte Komponente sind:
 
 Mit Luftdruck können starke 1-dimensionale Kräfte erzeugt werden. 
 Für die Funktion als Drückermechanismus eignet sich Luftdruck gut, um nicht die ganze Länge eines
-Paketes physikalisch überwinden zu müssen. Sondern genug Geschwindigkeit zu erzeugen, sodass das Paket aus dem Behälter fällt.
+- [ ] Paketes physikalisch überwinden zu müssen. Sondern genug Geschwindigkeit zu erzeugen, sodass das Paket aus dem Behälter fällt.

@@ -1,0 +1,35 @@
+{
+  "settings": {
+    "migrated": 4,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 12,
+    "emojiStyle": "none",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "SiReaddotcv",
+      "SiReadme",
+      "SiPython",
+      "FasCode",
+      "FasFolder"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": true,
+    "iconInFrontmatterEnabled": true,
+    "iconsBackgroundCheckEnabled": true,
+    "iconsInNotesEnabled": true,
+    "iconIdentifier": ":"
+  },
+  "AKS.ppt": "FasFilePowerpoint",
+  "sketch_jan10a/GUI.py": "SiPython",
+  "sketch_jan10a/container.py": "SiPython",
+  "Beschreibung.md": "SiReadme",
+  "README.md": "SiReaddotcv"
+}
