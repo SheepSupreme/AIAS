@@ -11,8 +11,14 @@
             "id": "d69be08536541581",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
+                {
+                  "title": "README",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Drücker/README.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
                 {
                   "state": "{}",
                   "eState": "{}"
@@ -25,6 +31,31 @@
                 "file": "sketch_jan10a/README.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "f55874a1f271a76f",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 1,
+              "stack": [
+                {
+                  "title": "README",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"sketch_jan10a/README.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "sketch_jan10a/README 2024-02-06 17.34.43.excalidraw.md"
               }
             }
           }
@@ -222,7 +253,11 @@
   },
   "active": "d69be08536541581",
   "lastOpenFiles": [
+    "sketch_jan10a/README 2024-02-06 17.34.43.excalidraw.md",
     "sketch_jan10a/README.md",
+    "Drücker/README.md",
+    "Drawing 2024-02-06 17.33.52.excalidraw.md",
+    "Drawing 2024-02-06 17.33.30.excalidraw.md",
     "sketch_jan10a/PDF/drv8825.pdf",
     "Drawing 2024-02-06 17.23.18.excalidraw.md",
     "Drawing 2024-02-06 17.23.05.excalidraw.md",
@@ -232,7 +267,6 @@
     "Dokumentationen/PDFs.md",
     "~$AKS.ppt",
     "Drawing 2024-02-06 13.19.45.excalidraw.md",
-    "Drücker/README.md",
     "Drawing 2024-02-06 13.18.30.excalidraw.md",
     "Drawing 2024-02-06 13.08.28.excalidraw.md",
     "Untitled.canvas",
@@ -260,9 +294,7 @@
     "Concept Art/idee.png",
     "Untitled.md",
     "Excalidraw/Drawing 2024-02-06 12.09.15.excalidraw.md",
-    "Excalidraw/Drawing 2024-02-06 12.09.16.excalidraw.md",
     "sketch_jan10a/GUI.py",
-    "Excalidraw",
-    "Dokumentationen/Programm Ablauf.md"
+    "Excalidraw"
   ]
 }
