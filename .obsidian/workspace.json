@@ -1,0 +1,265 @@
+{
+  "main": {
+    "id": "b05cd04a428d448f",
+    "type": "split",
+    "children": [
+      {
+        "id": "448445b71ad99ef8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f25fe4e654a0b92a",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "025d9d8f2a9b0a32",
+    "type": "split",
+    "children": [
+      {
+        "id": "823ed90ca0a0cba7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "abc447174777e277",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b9e94cec65190b9d",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "42ef19939ab4a70e",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "6fec7e96215ac6fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "c62ea41ea54716ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "88fdb1e1689b37e1",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "53cc28dfd086a01b",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3a10ea5b31fe6776",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1add381989cbd423",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "42ef19939ab4a70e",
+  "lastOpenFiles": [
+    "Dokumentationen/bin/UT232E.pdf",
+    "Dokumentationen/Serial Com.md",
+    "Dokumentationen/Pflichtenheft.md",
+    "Dokumentationen/check points.md",
+    "sketch_jan10a/PDF/DRV8825_driver.pdf",
+    "sketch_jan10a/PDF/drv8825.pdf",
+    "Dokumentationen/range drawing.md",
+    "Dokumentationen/bin/Pflichtenheft.pdf",
+    "Dokumentationen/bin/image-1.png",
+    "Untitled.md",
+    "Untitled",
+    "Dokumentationen/~$-Antrag_Muster.docx",
+    "Dokumentationen/bin",
+    "sketch_jan10a/README 2024-02-06 17.34.43.excalidraw.md",
+    "assets/image.png",
+    "assets/image-1.png",
+    "Concept Art/Wireframe3.png",
+    "Concept Art/Wireframe2.png",
+    "Concept Art/Wireframe.png",
+    "Concept Art/Normal3.png",
+    "Concept Art/Normal1.png",
+    "Concept Art/idee.png",
+    "Dokumentationen/bin/image.png",
+    "Dokumentationen/PDFs.md",
+    "Dokumentationen/Software Dokumentation.md",
+    "Drücker/README.md",
+    "Tutorials/Eigene library machen.md",
+    "sketch_jan10a/README.md",
+    "Drawing 2024-02-06 17.33.52.excalidraw.md",
+    "Drawing 2024-02-06 17.33.30.excalidraw.md",
+    "Drawing 2024-02-06 17.23.18.excalidraw.md",
+    "Drawing 2024-02-06 17.23.05.excalidraw.md",
+    "README.md",
+    "Beschreibung.md",
+    "~$AKS.ppt",
+    "Drawing 2024-02-06 13.19.45.excalidraw.md",
+    "Drawing 2024-02-06 13.18.30.excalidraw.md",
+    "Drawing 2024-02-06 13.08.28.excalidraw.md",
+    "Untitled.canvas",
+    "Drawing 2024-02-06 13.06.47.excalidraw.md",
+    "Drawing 2024-02-06 12.58.53.excalidraw.md",
+    "sketch_jan10a/TODO.md",
+    "Excalidraw/Drawing 2024-02-06 12.55.08.excalidraw.md",
+    "Excalidraw/Drawing 2024-02-06 12.54.45.excalidraw.md",
+    "sketch_jan10a/GUI.py",
+    "Excalidraw"
+  ]
+}

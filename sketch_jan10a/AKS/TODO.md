@@ -1,4 +1,2 @@
-- test with new datatypes
-- fix direction bug inside calibrate()
-- rename variables and functions
-- comment code
+- [ ] Endstop bug beheben
+
