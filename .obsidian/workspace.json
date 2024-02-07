@@ -4,20 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "3055bd432ac096e2",
+        "id": "448445b71ad99ef8",
         "type": "tabs",
         "children": [
           {
-            "id": "d69be08536541581",
+            "id": "f25fe4e654a0b92a",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 1,
               "stack": [
                 {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Drücker/README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "title": "UT232E",
+                  "icon": "lucide-file-text",
+                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"Dokumentationen/bin/UT232E.pdf\"}}",
+                  "eState": "{}"
                 },
                 {
                   "state": "{}",
@@ -28,34 +28,9 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sketch_jan10a/README.md",
+                "file": "Dokumentationen/Serial Com.md",
                 "mode": "source",
                 "source": false
-              }
-            }
-          },
-          {
-            "id": "f55874a1f271a76f",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 1,
-              "stack": [
-                {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"sketch_jan10a/README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "sketch_jan10a/README 2024-02-06 17.34.43.excalidraw.md"
               }
             }
           }
@@ -114,7 +89,7 @@
             }
           },
           {
-            "id": "6ce48904fc7839fa",
+            "id": "42ef19939ab4a70e",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -137,7 +112,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6fec7e96215ac6fe",
@@ -162,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "sketch_jan10a/README.md",
+                "file": "Dokumentationen/Serial Com.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "sketch_jan10a/README.md",
+                "file": "Dokumentationen/Serial Com.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -229,7 +205,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "sketch_jan10a/README.md"
+                "file": "Dokumentationen/Serial Com.md"
               }
             }
           }
@@ -251,49 +227,52 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d69be08536541581",
+  "active": "f25fe4e654a0b92a",
   "lastOpenFiles": [
+    "Dokumentationen/bin/UT232E.pdf",
+    "Dokumentationen/Serial Com.md",
+    "Dokumentationen/Pflichtenheft.md",
+    "Dokumentationen/check points.md",
+    "sketch_jan10a/PDF/DRV8825_driver.pdf",
+    "sketch_jan10a/PDF/drv8825.pdf",
+    "Dokumentationen/range drawing.md",
+    "Dokumentationen/bin/Pflichtenheft.pdf",
+    "Dokumentationen/bin/image-1.png",
+    "Untitled.md",
+    "Untitled",
+    "Dokumentationen/~$-Antrag_Muster.docx",
+    "Dokumentationen/bin",
     "sketch_jan10a/README 2024-02-06 17.34.43.excalidraw.md",
-    "sketch_jan10a/README.md",
+    "assets/image.png",
+    "assets/image-1.png",
+    "Concept Art/Wireframe3.png",
+    "Concept Art/Wireframe2.png",
+    "Concept Art/Wireframe.png",
+    "Concept Art/Normal3.png",
+    "Concept Art/Normal1.png",
+    "Concept Art/idee.png",
+    "Dokumentationen/bin/image.png",
+    "Dokumentationen/PDFs.md",
+    "Dokumentationen/Software Dokumentation.md",
     "Drücker/README.md",
+    "Tutorials/Eigene library machen.md",
+    "sketch_jan10a/README.md",
     "Drawing 2024-02-06 17.33.52.excalidraw.md",
     "Drawing 2024-02-06 17.33.30.excalidraw.md",
-    "sketch_jan10a/PDF/drv8825.pdf",
     "Drawing 2024-02-06 17.23.18.excalidraw.md",
     "Drawing 2024-02-06 17.23.05.excalidraw.md",
-    "Dokumentationen/Pflichtenheft.png",
     "README.md",
     "Beschreibung.md",
-    "Dokumentationen/PDFs.md",
     "~$AKS.ppt",
     "Drawing 2024-02-06 13.19.45.excalidraw.md",
     "Drawing 2024-02-06 13.18.30.excalidraw.md",
     "Drawing 2024-02-06 13.08.28.excalidraw.md",
     "Untitled.canvas",
     "Drawing 2024-02-06 13.06.47.excalidraw.md",
-    "Tutorials/Eigene library machen.md",
     "Drawing 2024-02-06 12.58.53.excalidraw.md",
     "sketch_jan10a/TODO.md",
     "Excalidraw/Drawing 2024-02-06 12.55.08.excalidraw.md",
     "Excalidraw/Drawing 2024-02-06 12.54.45.excalidraw.md",
-    "Dokumentationen/range drawing.md",
-    "sketch_jan10a/TODO.excalidraw.md",
-    "Concept Art/Wireframe3.png",
-    "Dokumentationen/image.png",
-    "Dokumentationen/image-1.png",
-    "Dokumentationen/Pflichtenheft.md",
-    "Dokumentationen/Pflichtenheft.pdf",
-    "Dokumentationen/Software Dokumentation.md",
-    "sketch_jan10a/PDF/DRV8825_driver.pdf",
-    "sketch_jan10a/AKS/TODO.md",
-    "Concept Art/Wireframe2.png",
-    "Concept Art/Wireframe.png",
-    "Concept Art/Normal3.png",
-    "Concept Art/Normal2.png",
-    "Concept Art/Normal1.png",
-    "Concept Art/idee.png",
-    "Untitled.md",
-    "Excalidraw/Drawing 2024-02-06 12.09.15.excalidraw.md",
     "sketch_jan10a/GUI.py",
     "Excalidraw"
   ]

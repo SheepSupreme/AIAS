@@ -1,6 +1,20 @@
 {
-  "quick-explorer:go-next": [],
-  "quick-explorer:go-prev": [],
+  "quick-explorer:go-next": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "F"
+    }
+  ],
+  "quick-explorer:go-prev": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "A"
+    }
+  ],
   "quick-explorer:browse-vault": [
     {
       "modifiers": [

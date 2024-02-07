@@ -1,7 +1,8 @@
 [
   "obsidian-excalidraw-plugin",
   "quick-explorer",
-  "obsidian-icon-folder",
   "pane-relief",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-style-settings",
+  "obsidian-icon-folder"
 ]

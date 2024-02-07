@@ -121,10 +121,10 @@ Der **1/4 step-Betrieb** ist optimal für den regulären Betrieb des Bewegungssy
 #### Implementierung
 Beim Anschaltvorgang kann es vorallem bei langen Leitungen zu hohen Spitzenspannungen kommen welche gefährlich für die auf dem eingebauten Keramikkondesatoren sind. Als Sicherheitsmaßnahme wird so knapp wie möglich an der Versorgungsspannung ein ELKO eingebaut der laut Hersteller mindestens 47uF haben soll.
 
-![image](/assets/image-1.png)
+![image](image-1.png)
 *Abbildung 4: DRV8825 Treiber*
 <br>
-![image](/assets/image.png)
+![image](image.png)
 *Abbildung 5: Betriebsmodi Tabelle*
 
 Die Tabelle zeigt alle wählbaren Betriebsmodi für den Steppermotor und welche Ausgänge angesteuert werden müssen um die gewünschte Konfiguration einzustellen.
