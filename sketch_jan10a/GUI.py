@@ -1,36 +1,34 @@
-import customtkinter
-import tkinterDnD
+import tkinter as tk
 import time
 
-customtkinter.set_ctk_parent_class(tkinterDnD.Tk)
-
-customtkinter.set_appearance_mode('dark')
-
-class App(customtkinter.CTk):
-    def __init__(self):
-        super().__init__()
+class Timer:
+    def __init__(self, end_time, root):
+        self.root = root
         self.start_time = time.time()
-        self.current_time = 0
-        self.title("my app")
-        self.geometry("400x150")
-        self.grid_columnconfigure((0, 1), weight=1)
-
-        self.timer_1 = customtkinter.CTkLabel(self.App, text = 'placeholder')
-        self.timer_1.grid(row=0, column=0, padx=20, pady=20)
+        self.current_time = time.time()
+        self.end_time = self.start_time + end_time
+        self.label = tk.Label(root, font=('Arial', 24))
+        self.label.pack(padx=20, pady=20)
         self.update_time()
-
-    def button_callback(self):
-        return
-    
     def update_time(self):
-        # Get the current time
-        current_time = time.strftime('%H:%M:%S')
+        self.current_time = time.time()
+        self.current_time = self.end_time - self.current_time
+        self.label.config(text = int(self.current_time))
+        self.root.after(1000, self.update_time)
 
-        # Update the label text
-        self.label.config(text=current_time)
+class App:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Current Time Display")
 
-        # Schedule the function to run again after 1000ms (1 second)
-        self.after(1000, self.update_time)
+        self.timer_1 = Timer(60,root)
+        self.timer_2 = Timer(100,root)
 
-app = App()
-app.mainloop()
+# Create the main window
+root = tk.Tk()
+
+# Create an instance of the App class
+app = App(root)
+
+# Run the Tkinter event loop
+root.mainloop()
