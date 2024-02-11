@@ -1,6 +1,6 @@
 {
   "promptDelete": false,
-  "vimMode": true,
+  "vimMode": false,
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
   "attachmentFolderPath": "./"

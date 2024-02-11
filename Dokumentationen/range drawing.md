@@ -108,8 +108,8 @@ the max range is _current_position.   ^o1gS66gq
 		},
 		{
 			"type": "text",
-			"version": 59,
-			"versionNonce": 654598664,
+			"version": 60,
+			"versionNonce": 1418005143,
 			"isDeleted": false,
 			"id": "zTHHG58g",
 			"fillStyle": "cross-hatch",
@@ -122,14 +122,14 @@ the max range is _current_position.   ^o1gS66gq
 			"y": -350.25,
 			"strokeColor": "#ffc9c9",
 			"backgroundColor": "#ffc9c9",
-			"width": 77.275390625,
+			"width": 87.2999267578125,
 			"height": 25,
 			"seed": 790835279,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707218739300,
+			"updated": 1707643829991,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -141,12 +141,12 @@ the max range is _current_position.   ^o1gS66gq
 			"containerId": null,
 			"originalText": "Endstop ",
 			"lineHeight": 1.25,
-			"baseline": 21
+			"baseline": 18
 		},
 		{
 			"type": "text",
-			"version": 188,
-			"versionNonce": 57713272,
+			"version": 189,
+			"versionNonce": 1779945049,
 			"isDeleted": false,
 			"id": "R7NWYyii",
 			"fillStyle": "cross-hatch",
@@ -159,14 +159,14 @@ the max range is _current_position.   ^o1gS66gq
 			"y": -348.25,
 			"strokeColor": "#ffc9c9",
 			"backgroundColor": "#ffc9c9",
-			"width": 77.275390625,
+			"width": 87.2999267578125,
 			"height": 25,
 			"seed": 2118448495,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707218739300,
+			"updated": 1707643829992,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -178,7 +178,7 @@ the max range is _current_position.   ^o1gS66gq
 			"containerId": null,
 			"originalText": "Endstop ",
 			"lineHeight": 1.25,
-			"baseline": 21
+			"baseline": 18
 		},
 		{
 			"type": "rectangle",
@@ -811,8 +811,8 @@ the max range is _current_position.   ^o1gS66gq
 		},
 		{
 			"type": "text",
-			"version": 14,
-			"versionNonce": 591061256,
+			"version": 15,
+			"versionNonce": 1054187447,
 			"isDeleted": false,
 			"id": "TklU1qga",
 			"fillStyle": "cross-hatch",
@@ -825,14 +825,14 @@ the max range is _current_position.   ^o1gS66gq
 			"y": -191.25,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#ffc9c9",
-			"width": 53.3203125,
+			"width": 67.05992126464844,
 			"height": 50,
 			"seed": 784429537,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707218739300,
+			"updated": 1707643829994,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -844,7 +844,7 @@ the max range is _current_position.   ^o1gS66gq
 			"containerId": null,
 			"originalText": "Offset\n",
 			"lineHeight": 1.25,
-			"baseline": 46
+			"baseline": 43
 		},
 		{
 			"type": "line",
@@ -890,8 +890,8 @@ the max range is _current_position.   ^o1gS66gq
 		},
 		{
 			"type": "text",
-			"version": 200,
-			"versionNonce": 1797624696,
+			"version": 201,
+			"versionNonce": 2057214777,
 			"isDeleted": false,
 			"id": "eQuNVsnZ",
 			"fillStyle": "cross-hatch",
@@ -904,14 +904,14 @@ the max range is _current_position.   ^o1gS66gq
 			"y": -56.650000000000006,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#ffc9c9",
-			"width": 452.765625,
+			"width": 609.375,
 			"height": 76.8,
 			"seed": 634649551,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707218739300,
+			"updated": 1707643829998,
 			"link": null,
 			"locked": false,
 			"fontSize": 16,
@@ -923,12 +923,12 @@ the max range is _current_position.   ^o1gS66gq
 			"containerId": null,
 			"originalText": "if(absolute_position < 0 || absolute_position > endstop_position)\n{\n      out_ofRange();\n}",
 			"lineHeight": 1.2,
-			"baseline": 74
+			"baseline": 73
 		},
 		{
 			"type": "text",
-			"version": 64,
-			"versionNonce": 1917419528,
+			"version": 65,
+			"versionNonce": 2023133399,
 			"isDeleted": false,
 			"id": "91QcKqwy",
 			"fillStyle": "cross-hatch",
@@ -941,14 +941,14 @@ the max range is _current_position.   ^o1gS66gq
 			"y": -134.25,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "#ffc9c9",
-			"width": 202.376953125,
+			"width": 234.39593505859375,
 			"height": 45,
 			"seed": 1186888687,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707218739300,
+			"updated": 1707643830000,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -960,7 +960,7 @@ the max range is _current_position.   ^o1gS66gq
 			"containerId": null,
 			"originalText": "Out of range",
 			"lineHeight": 1.25,
-			"baseline": 37
+			"baseline": 31
 		},
 		{
 			"type": "line",
@@ -1006,8 +1006,8 @@ the max range is _current_position.   ^o1gS66gq
 		},
 		{
 			"type": "text",
-			"version": 222,
-			"versionNonce": 1360290936,
+			"version": 223,
+			"versionNonce": 1853410329,
 			"isDeleted": false,
 			"id": "cFNqHLJT",
 			"fillStyle": "cross-hatch",
@@ -1020,7 +1020,7 @@ the max range is _current_position.   ^o1gS66gq
 			"y": -210.25,
 			"strokeColor": "#e8590c",
 			"backgroundColor": "#ffc9c9",
-			"width": 151.904296875,
+			"width": 187.5,
 			"height": 24,
 			"seed": 715291215,
 			"groupIds": [],
@@ -1032,7 +1032,7 @@ the max range is _current_position.   ^o1gS66gq
 					"type": "arrow"
 				}
 			],
-			"updated": 1707218739300,
+			"updated": 1707643830001,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1044,7 +1044,7 @@ the max range is _current_position.   ^o1gS66gq
 			"containerId": null,
 			"originalText": "endstop_position",
 			"lineHeight": 1.2,
-			"baseline": 20
+			"baseline": 19
 		},
 		{
 			"type": "arrow",
@@ -1094,8 +1094,8 @@ the max range is _current_position.   ^o1gS66gq
 		},
 		{
 			"type": "text",
-			"version": 393,
-			"versionNonce": 1143750408,
+			"version": 394,
+			"versionNonce": 1801215479,
 			"isDeleted": false,
 			"id": "o1gS66gq",
 			"fillStyle": "cross-hatch",
@@ -1108,14 +1108,14 @@ the max range is _current_position.   ^o1gS66gq
 			"y": 39.69395715864888,
 			"strokeColor": "#e8590c",
 			"backgroundColor": "#ffc9c9",
-			"width": 666.203125,
+			"width": 788.7034912109375,
 			"height": 40,
 			"seed": 1647622977,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707218739300,
+			"updated": 1707643830005,
 			"link": null,
 			"locked": false,
 			"fontSize": 16,
@@ -1127,7 +1127,7 @@ the max range is _current_position.   ^o1gS66gq
 			"containerId": null,
 			"originalText": "If _dir = -1 the maximum range allowed to travel is _endstop_distance and for the case _dir = 1\nthe max range is _current_position.  ",
 			"lineHeight": 1.25,
-			"baseline": 36
+			"baseline": 34
 		}
 	],
 	"appState": {
@@ -1145,10 +1145,10 @@ the max range is _current_position.   ^o1gS66gq
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 415.95918440414084,
-		"scrollY": 463.86703657219067,
+		"scrollX": 415.75465420838447,
+		"scrollY": 543.121763791281,
 		"zoom": {
-			"value": 1.6500000000000001
+			"value": 0.8
 		},
 		"currentItemRoundness": "sharp",
 		"gridSize": null,

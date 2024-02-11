@@ -1,25 +1,14 @@
-import pygame
-import sys
+import serial
 
-WINDOW_HEIGHT = 500
-WINDOW_WIDTH = 500
+serial_port = 'COM3'
+baud_rate = 9600
 
-class Sim:
-    def __init__(self):
-        pygame.init()
-        self.screen = pygame.display.set_mode((WINDOW_WIDTH,WINDOW_HEIGHT), pygame.RESIZABLE)
-        self.clock = pygame.time.Clock()
+ser = serial.Serial(serial_port, baud_rate)
 
-    def run(self):
-        while True:
-            self.screen.fill(('#13070c'))
+message = 'test'
 
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    sys.exit()
+message_bytes = message.encode('utf-8')
 
-            print(pygame.display.get_window_size())
+ser.write(message_bytes)
 
-
-Sim().run() 
+ser.close()

@@ -1,42 +1,23 @@
-import tkinter as tk
-import time
+import customtkinter
+import pyserial
 
-class Timer:
-    def __init__(self, end_time, root, index):
-        self.index = index
-        self.root = root
-        self.start_time = time.time()
-        self.current_time = time.time()
-        self.end_time = self.start_time + end_time
-        self.container = tk.Frame(self.root)
-        self.container.pack()
-        self.ident = tk.Label(self.container, font=('Arial',24),text=str(index)+':')
-        self.ident.pack(side='left')
-        self.count = tk.Label(self.container, font=('Arial', 24))
-        self.count.pack()
-        self.update_time()
-    def update_time(self):
-        self.current_time = time.time()
-        self.current_time = self.end_time - self.current_time
-        self.count.config(text = int(self.current_time))
-        self.root.after(1000, self.update_time)
+root = customtkinter.CTk()
 
 class App:
-    def __init__(self, root):
+    def __init__(self,root):
         self.root = root
-        self.root.title("Current Time Display")
+        self.root.title('GUI')
+        self.root.geometry('400x150')
+        self.root.columnconfigure(0,weight=1)
 
-        self.button = tk.Button(text='press')
-        self.button.pack()
+        self.button = customtkinter.CTkButton(self.root, text='press',command = self.button_press)
+        self.button.grid(row=0,column=0,padx=10,pady=10)
+    
+    def button_press(self):
+        print('button pressed')
 
-        self.timer_1 = Timer(60,root,1)
-        self.timer_2 = Timer(100,root,2)
+App(root)
 
-# Create the main window
-root = tk.Tk()
-
-# Create an instance of the App class
-app = App(root)
-
-# Run the Tkinter event loop
 root.mainloop()
+
+# customtkinter.set_appearance_mode('dark')

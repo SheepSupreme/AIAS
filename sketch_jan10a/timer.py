@@ -18,15 +18,14 @@ class App:
         self.timer_list = []
         self.root = root
         self.root.title("Current Time Display")
-        self.root.geometry('300x300')
 
-        self.Queue = tk.Frame(master=self.root, background='brown')
+        self.Queue = tk.Frame(master=self.root, background='grey')
         self.Queue.grid(padx=10,pady=10,ipadx=10,ipady=10)
 
-        self.entry = tk.Entry(master=self.Queue)
+        self.entry = tk.Entry(master=self.Queue, font=('Arial', 20))
         self.entry.grid(row=0, column=0,padx=10,pady=10)
 
-        self.button_1 = tk.Button(master=self.Queue, text='add timer', command=self.add_timer)
+        self.button_1 = tk.Button(master=self.Queue, text='add timer', command=self.add_timer,font=('Arial', 22))
         self.button_1.grid(row=1, column=0)
 
         self.update()
@@ -60,7 +59,7 @@ class App:
 root = tk.Tk()
 
 # Create an instance of the App class
-app = App(root)
+App(root)
 
 # Run the Tkinter event loop
 root.mainloop()

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "448445b71ad99ef8",
+        "id": "538279a50b940c46",
         "type": "tabs",
         "children": [
           {
-            "id": "f25fe4e654a0b92a",
+            "id": "4fd9d19858f02c24",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -20,8 +20,10 @@
               ]
             },
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "excalidraw",
+              "state": {
+                "file": "Dokumentationen/Programm Ablauf.md"
+              }
             }
           }
         ]
@@ -128,6 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Dokumentationen/Programm Ablauf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,6 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Dokumentationen/Programm Ablauf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -192,7 +196,9 @@
             },
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Dokumentationen/Programm Ablauf.md"
+              }
             }
           }
         ]
@@ -213,18 +219,27 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "42ef19939ab4a70e",
+  "active": "4fd9d19858f02c24",
   "lastOpenFiles": [
+    "Dokumentationen/Ideen.md",
+    "README.md",
+    "Dokumentationen/bin/Regalauslastung.md",
+    "Beschreibung.md",
+    "Dokumentationen/Programm Ablauf.md",
+    "Dokumentationen/Pflichtenheft.md",
+    "Dokumentationen/bin/image.png",
+    "Dokumentationen/Software Dokumentation.md",
+    "Dokumentationen/bin/image-1.png",
+    "Dokumentationen/PDFs.md",
+    "Dokumentationen/bin/Pflichtenheft.png",
+    "Dokumentationen/range drawing.md",
     "Dokumentationen/bin/UT232E.pdf",
     "Dokumentationen/Serial Com.md",
-    "Dokumentationen/Pflichtenheft.md",
     "Dokumentationen/check points.md",
     "sketch_jan10a/PDF/DRV8825_driver.pdf",
     "sketch_jan10a/PDF/drv8825.pdf",
-    "Dokumentationen/range drawing.md",
     "Dokumentationen/bin/Pflichtenheft.pdf",
     "Dokumentationen/bin/image-1.png",
-    "Untitled.md",
     "Untitled",
     "Dokumentationen/~$-Antrag_Muster.docx",
     "Dokumentationen/bin",
@@ -235,11 +250,6 @@
     "Concept Art/Wireframe2.png",
     "Concept Art/Wireframe.png",
     "Concept Art/Normal3.png",
-    "Concept Art/Normal1.png",
-    "Concept Art/idee.png",
-    "Dokumentationen/bin/image.png",
-    "Dokumentationen/PDFs.md",
-    "Dokumentationen/Software Dokumentation.md",
     "Drücker/README.md",
     "Tutorials/Eigene library machen.md",
     "sketch_jan10a/README.md",
@@ -247,8 +257,6 @@
     "Drawing 2024-02-06 17.33.30.excalidraw.md",
     "Drawing 2024-02-06 17.23.18.excalidraw.md",
     "Drawing 2024-02-06 17.23.05.excalidraw.md",
-    "README.md",
-    "Beschreibung.md",
     "~$AKS.ppt",
     "Drawing 2024-02-06 13.19.45.excalidraw.md",
     "Drawing 2024-02-06 13.18.30.excalidraw.md",
@@ -258,7 +266,6 @@
     "Drawing 2024-02-06 12.58.53.excalidraw.md",
     "sketch_jan10a/TODO.md",
     "Excalidraw/Drawing 2024-02-06 12.55.08.excalidraw.md",
-    "Excalidraw/Drawing 2024-02-06 12.54.45.excalidraw.md",
     "sketch_jan10a/GUI.py",
     "Excalidraw"
   ]
