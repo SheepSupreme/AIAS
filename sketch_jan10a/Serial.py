@@ -3,12 +3,8 @@ import serial
 serial_port = 'COM3'
 baud_rate = 9600
 
-ser = serial.Serial(serial_port, baud_rate)
+ser = serial.Serial(serial_port, baud_rate, timeout=2)
 
-message = 'test'
-
-message_bytes = message.encode('utf-8')
-
-ser.write(message_bytes)
-
-ser.close()
+while True:
+  text = ser.readline().decode().strip()
+  print(text)
