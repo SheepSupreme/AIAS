@@ -81,6 +81,54 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "Pflichtenheft",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Pflichtenheft.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Programm_Ablauf",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "README",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Beschreibung",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Beschreibung.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Programm_Ablauf",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Programm Ablauf",
+                  "icon": "excalidraw-icon",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Programm Ablauf.md\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "README",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
+                },
+                {
+                  "title": "conflict-files-obsidian-git",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"conflict-files-obsidian-git.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "README",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
@@ -97,7 +145,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -207,7 +255,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -233,7 +281,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -274,7 +322,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "README.md"
               }
             }
           }
@@ -298,18 +346,18 @@
   },
   "active": "4c4e6fd1ff281c9d",
   "lastOpenFiles": [
-    "README.md",
-    "conflict-files-obsidian-git.md",
+    "Dokumentationen/Pflichtenheft.md",
     "Dokumentationen/bin/Programm_Ablauf.png",
+    "README.md",
+    "Beschreibung.md",
+    "conflict-files-obsidian-git.md",
+    "Dokumentationen/Programm Ablauf.md",
     "Dokumentationen/bin/Pflichtenheft.png",
     "Dokumentationen/bin/Pflichtenheft.pdf",
     "Dokumentation/bin/Programm.md",
     "Dokumentation/bin",
     "Dokumentation",
-    "Dokumentationen/Programm Ablauf.md",
-    "Beschreibung.md",
     "Dokumentationen/bin/Regalauslastung.md",
-    "Dokumentationen/Pflichtenheft.md",
     "Dokumentationen/Ideen.md",
     "Dokumentationen/bin/image.png",
     "Dokumentationen/Software Dokumentation.md",
@@ -330,7 +378,6 @@
     "assets/image-1.png",
     "Concept Art/Wireframe3.png",
     "Concept Art/Wireframe2.png",
-    "Concept Art/Wireframe.png",
     "Drücker/README.md",
     "Tutorials/Eigene library machen.md",
     "sketch_jan10a/README.md",
@@ -343,7 +390,6 @@
     "Drawing 2024-02-06 13.18.30.excalidraw.md",
     "Drawing 2024-02-06 13.08.28.excalidraw.md",
     "Untitled.canvas",
-    "Drawing 2024-02-06 13.06.47.excalidraw.md",
-    "Drawing 2024-02-06 12.58.53.excalidraw.md"
+    "Drawing 2024-02-06 13.06.47.excalidraw.md"
   ]
 }
