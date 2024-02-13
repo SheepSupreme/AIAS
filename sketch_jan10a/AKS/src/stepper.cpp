@@ -99,7 +99,6 @@ void Stepper::setup_move(double absolute_pos)
 
 void Stepper::out_ofRange(){
     absolute_position = _current_position;
-    Serial.println("Move not possible due to calibration range restrictions");
 }
 
 void Stepper::move_relative(double relative_steps)
@@ -131,7 +130,6 @@ bool Stepper::buttonPressed(int btn_pin,bool &btn_state){
       }
       *last_state = _read;
     }
-    Serial.println("trigger");
     return true;
   }
   return false;
