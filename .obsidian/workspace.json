@@ -81,6 +81,12 @@
                   "eState": "{}"
                 },
                 {
+                  "title": "README",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "title": "Pflichtenheft",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Pflichtenheft.md\",\"mode\":\"source\",\"source\":false}}",
@@ -143,16 +149,13 @@
               ]
             },
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
+                "file": "Dokumentationen/bin/Programm_Ablauf.png"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -344,11 +347,11 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "4c4e6fd1ff281c9d",
+  "active": "30ca4eedad9e807b",
   "lastOpenFiles": [
-    "Dokumentationen/Pflichtenheft.md",
     "Dokumentationen/bin/Programm_Ablauf.png",
     "README.md",
+    "Dokumentationen/Pflichtenheft.md",
     "Beschreibung.md",
     "conflict-files-obsidian-git.md",
     "Dokumentationen/Programm Ablauf.md",
