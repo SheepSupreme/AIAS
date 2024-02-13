@@ -1,3 +1,5 @@
+
+![Programm Ablauf](Programm_Ablauf.png)
 # AKS
 
 Große Produktionsunternehmen stoßen oft auf das Problem, dass durch dessen Wachstum die Produktion immer größer und unübersichtlicher wird. Dadurch treten öfters Fehler auf, die das Unternehmen Geld kosten.
