@@ -155,7 +155,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -258,7 +259,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Dokumentationen/bin/Programm_Ablauf.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -284,7 +285,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Dokumentationen/bin/Programm_Ablauf.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -325,7 +326,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "Dokumentationen/bin/Programm_Ablauf.png"
               }
             }
           }
@@ -347,10 +348,10 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "30ca4eedad9e807b",
+  "active": "4c4e6fd1ff281c9d",
   "lastOpenFiles": [
-    "Dokumentationen/bin/Programm_Ablauf.png",
     "README.md",
+    "Dokumentationen/bin/Programm_Ablauf.png",
     "Dokumentationen/Pflichtenheft.md",
     "Beschreibung.md",
     "conflict-files-obsidian-git.md",
