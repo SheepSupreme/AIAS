@@ -2,9 +2,9 @@ import customtkinter
 import serial
 
 #Serial setup
-# serial_port = 'COM3'
-# baud_rate = 9600
-# ser = serial.Serial(serial_port, baud_rate, timeout=2)
+serial_port = 'COM3'
+baud_rate = 9600
+ser = serial.Serial(serial_port, baud_rate, timeout=2)
 
 #Customtkinter setup
 root = customtkinter.CTk()
@@ -36,15 +36,25 @@ class App:
         self.root = root
         self.root.title('GUI')
         self.root.columnconfigure(0,weight=1)
-        self.button_calibrate = Button(self.root,'calibrate','calibration 50',0,0)
-        self.button_blink = Button(self.root,'blink','blink 0',1,0)
-        self.button_pos1 = Button(self.root,'move to pos_1', "pos_1 0",2,0)
-        self.button_pos2 = Button(self.root,'move to pos_2', "pos_2 0",3,0)
-        self.button_pos3 = Button(self.root,'move to pos_3', "pos_3 0",4,0)
-        self.button_pos3 = Button(self.root,'move to pos_4', "pos_4 0",5,0)
+        Button(self.root,'calibrate','calibration 50',0,0)
+        Button(self.root,'blink','blink 0',1,0)
+        Button(self.root,'move to pos_1', "pos_1 0",2,0)
+        Button(self.root,'move to pos_2', "pos_2 0",3,0)
+        Button(self.root,'move to pos_3', "pos_3 0",4,0)
+        Button(self.root,'move to pos_4', "pos_4 0",5,0)
+        self.label = customtkinter.CTkLabel(self.root, text = "")
+        self.label.grid(row = 6, column = 0, padx=10, pady=10)
 
 App(root)
 
-root.mainloop()
+while True:
+    if ser.in_waiting > 0:
+        text_mod = ser.readline()
+        message = text_mod.decode().strip()
+        print("message received:",message);
+        App(root).label.configure(text = message)
+
+    root.update_idletasks()
+    root.update()
 
 # customtkinter.set_appearance_mode('dark')

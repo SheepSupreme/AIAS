@@ -74,10 +74,58 @@
             "id": "4c4e6fd1ff281c9d",
             "type": "leaf",
             "pane-relief:history-v1": {
-              "pos": 0,
+              "pos": 1,
               "stack": [
                 {
+                  "title": "GUI",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/GUI.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
                   "state": "{}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Barcode_Scanner_Module_User_Manual_EN",
+                  "icon": "lucide-file-text",
+                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"Dokumentationen/bin/Barcode_Scanner_Module_User_Manual_EN.pdf\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Regalauslastung",
+                  "icon": "excalidraw-icon",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/bin/Regalauslastung.md\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Pflichtenheft",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Pflichtenheft.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Ideen",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Ideen.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "range drawing",
+                  "icon": "excalidraw-icon",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/range drawing.md\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Programm Ablauf",
+                  "icon": "excalidraw-icon",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Programm Ablauf.md\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Programm_Ablauf",
+                  "icon": "lucide-image",
+                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
                   "eState": "{}"
                 },
                 {
@@ -149,9 +197,9 @@
               ]
             },
             "state": {
-              "type": "image",
+              "type": "excalidraw",
               "state": {
-                "file": "Dokumentationen/bin/Programm_Ablauf.png"
+                "file": "Dokumentationen/Programm Ablauf.md"
               }
             }
           }
@@ -234,7 +282,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6fec7e96215ac6fe",
@@ -259,7 +308,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dokumentationen/bin/Programm_Ablauf.png",
+                "file": "Dokumentationen/Programm Ablauf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -285,7 +334,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dokumentationen/bin/Programm_Ablauf.png",
+                "file": "Dokumentationen/Programm Ablauf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -326,7 +375,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dokumentationen/bin/Programm_Ablauf.png"
+                "file": "Dokumentationen/Programm Ablauf.md"
               }
             }
           }
@@ -350,24 +399,26 @@
   },
   "active": "4c4e6fd1ff281c9d",
   "lastOpenFiles": [
+    "Dokumentationen/bin/Barcode_Scanner_Module_User_Manual_EN.pdf",
+    "Dokumentationen/GUI.md",
+    "Dokumentationen/Programm Ablauf.md",
     "README.md",
-    "Dokumentationen/bin/Programm_Ablauf.png",
+    "Dokumentationen/bin/Regalauslastung.md",
     "Dokumentationen/Pflichtenheft.md",
+    "Dokumentationen/Ideen.md",
+    "Dokumentationen/range drawing.md",
+    "Dokumentationen/bin/Programm_Ablauf.png",
     "Beschreibung.md",
     "conflict-files-obsidian-git.md",
-    "Dokumentationen/Programm Ablauf.md",
     "Dokumentationen/bin/Pflichtenheft.png",
     "Dokumentationen/bin/Pflichtenheft.pdf",
     "Dokumentation/bin/Programm.md",
     "Dokumentation/bin",
     "Dokumentation",
-    "Dokumentationen/bin/Regalauslastung.md",
-    "Dokumentationen/Ideen.md",
     "Dokumentationen/bin/image.png",
     "Dokumentationen/Software Dokumentation.md",
     "Dokumentationen/bin/image-1.png",
     "Dokumentationen/PDFs.md",
-    "Dokumentationen/range drawing.md",
     "Dokumentationen/bin/UT232E.pdf",
     "Dokumentationen/Serial Com.md",
     "Dokumentationen/check points.md",
@@ -389,11 +440,9 @@
     "Drawing 2024-02-06 17.33.30.excalidraw.md",
     "Drawing 2024-02-06 17.23.18.excalidraw.md",
     "Drawing 2024-02-06 17.23.05.excalidraw.md",
-    "~$AKS.ppt",
     "Drawing 2024-02-06 13.19.45.excalidraw.md",
     "Drawing 2024-02-06 13.18.30.excalidraw.md",
     "Drawing 2024-02-06 13.08.28.excalidraw.md",
-    "Untitled.canvas",
-    "Drawing 2024-02-06 13.06.47.excalidraw.md"
+    "Untitled.canvas"
   ]
 }
