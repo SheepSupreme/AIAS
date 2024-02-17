@@ -1,24 +1,26 @@
 import time
 import customtkinter
 import serial
-import sys
 
 #Serial setup
-serial_port = 'COM3'
+serial_port = 'COM4'
 baud_rate = 9600
 ser = serial.Serial(serial_port, baud_rate, timeout=10)
 
 class Timer:
-    def __init__(self, end_time, root):
+    def __init__(self, name, end_time, root):
         self.root = root
-        self.delay = False
+        self.name = name
+        self.root.columnconfigure(0,weight=1)
         self.start_time = time.time()
         self.end_time = self.start_time + end_time
         self.current_time = self.end_time - time.time()
         self.container = customtkinter.CTkFrame(master=self.root)
         self.container.grid(row=0, column=0, sticky='nswe')
         self.label = customtkinter.CTkLabel(self.container, font=('Arial', 24))
-        self.label.grid(row = 0, column = 1)
+        self.label.grid(row = 0, column = 1, padx = 10, pady = 10)
+        self.name = customtkinter.CTkLabel(self.container, font=('Arial', 24), text = self.name)
+        self.name.grid(row = 0, column = 0, padx = 10, pady = 10)
 
 class App:
     def __init__(self, root):
@@ -33,13 +35,18 @@ class App:
         self.entry = customtkinter.CTkEntry(self.Queue, font=('Arial', 20))
         self.entry.grid(row=0, column=0,padx=10,pady=10)
 
-        self.button_1 = customtkinter.CTkButton(master=self.Queue, text='add timer', command=self.add_timer,font=('Arial', 22))
+        self.button_1 = customtkinter.CTkButton(master=self.Queue, text='add timer', command=self.add_e_timer,font=('Arial', 22))
         self.button_1.grid(row=1, column=0)
 
         self.update()
-    def add_timer(self):
-        self.timer_list.append(Timer(int(self.entry.get()),self.root))
+
+    def add_timer(self,time):
+        self.timer_list.append(Timer('Timer_QR',time,self.root))
         self.update_queue()
+
+    def add_e_timer(self):
+        self.timer_list.append(Timer('Timer',int(self.entry.get()),self.root))
+        self.update_queue()        
     
     def timer_sort(self):
         sorted_list = sorted(self.timer_list, key=lambda x: x.current_time, reverse = True)
@@ -64,7 +71,7 @@ class App:
 root = customtkinter.CTk()
 
 # Create an instance of the App class
-App(root)
+game_instance = App(root)
 
 # Run the Tkinter event loop
 while True:
@@ -72,7 +79,7 @@ while True:
         text_mod = ser.readline()
         message = text_mod.decode().strip()
         print("message received:",message);
-        App(root).label.configure(text = message)
+        game_instance.add_timer(int(message))
 
     root.update_idletasks()
     root.update()
