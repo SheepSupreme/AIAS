@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from dark_title_bar import *
 from PIL import Image, ImageTk
 from customtkinter import *
 from ctktable import *
