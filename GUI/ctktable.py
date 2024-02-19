@@ -1,7 +1,3 @@
-# CTkTable Widget by Akascape
-# License: MIT
-# Author: Akash Bora
-
 import customtkinter
 import copy
 
