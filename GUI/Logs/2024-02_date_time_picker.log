@@ -131,3 +131,10 @@ FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\phili\\AKS\\
 2024-02-22 10:34:44 : DEBUG : quit_homepage : 87 : - Quit Homepage -
 2024-02-22 10:34:44 : DEBUG : exit_bot : 103 : Exit Bot
 2024-02-22 10:34:44 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:49:13 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:49:13 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:49:13 : DEBUG : homepage : 348 : - Homepage -
+2024-02-22 10:49:16 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-22 10:49:16 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-22 10:49:16 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-22 10:49:16 : DEBUG : <module> : 451 : --- End ---

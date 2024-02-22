@@ -109,7 +109,13 @@ class Dashboard_New(CTkFrame):
                 self.root = root
                 self.name = name
                 self.cmd = cmd
-                self.button = CTkButton(master=self.root, text = self.name, command=self.send_text, fg_color="#FF99FF" , text_color = "#990099", hover_color="#FFB7FF")
+                self.button = CTkButton(master=self.root,
+                                        text = self.name,
+                                        command=self.send_text,
+                                        fg_color="#FF99FF",
+                                        text_color = "#990099",
+                                        hover_color="#FFB7FF",
+                                        font=("Arial",16,"bold"))
                 self.button.grid(row = _row, column = _column, padx=10,pady=10, sticky="nsew")
             
             def send_text(self):
