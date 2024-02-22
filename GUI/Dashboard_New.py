@@ -145,3 +145,4 @@ class Dashboard_New(CTkFrame):
 
         headline = CTkLabel(timer_box, text="Verfallszeit", text_color="#FF99FF", font=("Arial",24, "bold"))
         headline.grid(column=0, row=0, columnspan=2, sticky="nsew")
+
