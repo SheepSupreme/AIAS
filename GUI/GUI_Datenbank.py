@@ -25,7 +25,7 @@ class App(CTk):
     def __init__(self):
 
         #main setup
-        super().__init__()
+        super().__init__() 
         set_appearance_mode("dark")
         self._state_before_windows_set_titlebar_color = 'zoomed'
         self.title('Inventory')  
