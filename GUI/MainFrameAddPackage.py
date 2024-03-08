@@ -2,6 +2,7 @@ from customtkinter import *
 import datetime as dt
 from tkcalendar import *
 
+
 class MainFrameAddPackage(CTkFrame):
     def __init__(self, master):
         super().__init__(master)
@@ -109,10 +110,10 @@ class MainFrameAddPackage(CTkFrame):
             current_min = current_time.strftime("%M") 
             current_sec = current_time.strftime("%S")
 
-            cal = Calendar(datetime_choose, selectmode = 'day',
+            cal = Calendar(datetime_choose, selectmode = 'day', date_pattern ="dd-mm-yyyy",
                 year = int(current_year), month = int(current_month),
                 day = int(current_day))
-    
+            
             cal.grid(column= 0, row=1, columnspan=2, pady = 20, padx=20, sticky="nsew")
 
 
@@ -129,14 +130,75 @@ class MainFrameAddPackage(CTkFrame):
             Entry_Frame = CTkFrame(Time_Frame, corner_radius=5)
             Entry_Frame.grid(column=1, row=0, sticky = "nsew", pady=10, padx=10)
 
+            Entry_Frame.columnconfigure((0,1,2), weight=1, uniform='a')
+            Entry_Frame.rowconfigure(0, weight=4, uniform='a')
+            Entry_Frame.rowconfigure(1, weight=1, uniform='a')
+            
+            hour_label = CTkLabel(Entry_Frame, text="Stunde", font=("Arial",8))
+            hour_label.grid(column=0, row=1, sticky="nsew", padx=(10,0), pady=(0,2))
 
-            print(current_hour)
-            print(current_min)
-            print(current_sec)
+            Entry_hour = CTkEntry(Entry_Frame,
+                                    placeholder_text=current_hour,
+                                    bg_color="transparent",
+                                    fg_color="transparent",
+                                    corner_radius=0,
+                                    border_color="Grey",
+                                    justify = "center")
+            Entry_hour.grid(column=0, row=0, sticky="nsew", pady=(10,2), padx=(10,0))
 
-            Entry_hour = CTkEntry(Entry_Frame, text=current_hour)
-            Entry_hour.grid(column=0, row=0, sticky="nsew", pady=10, padx=10)
-        
+            min_label = CTkLabel(Entry_Frame, text="Minute", font=("Arial",8))
+            min_label.grid(column=1, row=1, sticky="nsew", padx=0, pady=(0,2))
+
+            Entry_min = CTkEntry(Entry_Frame,
+                                    placeholder_text=current_min,
+                                    bg_color="transparent",
+                                    fg_color="transparent",
+                                    corner_radius=0,
+                                    border_color="Grey",
+                                    justify = "center")
+            Entry_min.grid(column=1, row=0, sticky="nsew", pady=(10,2), padx=0)
+            
+            sec_label = CTkLabel(Entry_Frame, text="Sekunde", font=("Arial",8))
+            sec_label.grid(column=2, row=1, sticky="nsew", padx=(0,10), pady=(0,2))
+
+            Entry_sec = CTkEntry(Entry_Frame,
+                                    placeholder_text=current_sec,
+                                    bg_color="transparent",
+                                    fg_color="transparent",
+                                    corner_radius=0,
+                                    border_color="Grey",
+                                    justify = "center")
+            Entry_sec.grid(column=2, row=0, sticky="nsew", pady=(10,2), padx=(0,10))
+            
+            def get_entry(): 
+
+                date_cal = cal.get_date()        
+                str_date = str(date_cal)
+
+                hour = Entry_hour.get()
+                minutes = Entry_min.get()
+                seconds = Entry_sec.get()
+
+                time = str(hour + ":" + minutes + ":" + seconds)
+
+                DatumEntry.delete(0, END)
+                UhrzeitEntry.delete(0, END)
+                DatumEntry.insert(0, str_date)
+                UhrzeitEntry.insert(0 ,time)
+
+                datetime_choose.destroy()
+                 
+
+            Button_select = CTkButton(datetime_choose,
+                                        text="Select",
+                                        text_color = "#990099",
+                                        font=("Arial",16,"bold"),
+                                        fg_color = "#FF99FF",
+                                        hover_color="#FFB7FF",
+                                        command=get_entry)
+            Button_select.grid(column=0, row=3, columnspan=2, sticky="nsew", pady=10, padx=10)
+            
+            
             datetime_choose.mainloop() 
     
     
@@ -160,6 +222,8 @@ class MainFrameAddPackage(CTkFrame):
                                 hover_color="#FFB7FF")
         button_add.grid(column=0, row=3, sticky="nsew", pady=(5,10), padx=10)
 
+
+            
 
         # class MyDateEntry(DateEntry):
         #     def __init__(self, master=None, **kw):
