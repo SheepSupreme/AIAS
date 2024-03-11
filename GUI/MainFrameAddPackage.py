@@ -1,7 +1,28 @@
 from customtkinter import *
 import datetime as dt
 from tkcalendar import *
+import mysql.connector
+from errno import errorcode
 
+
+host = "127.0.0.1"
+user = "userdb"
+password = "userdb"
+database = "aks" 
+
+try:
+    conn = mysql.connector.connect(host=host,user=user,password=password)
+    print("Connection established")
+
+except mysql.connector.Error as err:
+    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+        print("Something is wrong with the user name or password")
+    elif err.errno == errorcode.ER_BAD_DB_ERROR:
+        print("Database does not exist")
+    else:
+        print(err)
+else:
+    cursor = conn.cursor()
 
 class MainFrameAddPackage(CTkFrame):
     def __init__(self, master):
@@ -171,7 +192,7 @@ class MainFrameAddPackage(CTkFrame):
             Entry_sec.grid(column=2, row=0, sticky="nsew", pady=(10,2), padx=(0,10))
             
             def get_entry(): 
-
+                
                 date_cal = cal.get_date()        
                 str_date = str(date_cal)
 
@@ -212,27 +233,34 @@ class MainFrameAddPackage(CTkFrame):
                                 command= cal_get)
         SelectDate.grid(column=0, row=2, columnspan=2, sticky="nsew", pady=10, padx=10)        
 
-        
+        def package_add():    
+            
+            Time = UhrzeitEntry.get()
+            Date = DatumEntry.get()
+            Datetime = Date + " " + Time 
+
+            inhalt1 = inhalt1_entry.get()
+            inhalt2 = inhalt2_entry.get()
+            ID = 1
+
+            query = '''INSERT INTO aks.tdim_inventory(ID, issue_datetime, content_1, content_2)
+                    VALUES(%d, %s, %s, %s)''' %ID %Datetime %inhalt1 %inhalt2
+            
+            cursor.execute(query)
+            print("Package has added!")
 
         button_add = CTkButton(create_package_frame,
                                 text="ADD",
                                 text_color = "#990099",
                                 font=("Arial",16,"bold"),
                                 fg_color = "#FF99FF",
-                                hover_color="#FFB7FF")
+                                hover_color="#FFB7FF",
+                                command=package_add)
         button_add.grid(column=0, row=3, sticky="nsew", pady=(5,10), padx=10)
 
 
             
 
-        # class MyDateEntry(DateEntry):
-        #     def __init__(self, master=None, **kw):
-        #         DateEntry.__init__(self, master=None, **kw)
-        #         # add black border around drop-down calendar
-        #         self._top_cal.configure(bg='black', bd=1)
-        #         # add label displaying today's date below
-        #         CTkLabel(self._top_cal, bg='gray90', anchor='w',
-        #             text='Hoje: %s' % dt.date.today().strftime('%d/%m/%Y')).pack(fill='x')
             
 
             
