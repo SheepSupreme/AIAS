@@ -50,7 +50,7 @@ class App(CTk):
         if self.MainFrame:
             self.MainFrame.destroy()  # Zerstöre das aktuelle Frame, bevor du ein neues erstellst
         self.MainFrame = Dashboard_New(self)
-
+ 
     def show_frameInventory(self):
         if self.MainFrame:
             self.MainFrame.destroy()

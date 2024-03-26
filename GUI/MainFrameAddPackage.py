@@ -1,9 +1,10 @@
+from tkinter import messagebox
 from customtkinter import *
 import datetime as dt
 from tkcalendar import *
 import mysql.connector
 from errno import errorcode
-
+from datetime import datetime
 
 host = "127.0.0.1"
 user = "userdb"
@@ -38,6 +39,7 @@ class MainFrameAddPackage(CTkFrame):
 
         self.create_headline()
         self.create_package()
+        self.package_tabel()
 
     def create_headline(self):
 
@@ -48,6 +50,7 @@ class MainFrameAddPackage(CTkFrame):
         label_underline.grid(column=0, row=1, columnspan=2, sticky="nsew", padx=10) 
 
     def create_package(self):
+
 
         create_package_frame = CTkFrame(self, corner_radius= 5)
         create_package_frame.grid(column= 0, row = 2, rowspan=2, sticky="nsew", pady=10, padx=10)
@@ -131,7 +134,7 @@ class MainFrameAddPackage(CTkFrame):
             current_min = current_time.strftime("%M") 
             current_sec = current_time.strftime("%S")
 
-            cal = Calendar(datetime_choose, selectmode = 'day', date_pattern ="dd-mm-yyyy",
+            cal = Calendar(datetime_choose, selectmode = 'day', date_pattern ="yyyy-mm-dd",
                 year = int(current_year), month = int(current_month),
                 day = int(current_day))
             
@@ -237,18 +240,32 @@ class MainFrameAddPackage(CTkFrame):
             
             Time = UhrzeitEntry.get()
             Date = DatumEntry.get()
-            Datetime = Date + " " + Time 
+            Datetime_str = Date + " " + Time
 
-            inhalt1 = inhalt1_entry.get()
-            inhalt2 = inhalt2_entry.get()
+            try:
+                datetime_object = datetime.strptime(Datetime_str, '%Y-%m-%d %H:%M:%S')
+            except ValueError:
+                print("Fehler bei der Konvertierung von Datum/Uhrzeit.")
+                return
+    
+            print(datetime_object)
+    
+            inhalt1 = str(inhalt1_entry.get())
+            inhalt2 = str(inhalt2_entry.get())
             ID = 1
+    
+            try:
+                query = '''INSERT INTO aks.tdim_inventory(ID, issue_datetime, content_1, content_2)
+                        VALUES(%s, %s, %s, %s)'''
+                cursor.execute(query, (ID, datetime_object, inhalt1, inhalt2))
+                conn.commit()
+                print("Package has added!")
+            except Exception as e:
+                print("Fehler beim Einfügen des Pakets in die Datenbank:", e)
 
-            query = '''INSERT INTO aks.tdim_inventory(ID, issue_datetime, content_1, content_2)
-                    VALUES(%d, %s, %s, %s)''' %ID %Datetime %inhalt1 %inhalt2
-            
-            cursor.execute(query)
-            print("Package has added!")
+            messagebox.showinfo("", "Package has been added!")
 
+    
         button_add = CTkButton(create_package_frame,
                                 text="ADD",
                                 text_color = "#990099",
@@ -258,6 +275,23 @@ class MainFrameAddPackage(CTkFrame):
                                 command=package_add)
         button_add.grid(column=0, row=3, sticky="nsew", pady=(5,10), padx=10)
 
+    def package_tabel(self):
+
+        package_tabel_frame = CTkFrame(self, corner_radius=5)
+        package_tabel_frame.grid(column=1, row=2, rowspan=2, sticky="nsew", pady=10, padx=10)
+
+        package_tabel_frame.columnconfigure(0, weight=30, uniform='a')
+        package_tabel_frame.columnconfigure(1, weight=1, uniform='a')
+        package_tabel_frame.rowconfigure(0, weight=1, uniform='a')
+        package_tabel_frame.rowconfigure((1,2,3,4,5,6,7,8,9,10), weight=1, uniform='a')
+
+        storage_label = CTkLabel(package_tabel_frame, text="Package Storage", text_color = "#FF99FF", font=("Arial",24,"bold"))
+        storage_label.grid(column=0, row=0, columnspan=2, sticky="nsew", pady=5, padx=5)
+
+        scrollbar = CTkScrollbar(package_tabel_frame, orientation="vertical")
+        scrollbar.grid(column=1, row=1, rowspan=9, sticky="nsew")
+
+        
 
             
 
