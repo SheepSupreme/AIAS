@@ -1,0 +1,34 @@
+2024-02-22 09:32:07 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 09:32:07 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 09:32:07 : ERROR : <module> : 447 : Failed
+2024-02-22 09:32:07 : ERROR : <module> : 448 : No section: 'tkinter'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\Datetime.py", line 444, in <module>
+    load_ui()
+  File "c:\Users\phili\AKS\AKS\GUI\Datetime.py", line 410, in load_ui
+    ROOT.title(CONFIG.get('tkinter', 'title'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 1168, in _unify_values
+    raise NoSectionError(section) from None
+configparser.NoSectionError: No section: 'tkinter'
+2024-02-22 09:32:07 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 09:32:51 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 09:32:51 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 09:32:51 : ERROR : <module> : 447 : Failed
+2024-02-22 09:32:51 : ERROR : <module> : 448 : No section: 'tkinter'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\Datetime.py", line 444, in <module>
+    load_ui()
+  File "c:\Users\phili\AKS\AKS\GUI\Datetime.py", line 410, in load_ui
+    ROOT.title(CONFIG.get('tkinter', 'title'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 1168, in _unify_values
+    raise NoSectionError(section) from None
+configparser.NoSectionError: No section: 'tkinter'
+2024-02-22 09:32:51 : DEBUG : <module> : 451 : --- End ---

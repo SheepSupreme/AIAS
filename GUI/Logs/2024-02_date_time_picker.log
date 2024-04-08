@@ -1,0 +1,157 @@
+2024-02-22 10:14:56 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:14:56 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:14:56 : ERROR : <module> : 447 : Failed
+2024-02-22 10:14:56 : ERROR : <module> : 448 : No section: 'tkinter'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 444, in <module>
+    load_ui()
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 410, in load_ui
+    ROOT.title(CONFIG.get('tkinter', 'title'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 1168, in _unify_values
+    raise NoSectionError(section) from None
+configparser.NoSectionError: No section: 'tkinter'
+2024-02-22 10:14:56 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:15:28 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:15:28 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:15:28 : ERROR : <module> : 447 : Failed
+2024-02-22 10:15:28 : ERROR : <module> : 448 : No section: 'tkinter'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 444, in <module>
+    load_ui()
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 410, in load_ui
+    ROOT.title(CONFIG.get('tkinter', 'title'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 1168, in _unify_values
+    raise NoSectionError(section) from None
+configparser.NoSectionError: No section: 'tkinter'
+2024-02-22 10:15:28 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:19:18 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:19:18 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:19:18 : ERROR : <module> : 447 : Failed
+2024-02-22 10:19:18 : ERROR : <module> : 448 : No section: 'tkinter'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 444, in <module>
+    load_ui()
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 410, in load_ui
+    ROOT.title(CONFIG.get('tkinter', 'title'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 1168, in _unify_values
+    raise NoSectionError(section) from None
+configparser.NoSectionError: No section: 'tkinter'
+2024-02-22 10:19:18 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:19:35 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:19:35 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:19:35 : ERROR : <module> : 447 : Failed
+2024-02-22 10:19:35 : ERROR : <module> : 448 : No section: 'tkinter'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 444, in <module>
+    load_ui()
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 410, in load_ui
+    ROOT.title(CONFIG.get('tkinter', 'title'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 1168, in _unify_values
+    raise NoSectionError(section) from None
+configparser.NoSectionError: No section: 'tkinter'
+2024-02-22 10:19:35 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:20:23 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:20:23 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:20:23 : ERROR : <module> : 447 : Failed
+2024-02-22 10:20:23 : ERROR : <module> : 448 : No section: 'tkinter'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 444, in <module>
+    load_ui()
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 410, in load_ui
+    ROOT.title(CONFIG.get('tkinter', 'title'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 797, in get
+    d = self._unify_values(section, vars)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2288.0_x64__qbz5n2kfra8p0\Lib\configparser.py", line 1168, in _unify_values
+    raise NoSectionError(section) from None
+configparser.NoSectionError: No section: 'tkinter'
+2024-02-22 10:20:23 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:23:56 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:23:56 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:23:56 : DEBUG : homepage : 348 : - Homepage -
+2024-02-22 10:23:56 : ERROR : homepage : 399 : Failed
+2024-02-22 10:23:56 : ERROR : homepage : 400 : [Errno 2] No such file or directory: 'C:\\Users\\phili\\AKS\\AKS\\GUI\\Config\\Images\\python-logo.png'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 355, in homepage
+    img = Image.open(os.path.join(IMAGES_DIRECTORY, "python-logo.png"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\PIL\Image.py", line 3247, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\phili\\AKS\\AKS\\GUI\\Config\\Images\\python-logo.png'
+2024-02-22 10:24:01 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-22 10:24:01 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-22 10:24:01 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-22 10:24:01 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:25:40 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:25:40 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:25:40 : DEBUG : homepage : 348 : - Homepage -
+2024-02-22 10:25:40 : ERROR : homepage : 399 : Failed
+2024-02-22 10:25:40 : ERROR : homepage : 400 : [Errno 2] No such file or directory: 'C:\\Users\\phili\\AKS\\AKS\\GUI\\Config\\Images\\python-logo.png'
+Traceback (most recent call last):
+  File "c:\Users\phili\AKS\AKS\GUI\date_time_picker.py", line 355, in homepage
+    img = Image.open(os.path.join(IMAGES_DIRECTORY, "python-logo.png"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phili\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\PIL\Image.py", line 3247, in open
+    fp = builtins.open(filename, "rb")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\phili\\AKS\\AKS\\GUI\\Config\\Images\\python-logo.png'
+2024-02-22 10:25:42 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-22 10:25:42 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-22 10:25:42 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-22 10:25:42 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:28:27 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:28:27 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:28:27 : DEBUG : homepage : 348 : - Homepage -
+2024-02-22 10:28:52 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-22 10:28:52 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-22 10:28:52 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-22 10:28:52 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:34:14 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:34:14 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:34:14 : DEBUG : homepage : 348 : - Homepage -
+2024-02-22 10:34:44 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-22 10:34:44 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-22 10:34:44 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-22 10:34:44 : DEBUG : <module> : 451 : --- End ---
+2024-02-22 10:49:13 : DEBUG : <module> : 439 : --- Start ---
+2024-02-22 10:49:13 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-22 10:49:13 : DEBUG : homepage : 348 : - Homepage -
+2024-02-22 10:49:16 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-22 10:49:16 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-22 10:49:16 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-22 10:49:16 : DEBUG : <module> : 451 : --- End ---
+2024-02-23 09:52:45 : DEBUG : <module> : 439 : --- Start ---
+2024-02-23 09:52:45 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-23 09:52:45 : DEBUG : homepage : 348 : - Homepage -
+2024-02-23 09:52:58 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-23 09:52:58 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-23 09:52:58 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-23 09:52:58 : DEBUG : <module> : 451 : --- End ---
+2024-02-23 09:54:39 : DEBUG : <module> : 439 : --- Start ---
+2024-02-23 09:54:39 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-23 09:54:39 : DEBUG : homepage : 348 : - Homepage -
+2024-02-23 09:54:54 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-02-23 09:54:54 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-02-23 09:54:54 : DEBUG : exit_bot : 103 : Exit Bot
+2024-02-23 09:54:54 : DEBUG : <module> : 451 : --- End ---
+2024-02-23 16:07:22 : DEBUG : <module> : 439 : --- Start ---
+2024-02-23 16:07:22 : DEBUG : load_ui : 405 : - Load UI -
+2024-02-23 16:07:22 : DEBUG : homepage : 348 : - Homepage -

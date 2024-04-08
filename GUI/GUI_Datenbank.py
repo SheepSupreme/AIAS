@@ -7,6 +7,15 @@ import mysql.connector
 from Spinbox import *
 import serial
 
+from MainFrameOrder import *
+from MainFrameAddPackage import *
+from MainFrameDashboard import *
+from MainFrameDeletePackage import *
+from MainFrameInventory import *
+from Menu import *
+from TopLeiste import *
+from Dashboard_New import *
+
 
 # serial_port = 'COM3'
 # baud_rate = 9600
@@ -16,7 +25,7 @@ class App(CTk):
     def __init__(self):
 
         #main setup
-        super().__init__()
+        super().__init__() 
         set_appearance_mode("dark")
         self._state_before_windows_set_titlebar_color = 'zoomed'
         self.title('Inventory')  
@@ -41,7 +50,7 @@ class App(CTk):
         if self.MainFrame:
             self.MainFrame.destroy()  # Zerstöre das aktuelle Frame, bevor du ein neues erstellst
         self.MainFrame = Dashboard_New(self)
-
+ 
     def show_frameInventory(self):
         if self.MainFrame:
             self.MainFrame.destroy()
@@ -62,6 +71,7 @@ class App(CTk):
             self.MainFrame.destroy()
         self.MainFrame = MainFrameDeletePackage(self)
 
+<<<<<<< HEAD
 class Menu(CTkFrame):
     def __init__(self, master,  cmd_dashboard, cmd_inventory, cmd_order, cmd_addPackage, cmd_deletePackage):
         super().__init__(master, fg_color="#FF99FF")
@@ -436,5 +446,7 @@ class MainFrameDeletePackage(CTkFrame):
         label_underline = CTkLabel(self, fg_color="#FF99FF", text="", )
         label_underline.grid(column=0, row=1, columnspan=3, sticky="nsew", padx=10) 
 
+=======
+>>>>>>> 8ef3296d8c339bc4d5527b905f7eaf08dc8d1cf2
 
 App()
