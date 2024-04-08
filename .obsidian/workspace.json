@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "30ca4eedad9e807b",
+            "id": "6d7ffffa768aa05d",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -18,97 +18,10 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "Programm_Ablauf",
-                  "icon": "lucide-image",
-                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":1,\"ch\":28},\"to\":{\"line\":1,\"ch\":28}}}"
-                },
-                {
-                  "title": "Pflichtenheft",
-                  "icon": "lucide-image",
-                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Pflichtenheft.png\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Pflichtenheft",
-                  "icon": "lucide-file-text",
-                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"Dokumentationen/bin/Pflichtenheft.pdf\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Programm_Ablauf",
-                  "icon": "lucide-image",
-                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Programm",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentation/bin/Programm.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":3,\"ch\":21},\"to\":{\"line\":3,\"ch\":2}}}"
-                }
-              ]
-            },
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4c4e6fd1ff281c9d",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 1,
-              "stack": [
-                {
-                  "title": "GUI",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/GUI.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Barcode_Scanner_Module_User_Manual_EN",
-                  "icon": "lucide-file-text",
-                  "state": "{\"type\":\"pdf\",\"state\":{\"file\":\"Dokumentationen/bin/Barcode_Scanner_Module_User_Manual_EN.pdf\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Regalauslastung",
+                  "title": "Programm Ablauf",
                   "icon": "excalidraw-icon",
-                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/bin/Regalauslastung.md\"}}",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Programm Ablauf.md\"}}",
                   "eState": "{}"
-                },
-                {
-                  "title": "Pflichtenheft",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Pflichtenheft.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "Ideen",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Ideen.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
                   "title": "range drawing",
@@ -117,94 +30,48 @@
                   "eState": "{}"
                 },
                 {
-                  "title": "Programm Ablauf",
+                  "title": "Drawing 2024-03-08 15.14.39.excalidraw",
                   "icon": "excalidraw-icon",
-                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Programm Ablauf.md\"}}",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Drawing 2024-03-08 15.14.39.excalidraw.md\"}}",
                   "eState": "{}"
-                },
-                {
-                  "title": "Programm_Ablauf",
-                  "icon": "lucide-image",
-                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 },
                 {
                   "title": "Pflichtenheft",
                   "icon": "lucide-file",
                   "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Pflichtenheft.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "Programm_Ablauf",
-                  "icon": "lucide-image",
-                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "Beschreibung",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Beschreibung.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "Programm_Ablauf",
-                  "icon": "lucide-image",
-                  "state": "{\"type\":\"image\",\"state\":{\"file\":\"Dokumentationen/bin/Programm_Ablauf.png\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Programm Ablauf",
-                  "icon": "excalidraw-icon",
-                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Programm Ablauf.md\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}},\"scroll\":0}"
-                },
-                {
-                  "title": "conflict-files-obsidian-git",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"conflict-files-obsidian-git.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "README",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"README.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
-                },
-                {
-                  "title": "conflict-files-obsidian-git",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"conflict-files-obsidian-git.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                  "eState": "{\"cursor\":{\"from\":{\"line\":207,\"ch\":28},\"to\":{\"line\":207,\"ch\":28}},\"scroll\":0}"
                 }
               ]
             },
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "Dokumentationen/Programm Ablauf.md"
+                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md"
+              }
+            }
+          },
+          {
+            "id": "70265d3c7e36bf3a",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Dokumentationen/Software Dokumentation.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -308,7 +175,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dokumentationen/Programm Ablauf.md",
+                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -334,7 +201,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dokumentationen/Programm Ablauf.md",
+                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -375,7 +242,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dokumentationen/Programm Ablauf.md"
+                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md"
               }
             }
           }
@@ -397,36 +264,39 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "4c4e6fd1ff281c9d",
+  "active": "6d7ffffa768aa05d",
   "lastOpenFiles": [
-    "SQL/MySQL Server 8.1/server_config.xml",
-    "SQL/MySQL Server 8.1/my_2023-10-20T16-08-30.ini",
-    "SQL/MySQL Server 8.1/my_2023-10-20T16-04-32.ini",
-    "SQL/MySQL Server 8.1/my_2023-10-20T16-00-46.ini",
-    "SQL/MySQL Server 8.1/my.ini",
-    "SQL/MySQL Server 8.1/Data/undo_002",
-    "SQL/MySQL Server 8.1/Data/undo_001",
-    "SQL/MySQL Server 8.1/Data/performance_schema/variables_info_186.sdi",
-    "SQL/MySQL Server 8.1/Data/performance_schema/variables_by_thr_183.sdi",
-    "SQL/MySQL Server 8.1/Data/performance_schema/user_variables_b_176.sdi",
-    "SQL/MySQL Server 8.1/Data/performance_schema/user_defined_fun_188.sdi",
+    "Dokumentationen/lu21928xx6o7x.tmp",
+    "Dokumentationen/Software Dokumentation.md",
+    "Dokumentationen/lu21928xx6o7u.tmp",
+    "Drawing 2024-03-08 15.14.39.excalidraw.md",
+    "Dokumentationen/lu21928xx6o7r.tmp",
+    "Dokumentationen/lu21928xx6o7o.tmp",
+    "Dokumentationen/lu21928xx6o7l.tmp",
+    "Dokumentationen/lu21928xx6o7i.tmp",
+    "Dokumentationen/lu21928xx6o7e.tmp",
+    "Dokumentationen/lu21928xx6o7b.tmp",
+    "Dokumentationen/lu21928xx6o78.tmp",
+    "Dokumentationen/Diplomarbeit.odt~RF8fd6b73c.TMP",
+    "Dokumentationen/lu21928xx6o75.tmp",
+    "Dokumentationen/Programm Ablauf.md",
+    "Dokumentationen/range drawing.md",
+    "Dokumentationen/Pflichtenheft.md",
+    "Excalidraw/Scripts/Downloaded/GPT-Draw-a-UI.svg",
+    "Excalidraw/Scripts/Downloaded/GPT-Draw-a-UI.md",
     "GUI/password-icon.png",
     "GUI/Hintergrund_Login.jpg",
     "GUI/email-icon.png",
     "Dokumentationen/GUI.md",
-    "Dokumentationen/Programm Ablauf.md",
     "README.md",
     "Dokumentationen/bin/Regalauslastung.md",
-    "Dokumentationen/Pflichtenheft.md",
     "Dokumentationen/Ideen.md",
-    "Dokumentationen/range drawing.md",
     "Dokumentationen/bin/Programm_Ablauf.png",
     "Beschreibung.md",
     "conflict-files-obsidian-git.md",
     "Dokumentationen/bin/Pflichtenheft.png",
     "Dokumentation/bin/Programm.md",
     "Dokumentationen/bin/image.png",
-    "Dokumentationen/Software Dokumentation.md",
     "Dokumentationen/bin/image-1.png",
     "Dokumentationen/PDFs.md",
     "Dokumentationen/Serial Com.md",
@@ -434,7 +304,6 @@
     "Dokumentationen/bin/image-1.png",
     "sketch_jan10a/README 2024-02-06 17.34.43.excalidraw.md",
     "assets/image.png",
-    "assets/image-1.png",
     "Drücker/README.md",
     "Tutorials/Eigene library machen.md",
     "sketch_jan10a/README.md",
@@ -442,9 +311,6 @@
     "Drawing 2024-02-06 17.33.30.excalidraw.md",
     "Drawing 2024-02-06 17.23.18.excalidraw.md",
     "Drawing 2024-02-06 17.23.05.excalidraw.md",
-    "Drawing 2024-02-06 13.19.45.excalidraw.md",
-    "Drawing 2024-02-06 13.18.30.excalidraw.md",
-    "Drawing 2024-02-06 13.08.28.excalidraw.md",
     "Untitled.canvas"
   ]
 }

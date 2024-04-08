@@ -3,9 +3,9 @@ import customtkinter
 import serial
 
 #Serial setup
-serial_port = 'COM4'
-baud_rate = 9600
-ser = serial.Serial(serial_port, baud_rate, timeout=10)
+# serial_port = 'COM4'
+# baud_rate = 9600
+# ser = serial.Serial(serial_port, baud_rate, timeout=10)
 
 class Timer:
     def __init__(self, name, end_time, root):
@@ -120,11 +120,11 @@ game_instance = App(root)
 
 # Run the Tkinter event loop
 while True:
-    if ser.in_waiting > 0:
-        text_mod = ser.readline()
-        message = text_mod.decode().strip()
-        print("message received:",message);
-        game_instance.add_timer(int(message))
+    # if ser.in_waiting > 0:
+    #     text_mod = ser.readline()
+    #     message = text_mod.decode().strip()
+    #     print("message received:",message);
+    #     game_instance.add_timer(int(message))
 
     root.update_idletasks()
     root.update()

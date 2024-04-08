@@ -84,8 +84,8 @@ serielle Schnittstelle
 	"elements": [
 		{
 			"type": "text",
-			"version": 419,
-			"versionNonce": 1341004834,
+			"version": 420,
+			"versionNonce": 1638292578,
 			"isDeleted": false,
 			"id": "G7RuVe72",
 			"fillStyle": "solid",
@@ -105,7 +105,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804315534,
+			"updated": 1709892527979,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -386,8 +386,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 1969,
-			"versionNonce": 79431998,
+			"version": 1978,
+			"versionNonce": 1209426530,
 			"isDeleted": false,
 			"id": "dJPqbkuTlPqdhmxXLSDe8",
 			"fillStyle": "solid",
@@ -401,7 +401,7 @@ serielle Schnittstelle
 			"strokeColor": "#1971c2",
 			"backgroundColor": "transparent",
 			"width": 370.5132117559008,
-			"height": 14.10944133582774,
+			"height": 14.109441335827682,
 			"seed": 1423969015,
 			"groupIds": [],
 			"frameId": null,
@@ -414,18 +414,18 @@ serielle Schnittstelle
 					"id": "uvXf5KiY"
 				}
 			],
-			"updated": 1707804315540,
+			"updated": 1709892527861,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "DX3YGNneph1GhbdrnOERN",
-				"focus": -0.4069198058147236,
-				"gap": 15.074352066093155
+				"gap": 15.074352066093155,
+				"focus": -0.4069198058147236
 			},
 			"endBinding": {
 				"elementId": "U64DESZmwysDXfMpFwopI",
-				"focus": 0.6370296699783351,
-				"gap": 10.539079759833044
+				"gap": 10.539079759833044,
+				"focus": 0.6370296699783351
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -437,14 +437,14 @@ serielle Schnittstelle
 				],
 				[
 					370.5132117559008,
-					-14.10944133582774
+					-14.109441335827682
 				]
 			]
 		},
 		{
 			"type": "text",
-			"version": 287,
-			"versionNonce": 2142781858,
+			"version": 288,
+			"versionNonce": 1344940322,
 			"isDeleted": false,
 			"id": "uvXf5KiY",
 			"fillStyle": "cross-hatch",
@@ -464,7 +464,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804296354,
+			"updated": 1709892527851,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -480,8 +480,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 1419,
-			"versionNonce": 249385406,
+			"version": 1427,
+			"versionNonce": 608772450,
 			"isDeleted": false,
 			"id": "ESimG3PVmSbPQboZjtUFr",
 			"fillStyle": "solid",
@@ -503,18 +503,18 @@ serielle Schnittstelle
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707804315541,
+			"updated": 1709892527864,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "DX3YGNneph1GhbdrnOERN",
-				"focus": 0.01564120406174386,
-				"gap": 12.025158186276656
+				"gap": 12.025158186276656,
+				"focus": 0.01564120406174386
 			},
 			"endBinding": {
 				"elementId": "kKFZ5DPW21Cm-cpOk4Iz8",
-				"focus": 0.05602201462115055,
-				"gap": 12.642986383751236
+				"gap": 12.642986383751236,
+				"focus": 0.05602201462115055
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -532,8 +532,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 1415,
-			"versionNonce": 514226750,
+			"version": 1423,
+			"versionNonce": 731230434,
 			"isDeleted": false,
 			"id": "mHZODtrimTabkH7cpCb4b",
 			"fillStyle": "solid",
@@ -555,18 +555,18 @@ serielle Schnittstelle
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707804315542,
+			"updated": 1709892527864,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "kKFZ5DPW21Cm-cpOk4Iz8",
-				"focus": -0.2754085583129811,
-				"gap": 8.477813061625739
+				"gap": 8.477813061625739,
+				"focus": -0.2754085583129811
 			},
 			"endBinding": {
 				"elementId": "DX3YGNneph1GhbdrnOERN",
-				"focus": 0.3065108982274972,
-				"gap": 22.95444077642844
+				"gap": 22.95444077642844,
+				"focus": 0.3065108982274972
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -584,8 +584,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 1790,
-			"versionNonce": 329220798,
+			"version": 1798,
+			"versionNonce": 466006498,
 			"isDeleted": false,
 			"id": "-FZlbg5KfkiH9VtkB2WAV",
 			"fillStyle": "solid",
@@ -594,7 +594,7 @@ serielle Schnittstelle
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 328.8627645859225,
+			"x": 328.86276458592255,
 			"y": 288.7978920097207,
 			"strokeColor": "#1971c2",
 			"backgroundColor": "transparent",
@@ -612,18 +612,18 @@ serielle Schnittstelle
 					"id": "zABicjzd"
 				}
 			],
-			"updated": 1707804315545,
+			"updated": 1709892527862,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "U64DESZmwysDXfMpFwopI",
-				"focus": -0.625801106117912,
-				"gap": 11.86894567831007
+				"gap": 11.86894567831007,
+				"focus": -0.625801106117912
 			},
 			"endBinding": {
 				"elementId": "DX3YGNneph1GhbdrnOERN",
-				"focus": 0.7507820686359161,
-				"gap": 16.65118180768036
+				"gap": 16.65118180768036,
+				"focus": 0.7507820686359161
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -641,8 +641,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 309,
-			"versionNonce": 1768538402,
+			"version": 310,
+			"versionNonce": 21767010,
 			"isDeleted": false,
 			"id": "zABicjzd",
 			"fillStyle": "cross-hatch",
@@ -662,7 +662,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804296354,
+			"updated": 1709892527858,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -678,8 +678,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 489,
-			"versionNonce": 785176098,
+			"version": 490,
+			"versionNonce": 935695038,
 			"isDeleted": false,
 			"id": "7X4fgmm2",
 			"fillStyle": "solid",
@@ -699,7 +699,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804315534,
+			"updated": 1709892527981,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -790,8 +790,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 1166,
-			"versionNonce": 189819710,
+			"version": 1174,
+			"versionNonce": 674606562,
 			"isDeleted": false,
 			"id": "oWP5nrk6GDbH8yyliv-ep",
 			"fillStyle": "solid",
@@ -818,18 +818,18 @@ serielle Schnittstelle
 					"id": "FjNZhNjt"
 				}
 			],
-			"updated": 1707804315546,
+			"updated": 1709892527871,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "bcaraVrTiRy5Y_UCaEmOc",
-				"focus": -0.5048292216643322,
-				"gap": 4.218544574174899
+				"gap": 4.218544574174899,
+				"focus": -0.5048292216643322
 			},
 			"endBinding": {
 				"elementId": "kKFZ5DPW21Cm-cpOk4Iz8",
-				"focus": -0.4107411491309544,
-				"gap": 10.787121336662153
+				"gap": 10.787121336662153,
+				"focus": -0.4107411491309544
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -847,8 +847,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 211,
-			"versionNonce": 207352446,
+			"version": 212,
+			"versionNonce": 347997218,
 			"isDeleted": false,
 			"id": "FjNZhNjt",
 			"fillStyle": "cross-hatch",
@@ -868,7 +868,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804296354,
+			"updated": 1709892527866,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1101,8 +1101,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 1249,
-			"versionNonce": 1631663038,
+			"version": 1257,
+			"versionNonce": 128131362,
 			"isDeleted": false,
 			"id": "a-HsaBB_vFEuBm7PWnyAR",
 			"fillStyle": "cross-hatch",
@@ -1116,7 +1116,7 @@ serielle Schnittstelle
 			"strokeColor": "#2f9e44",
 			"backgroundColor": "transparent",
 			"width": 77.42356463409862,
-			"height": 4.6216501456374885,
+			"height": 4.62165014563746,
 			"seed": 989978169,
 			"groupIds": [],
 			"frameId": null,
@@ -1124,18 +1124,18 @@ serielle Schnittstelle
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707804315547,
+			"updated": 1709892527880,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "kKFZ5DPW21Cm-cpOk4Iz8",
-				"focus": -0.16575908029034114,
-				"gap": 11.241802194872662
+				"gap": 11.241802194872662,
+				"focus": -0.16575908029034114
 			},
 			"endBinding": {
 				"elementId": "SmH4pINhsFjNVQr6LIdLk",
-				"focus": -0.20259511404522568,
-				"gap": 7.940905609170159
+				"gap": 7.940905609170159,
+				"focus": -0.20259511404522568
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -1147,7 +1147,7 @@ serielle Schnittstelle
 				],
 				[
 					-77.42356463409862,
-					-4.6216501456374885
+					-4.62165014563746
 				]
 			]
 		},
@@ -1222,8 +1222,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 210,
-			"versionNonce": 1977232162,
+			"version": 212,
+			"versionNonce": 1791599010,
 			"isDeleted": false,
 			"id": "jG0nB1wN1UkGp-tBqzalZ",
 			"fillStyle": "cross-hatch",
@@ -1245,7 +1245,7 @@ serielle Schnittstelle
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707804240167,
+			"updated": 1709892527873,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -1270,8 +1270,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 130,
-			"versionNonce": 210440190,
+			"version": 131,
+			"versionNonce": 1059094562,
 			"isDeleted": false,
 			"id": "0Bl0e0ep",
 			"fillStyle": "cross-hatch",
@@ -1291,7 +1291,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240167,
+			"updated": 1709892527982,
 			"link": null,
 			"locked": false,
 			"fontSize": 28,
@@ -1376,8 +1376,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 1121,
-			"versionNonce": 788126782,
+			"version": 1129,
+			"versionNonce": 842130210,
 			"isDeleted": false,
 			"id": "rwIKLI6oD7QsZDh410pNX",
 			"fillStyle": "cross-hatch",
@@ -1391,7 +1391,7 @@ serielle Schnittstelle
 			"strokeColor": "#ac60bb",
 			"backgroundColor": "#a24db3",
 			"width": 136.98012951260887,
-			"height": 2.1960945686691105,
+			"height": 2.196094568669139,
 			"seed": 1420144151,
 			"groupIds": [],
 			"frameId": null,
@@ -1399,18 +1399,18 @@ serielle Schnittstelle
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1707804315547,
+			"updated": 1709892527867,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "DX3YGNneph1GhbdrnOERN",
-				"focus": -0.20139508028568864,
-				"gap": 12.556185316855476
+				"gap": 12.556185316855476,
+				"focus": -0.20139508028568864
 			},
 			"endBinding": {
 				"elementId": "kKFZ5DPW21Cm-cpOk4Iz8",
-				"focus": 0.44645126299566523,
-				"gap": 14.485772639720835
+				"gap": 14.485772639720835,
+				"focus": 0.44645126299566523
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -1422,14 +1422,14 @@ serielle Schnittstelle
 				],
 				[
 					-136.98012951260887,
-					2.1960945686691105
+					2.196094568669139
 				]
 			]
 		},
 		{
 			"type": "rectangle",
-			"version": 891,
-			"versionNonce": 601486242,
+			"version": 944,
+			"versionNonce": 427807085,
 			"isDeleted": false,
 			"id": "S_w9dui95pts119_kV0Dv",
 			"fillStyle": "cross-hatch",
@@ -1438,8 +1438,8 @@ serielle Schnittstelle
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -711.6914045402248,
-			"y": -14.84137625904441,
+			"x": -687.8231578579777,
+			"y": 1.7626231541258903,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 155.83964780673296,
@@ -1460,14 +1460,14 @@ serielle Schnittstelle
 					"type": "arrow"
 				}
 			],
-			"updated": 1707804315535,
+			"updated": 1708334282115,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 862,
-			"versionNonce": 2103390050,
+			"version": 916,
+			"versionNonce": 2109545421,
 			"isDeleted": false,
 			"id": "PEwLsrSy",
 			"fillStyle": "cross-hatch",
@@ -1476,8 +1476,8 @@ serielle Schnittstelle
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -703.665562570452,
-			"y": 3.851920128348411,
+			"x": -679.7973158882049,
+			"y": 20.455919541518753,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
 			"width": 139.7879638671875,
@@ -1487,7 +1487,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804315535,
+			"updated": 1708334282115,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -1503,8 +1503,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "arrow",
-			"version": 2013,
-			"versionNonce": 1275225278,
+			"version": 2127,
+			"versionNonce": 616743074,
 			"isDeleted": false,
 			"id": "kYlvDfdaNfCjYDqsHAaG6",
 			"fillStyle": "cross-hatch",
@@ -1513,12 +1513,12 @@ serielle Schnittstelle
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -541.5907652461417,
+			"x": -537.7516860380649,
 			"y": 188.64364840514264,
 			"strokeColor": "#ac60bb",
 			"backgroundColor": "transparent",
-			"width": 52.40616155721261,
-			"height": 111.17228094541676,
+			"width": 37.00350378652968,
+			"height": 94.56828153224646,
 			"seed": 741530681,
 			"groupIds": [],
 			"frameId": null,
@@ -1531,18 +1531,18 @@ serielle Schnittstelle
 					"id": "8N4p45W7"
 				}
 			],
-			"updated": 1707804315548,
+			"updated": 1709892527893,
 			"link": null,
 			"locked": false,
 			"startBinding": {
 				"elementId": "kKFZ5DPW21Cm-cpOk4Iz8",
-				"focus": 0.15932289672798228,
-				"gap": 9.31176647442021
+				"gap": 9.31176647442021,
+				"focus": 0.15932289672798228
 			},
 			"endBinding": {
 				"elementId": "S_w9dui95pts119_kV0Dv",
-				"focus": -0.16105863726582392,
-				"gap": 9.926150943984567
+				"gap": 9.926150943984567,
+				"focus": -0.16105863726582392
 			},
 			"lastCommittedPoint": null,
 			"startArrowhead": null,
@@ -1553,15 +1553,15 @@ serielle Schnittstelle
 					0
 				],
 				[
-					-52.40616155721261,
-					-111.17228094541676
+					-37.00350378652968,
+					-94.56828153224646
 				]
 			]
 		},
 		{
 			"type": "text",
-			"version": 231,
-			"versionNonce": 459785086,
+			"version": 232,
+			"versionNonce": 651452002,
 			"isDeleted": false,
 			"id": "8N4p45W7",
 			"fillStyle": "cross-hatch",
@@ -1581,7 +1581,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804296354,
+			"updated": 1709892527869,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1641,8 +1641,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 171,
-			"versionNonce": 833680866,
+			"version": 172,
+			"versionNonce": 557878014,
 			"isDeleted": false,
 			"id": "G4jO4sLS",
 			"fillStyle": "cross-hatch",
@@ -1662,7 +1662,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892527983,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1678,8 +1678,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 186,
-			"versionNonce": 913002814,
+			"version": 187,
+			"versionNonce": 2032151522,
 			"isDeleted": false,
 			"id": "tA4B3B7l",
 			"fillStyle": "cross-hatch",
@@ -1699,7 +1699,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892527985,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -1759,8 +1759,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 438,
-			"versionNonce": 205745762,
+			"version": 439,
+			"versionNonce": 1228045118,
 			"isDeleted": false,
 			"id": "xPRjny8z",
 			"fillStyle": "cross-hatch",
@@ -1769,7 +1769,7 @@ serielle Schnittstelle
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": -476.89026949315473,
+			"x": -490.2414123764555,
 			"y": 349.44634328508465,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
@@ -1780,7 +1780,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804315536,
+			"updated": 1709892527987,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1796,8 +1796,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 1066,
-			"versionNonce": 796026210,
+			"version": 1067,
+			"versionNonce": 1974755234,
 			"isDeleted": false,
 			"id": "02Cdh0ey",
 			"fillStyle": "cross-hatch",
@@ -1817,7 +1817,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892527989,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1833,8 +1833,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 180,
-			"versionNonce": 56269246,
+			"version": 182,
+			"versionNonce": 1566473890,
 			"isDeleted": false,
 			"id": "G9FhOb90",
 			"fillStyle": "cross-hatch",
@@ -1847,14 +1847,14 @@ serielle Schnittstelle
 			"y": 1003.4017013159043,
 			"strokeColor": "#2f9e44",
 			"backgroundColor": "transparent",
-			"width": 563.867578125,
+			"width": 563.8677978515625,
 			"height": 45,
 			"seed": 804287033,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892531732,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -1870,8 +1870,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 689,
-			"versionNonce": 1753442594,
+			"version": 690,
+			"versionNonce": 17570658,
 			"isDeleted": false,
 			"id": "y374fQq5",
 			"fillStyle": "cross-hatch",
@@ -1891,7 +1891,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892527991,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1907,8 +1907,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 531,
-			"versionNonce": 1654436350,
+			"version": 532,
+			"versionNonce": 2044675006,
 			"isDeleted": false,
 			"id": "UvIh0cjj",
 			"fillStyle": "cross-hatch",
@@ -1928,7 +1928,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892527992,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -1944,8 +1944,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 151,
-			"versionNonce": 675149026,
+			"version": 153,
+			"versionNonce": 214414462,
 			"isDeleted": false,
 			"id": "yW1fCZkD",
 			"fillStyle": "cross-hatch",
@@ -1958,14 +1958,14 @@ serielle Schnittstelle
 			"y": 1200.036734315411,
 			"strokeColor": "#e03131",
 			"backgroundColor": "transparent",
-			"width": 905.291180419922,
+			"width": 905.2916259765625,
 			"height": 45,
 			"seed": 1288928311,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892531742,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -1981,8 +1981,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 53,
-			"versionNonce": 2054275646,
+			"version": 55,
+			"versionNonce": 1276795490,
 			"isDeleted": false,
 			"id": "pecoTU0e",
 			"fillStyle": "cross-hatch",
@@ -1995,14 +1995,14 @@ serielle Schnittstelle
 			"y": 1353.8482584502433,
 			"strokeColor": "#a24db3",
 			"backgroundColor": "transparent",
-			"width": 359.60386439732144,
+			"width": 359.6038818359375,
 			"height": 45,
 			"seed": 1152218039,
 			"groupIds": [],
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892531744,
 			"link": null,
 			"locked": false,
 			"fontSize": 36,
@@ -2018,8 +2018,8 @@ serielle Schnittstelle
 		},
 		{
 			"type": "text",
-			"version": 416,
-			"versionNonce": 1882261666,
+			"version": 417,
+			"versionNonce": 1533160162,
 			"isDeleted": false,
 			"id": "S9WYBtKL",
 			"fillStyle": "cross-hatch",
@@ -2039,7 +2039,7 @@ serielle Schnittstelle
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1707804240168,
+			"updated": 1709892527993,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -2052,115 +2052,6 @@ serielle Schnittstelle
 			"originalText": "Mit dem Auswurfbefehl kann die gewollte Anzahl an Pakete ausgeworfen werden. Die Reihenfolge,\nin der die Pakete ausgeworfen werden, beginnt mit dem Paket, das die kürzeste Ablaufzeit hat \nund steigt dann auf.",
 			"lineHeight": 1.25,
 			"baseline": 68
-		},
-		{
-			"id": "Adfg4Gvm",
-			"type": "text",
-			"x": 421.8267598067064,
-			"y": 53.1088776800857,
-			"width": 10,
-			"height": 25,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "cross-hatch",
-			"strokeWidth": 4,
-			"strokeStyle": "dashed",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": "Z_m7-5czIrs-1vME0Vzke",
-			"roundness": null,
-			"seed": 1272561698,
-			"version": 2,
-			"versionNonce": 1381317438,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1707804267543,
-			"link": null,
-			"locked": false,
-			"text": "",
-			"rawText": "",
-			"fontSize": 20,
-			"fontFamily": 1,
-			"textAlign": "left",
-			"verticalAlign": "top",
-			"baseline": 18,
-			"containerId": null,
-			"originalText": "",
-			"lineHeight": 1.25
-		},
-		{
-			"id": "nu7uio3j",
-			"type": "text",
-			"x": 619.3267598067064,
-			"y": -59.3911223199143,
-			"width": 10,
-			"height": 25,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "cross-hatch",
-			"strokeWidth": 4,
-			"strokeStyle": "dashed",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": "Z_m7-5czIrs-1vME0Vzke",
-			"roundness": null,
-			"seed": 1779883006,
-			"version": 2,
-			"versionNonce": 1579663010,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1707804273609,
-			"link": null,
-			"locked": false,
-			"text": "",
-			"rawText": "",
-			"fontSize": 20,
-			"fontFamily": 1,
-			"textAlign": "left",
-			"verticalAlign": "top",
-			"baseline": 18,
-			"containerId": null,
-			"originalText": "",
-			"lineHeight": 1.25
-		},
-		{
-			"type": "frame",
-			"version": 241,
-			"versionNonce": 1464977122,
-			"isDeleted": true,
-			"id": "Z_m7-5czIrs-1vME0Vzke",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 0,
-			"opacity": 100,
-			"angle": 0,
-			"x": -976.3935240932185,
-			"y": -159.64236897693547,
-			"strokeColor": "#bbb",
-			"backgroundColor": "transparent",
-			"width": 1579.4405983174279,
-			"height": 640.1998417550478,
-			"seed": 1654988030,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"boundElements": [],
-			"updated": 1707804298709,
-			"link": null,
-			"locked": false,
-			"customData": {
-				"frameColor": {
-					"stroke": "#2B2B2B",
-					"fill": "#525252",
-					"nameColor": "#858585"
-				}
-			},
-			"name": null
 		}
 	],
 	"appState": {
@@ -2178,10 +2069,10 @@ serielle Schnittstelle
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 1591.1731944169264,
-		"scrollY": 382.7973608758225,
+		"scrollX": 1415.9985291270207,
+		"scrollY": 73.95424574426522,
 		"zoom": {
-			"value": 0.4
+			"value": 0.45
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,

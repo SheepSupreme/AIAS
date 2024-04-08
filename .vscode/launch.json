@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/lukas/Desktop/Diplomarbeit/AKS/Arduino/1_axis_belt_drive",
-      "program": "c:/Users/lukas/Desktop/Diplomarbeit/AKS/Arduino/1_axis_belt_drive/build/Debug/outDebug",
+      "cwd": "c:/Users/domin/Documents/AKS/sketch_jan10a/AKS/src",
+      "program": "c:/Users/domin/Documents/AKS/sketch_jan10a/AKS/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
