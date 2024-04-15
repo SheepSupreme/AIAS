@@ -1,0 +1,7 @@
+2024-03-08 09:37:35 : DEBUG : <module> : 439 : --- Start ---
+2024-03-08 09:37:35 : DEBUG : load_ui : 405 : - Load UI -
+2024-03-08 09:37:35 : DEBUG : homepage : 348 : - Homepage -
+2024-03-08 09:37:48 : DEBUG : exit_bot : 97 : - Exit Bot -
+2024-03-08 09:37:48 : DEBUG : quit_homepage : 87 : - Quit Homepage -
+2024-03-08 09:37:48 : DEBUG : exit_bot : 103 : Exit Bot
+2024-03-08 09:37:48 : DEBUG : <module> : 451 : --- End ---
