@@ -8,49 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6d7ffffa768aa05d",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Programm Ablauf",
-                  "icon": "excalidraw-icon",
-                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Programm Ablauf.md\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "range drawing",
-                  "icon": "excalidraw-icon",
-                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/range drawing.md\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Drawing 2024-03-08 15.14.39.excalidraw",
-                  "icon": "excalidraw-icon",
-                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Drawing 2024-03-08 15.14.39.excalidraw.md\"}}",
-                  "eState": "{}"
-                },
-                {
-                  "title": "Pflichtenheft",
-                  "icon": "lucide-file",
-                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Pflichtenheft.md\",\"mode\":\"source\",\"source\":false}}",
-                  "eState": "{\"cursor\":{\"from\":{\"line\":207,\"ch\":28},\"to\":{\"line\":207,\"ch\":28}},\"scroll\":0}"
-                }
-              ]
-            },
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md"
-              }
-            }
-          },
-          {
             "id": "70265d3c7e36bf3a",
             "type": "leaf",
             "pane-relief:history-v1": {
@@ -175,7 +132,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md",
+                "file": "Dokumentationen/Software Dokumentation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -201,7 +158,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md",
+                "file": "Dokumentationen/Software Dokumentation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -242,16 +199,33 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Drawing 2024-03-08 15.14.39.excalidraw.md"
+                "file": "Dokumentationen/Software Dokumentation.md"
               }
             }
+          },
+          {
+            "id": "fb06650ca0964469",
+            "type": "leaf",
+            "pane-relief:history-v1": {
+              "pos": 0,
+              "stack": [
+                {
+                  "state": "{}",
+                  "eState": "{}"
+                }
+              ]
+            },
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -264,12 +238,13 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6d7ffffa768aa05d",
+  "active": "70265d3c7e36bf3a",
   "lastOpenFiles": [
+    "Drawing 2024-03-08 15.14.39.excalidraw.md",
+    "Dokumentationen/Diplomarbeit 2.docx",
     "Dokumentationen/lu21928xx6o7x.tmp",
     "Dokumentationen/Software Dokumentation.md",
     "Dokumentationen/lu21928xx6o7u.tmp",
-    "Drawing 2024-03-08 15.14.39.excalidraw.md",
     "Dokumentationen/lu21928xx6o7r.tmp",
     "Dokumentationen/lu21928xx6o7o.tmp",
     "Dokumentationen/lu21928xx6o7l.tmp",
@@ -277,8 +252,6 @@
     "Dokumentationen/lu21928xx6o7e.tmp",
     "Dokumentationen/lu21928xx6o7b.tmp",
     "Dokumentationen/lu21928xx6o78.tmp",
-    "Dokumentationen/Diplomarbeit.odt~RF8fd6b73c.TMP",
-    "Dokumentationen/lu21928xx6o75.tmp",
     "Dokumentationen/Programm Ablauf.md",
     "Dokumentationen/range drawing.md",
     "Dokumentationen/Pflichtenheft.md",
