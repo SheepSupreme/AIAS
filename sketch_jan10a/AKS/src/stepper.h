@@ -8,6 +8,7 @@ class Stepper
     public:
         Stepper(int pin_dir, int pin_step, int pin_nEnable, int pin_M0, int pin_M1, int pin_M2, int es1_pin, int es2_pin); //Constructor decleration
 
+        //Pins
         byte M0;
         byte M1;
         byte M2;
@@ -21,20 +22,22 @@ class Stepper
         double absolute_position;
         double endstop_position =1E6;
 
-        //methods
-        //paramenter
+        //Modifikation
         void change_profile(int speed, int accel);
         void change_microstep_resolution(short int resolution);
-        //movement
 
+        //Bewegung
         void calibration(unsigned int endstop_offset);
         void calibration_direction(int endstop_offset, int direction, double max_calibration_travel);
         void move_relative(double relative_steps);
         void move_absolute(uint32_t position);
         void setup_move(double absolute_pos);
         void out_ofRange();
+
+        //debounce
         bool buttonPressed(int btn_pin,bool &btn_state);
 
+        //Schritt
         bool move();
 
     private:
@@ -60,7 +63,7 @@ class Stepper
         float _microstep_resolution = 1.0f;
         int _dir;
         bool new_move;
-        
+
         float microstep_table[8][4] = 
         {{0,0,0,1},   //0 = Full-Step-Betrieb
         {1,0,0,2},    //1 = Half-Step-Betrieb
