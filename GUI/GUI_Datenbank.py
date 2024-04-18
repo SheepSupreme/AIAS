@@ -67,22 +67,22 @@ class App(CTk):
             self.MainFrame.destroy()
         self.MainFrame = MainFrameAddPackage(self)
 
-def serial_listener(port):
-    ser = serial.Serial(port, 9600)  # Serielle Schnittstelle öffnen
+#def serial_listener(port):
+    # ser = serial.Serial(port, 9600)  # Serielle Schnittstelle öffnen
 
-    while True:
-        if ser.in_waiting > 0:
-            data = ser.readline().decode().strip()  # Daten von serieller Schnittstelle lesen
-            if data:
-                add_package_to_issue(data)
+    # while True:
+    #     if ser.in_waiting > 0:
+    #         data = ser.readline().decode().strip()  # Daten von serieller Schnittstelle lesen
+    #         if data:
+    #             add_package_to_issue(data)
 
 
 if __name__ == "__main__":
 
-    serial_thread = threading.Thread(target=serial_listener)
-    serial_thread.daemon = True  
-    
-    serial_thread.start()
+    # serial_thread = threading.Thread(target=serial_listener)
+    # serial_thread.daemon = True  
+
+    # serial_thread.start()
 
     root = App()
     root.mainloop()

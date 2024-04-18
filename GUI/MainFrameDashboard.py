@@ -12,9 +12,9 @@ user = "userdb"
 password = "userdb"
 database = "aks" 
 
-serial_port = 'COM3'
-baud_rate = 9600
-ser = serial.Serial(serial_port, baud_rate, timeout=2)
+# serial_port = 'COM3'
+# baud_rate = 9600
+# ser = serial.Serial(serial_port, baud_rate, timeout=2)
 
 try:
     conn = mysql.connector.connect(host=host,user=user,password=password)
@@ -241,10 +241,10 @@ class MainFrameDashboard(CTkFrame):
 
                     print(x)
 
-                    message = "Position"+str(x)
-                    print("message send:"+message)
-                    message_bytes = message.encode('ascii')
-                    ser.write(message_bytes)
+                    # message = "Position"+str(x)
+                    # print("message send:"+message)
+                    # message_bytes = message.encode('ascii')
+                    # ser.write(message_bytes)
 
 
                     query = "DELETE FROM aks.tfact_issue_inventory WHERE position_x = %s AND position_y = 1" %x
