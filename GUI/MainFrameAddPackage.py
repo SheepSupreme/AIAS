@@ -1,10 +1,14 @@
+import time
 from tkinter import messagebox
 from customtkinter import *
 import datetime as dt
 from tkcalendar import *
 import mysql.connector
 from errno import errorcode
-from datetime import datetime
+from datetime import datetime, timedelta
+import qrcode
+import png
+from PIL import Image, ImageTk 
 
 host = "127.0.0.1"
 user = "userdb"
@@ -76,13 +80,13 @@ class MainFrameAddPackage(CTkFrame):
         inhalt_frame.rowconfigure(1, weight=1, uniform='a')
 
 
-        inhalt1_label = CTkLabel(inhalt_frame, text="1. Inhalt:", text_color= "#FF99FF",  font=("Arial",16,"bold"))
+        inhalt1_label = CTkLabel(inhalt_frame, text="1. Content:", text_color= "#FF99FF",  font=("Arial",16,"bold"))
         inhalt1_label.grid(column=0, row=0, sticky="nsew")
 
         inhalt1_entry = CTkEntry(inhalt_frame)
         inhalt1_entry.grid(column=1, row=0, sticky="nsew", pady=10, padx=10)
 
-        inhalt2_label = CTkLabel(inhalt_frame, text="2. Inhalt:", text_color= "#FF99FF",  font=("Arial",16,"bold"))
+        inhalt2_label = CTkLabel(inhalt_frame, text="2. Content:", text_color= "#FF99FF",  font=("Arial",16,"bold"))
         inhalt2_label.grid(column=0, row=1, sticky="nsew")
 
         inhalt2_entry = CTkEntry(inhalt_frame)
@@ -96,10 +100,10 @@ class MainFrameAddPackage(CTkFrame):
         datetime_frame.rowconfigure((0,1), weight=1, uniform='a')
         datetime_frame.rowconfigure(2, weight=1, uniform='a')
 
-        Datum = CTkLabel(datetime_frame, text="Datum:", text_color= "#FF99FF",  font=("Arial",16,"bold"))
+        Datum = CTkLabel(datetime_frame, text="Date:", text_color= "#FF99FF",  font=("Arial",16,"bold"))
         Datum.grid(column=0, row=0, sticky="nsew", pady=10, padx=10)
 
-        Uhrzeit = CTkLabel(datetime_frame, text="Uhrzeit:", text_color="#FF99FF", font=("Arial",16,"bold"))
+        Uhrzeit = CTkLabel(datetime_frame, text="Time:", text_color="#FF99FF", font=("Arial",16,"bold"))
         Uhrzeit.grid(column=0, row=1, sticky="nsew", pady=10, padx=10)
 
         DatumEntry = CTkEntry(datetime_frame)
@@ -252,7 +256,19 @@ class MainFrameAddPackage(CTkFrame):
     
             inhalt1 = str(inhalt1_entry.get())
             inhalt2 = str(inhalt2_entry.get())
-            ID = 1
+           # Erstellen der Basis-ID basierend auf dem Datum
+            base_ID = int(datetime_object.strftime('%y%m%d')) * 1000
+            
+            cursor.execute("SELECT MAX(ID) FROM aks.tdim_inventory WHERE ID >= %s AND ID < %s", (base_ID, base_ID + 1000))
+            last_id = cursor.fetchone()[0]
+
+            if last_id is None:
+                ID = base_ID
+            else:
+                ID = last_id + 1
+
+
+            print(ID)
     
             try:
                 query = '''INSERT INTO aks.tdim_inventory(ID, issue_datetime, content_1, content_2)
@@ -267,7 +283,7 @@ class MainFrameAddPackage(CTkFrame):
 
     
         button_add = CTkButton(create_package_frame,
-                                text="ADD",
+                                text="Add Package",
                                 text_color = "#990099",
                                 font=("Arial",16,"bold"),
                                 fg_color = "#FF99FF",
@@ -276,23 +292,119 @@ class MainFrameAddPackage(CTkFrame):
         button_add.grid(column=0, row=3, sticky="nsew", pady=(5,10), padx=10)
 
     def package_tabel(self):
+        package_table_frame = CTkFrame(self, corner_radius=5)
+        package_table_frame.grid(column=1, row=2, rowspan=2, sticky="nsew", pady=10, padx=10)
+        package_table_frame.columnconfigure(0, weight=1, uniform='a')
+        package_table_frame.rowconfigure(0, weight=1, uniform='a')
+        package_table_frame.rowconfigure(1, weight=10, uniform='a')
 
-        package_tabel_frame = CTkFrame(self, corner_radius=5)
-        package_tabel_frame.grid(column=1, row=2, rowspan=2, sticky="nsew", pady=10, padx=10)
-
-        package_tabel_frame.columnconfigure(0, weight=30, uniform='a')
-        package_tabel_frame.columnconfigure(1, weight=1, uniform='a')
-        package_tabel_frame.rowconfigure(0, weight=1, uniform='a')
-        package_tabel_frame.rowconfigure((1,2,3,4,5,6,7,8,9,10), weight=1, uniform='a')
-
-        storage_label = CTkLabel(package_tabel_frame, text="Package Storage", text_color = "#FF99FF", font=("Arial",24,"bold"))
+        storage_label = CTkLabel(package_table_frame, text="Package Storage", text_color="#FF99FF",
+                                 font=("Arial", 24, "bold"))
         storage_label.grid(column=0, row=0, columnspan=2, sticky="nsew", pady=5, padx=5)
 
-        scrollbar = CTkScrollbar(package_tabel_frame, orientation="vertical")
-        scrollbar.grid(column=1, row=1, rowspan=9, sticky="nsew")
+        table = CTkScrollableFrame(package_table_frame, corner_radius=5)
+        table.grid(column=0,row=1, pady=10, padx=10, sticky="nsew")
+        table.columnconfigure(0,weight=1)
+        
+        #scrollbar = CTkScrollbar(package_table_frame, orientation="vertical")
+        #scrollbar.grid(column=1, row=1, rowspan=9, sticky="nsew")
 
+     
+        class TimerEntry:
+            def __init__(self, end_time, ID):
+                self.container = CTkFrame(master=table, corner_radius=5, border_width=1)
+                self.container.grid(row=0, column=0, sticky='nswe', pady=(5,0), padx=5)
+                self.ID = ID
+                self.end_time = end_time
+                self.current_time = end_time - datetime.now()
+                self.container.columnconfigure((0,1), weight=2, uniform='a')
+                self.container.columnconfigure((2,3), weight=1, uniform='a')
+                self.container.rowconfigure(0, weight=1,  uniform='a')
+                self.label1 = CTkLabel(self.container,font=('Arial', 20))
+                self.label1.grid(column=0, row=0,padx=5, pady=5, sticky="nsew")
+                self.label2 = CTkLabel(self.container, font=('Arial', 20))
+                self.label2.grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
+                self.qr_button = CTkButton(self.container, text="QR-Code", command=self.generate_qr)
+                self.qr_button.grid(row=0, column=2, padx=5, pady=5)
+                self.info_button = CTkButton(self.container, text="Info", command=self.info)
+                self.info_button.grid(row=0, column=3, padx=5, pady=5)
+                self.update()
+
+            def update(self):
+                self.current_time = self.end_time - datetime.now()
+                seconds = self.current_time.total_seconds()
+                self.label2.configure(text=int(seconds))
+                self.label1.configure(text=self.ID)
+                if seconds < 0:
+                    self.label2.configure(bg_color='red')
+                self.container.after(1000, self.update)
+
+            
+            def info(self):
+                label_text = self.label1.cget("text")
+
+                query = "SELECT issue_datetime, content_1, content_2 FROM aks.tdim_inventory WHERE ID = %s" %label_text
+                cursor.execute(query)
+                results = cursor.fetchall()
+
+                for row in results:
+                    issue_datetime = row [0]
+                    content1 = row[1]
+                    content2 = row[2]
+
+                message = (
+                    f"Package ID: {label_text}\n"
+                    f"Datetime for Issue: {issue_datetime}\n"
+                    f"1. Content: {content1}\n"
+                    f"2. Content: {content2}"
+                )
+
+                messagebox.showinfo(
+                    title="INFO",
+                    message=message
+                )
+
+            def generate_qr(self):
+                # Holen Sie sich den Text aus label1
+                label_text = self.label1.cget("text")
+
+                qr = qrcode.QRCode(version=1, box_size=10, border=5)
+                qr.add_data(label_text)
+                qr.make(fit=True)
+                qr_image = qr.make_image(fill='black', back_color='white')
+
+
+                qr_image.show()
+         
+
+
+        def get_endtimes_from_db():
+            query = "SELECT issue_datetime FROM aks.tdim_inventory"
+            cursor.execute(query)
+            results = cursor.fetchall()
+            conn.commit()
+            return [result[0] for result in results] if results else []
+        
+        def get_Id_from_db():
+            query= "SELECT ID FROM aks.tdim_inventory"
+            cursor.execute(query)
+            results = cursor.fetchall()
+            conn.commit()
+            return [result[0] for result in results] if results else []
         
 
+
+        def add_timer_from_db():
+            end_times = get_endtimes_from_db()
+            Ids = get_Id_from_db()
+
+            for i, (end_time, ID) in enumerate(zip(end_times, Ids), start=1):
+                TimerEntry(end_time, ID).container.grid(row=i, column=0, sticky='nswe')
+            
+            self.after(5000, add_timer_from_db)
+            
+        
+        add_timer_from_db()
             
 
             
