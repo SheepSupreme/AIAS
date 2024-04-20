@@ -3,7 +3,7 @@ import customtkinter
 import serial
 
 #Serial setup
-serial_port = 'COM4'
+serial_port = 'COM3'
 baud_rate = 9600
 ser = serial.Serial(serial_port, baud_rate, timeout=10)
 

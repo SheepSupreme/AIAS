@@ -19,16 +19,16 @@ class Button:
 
     def send_text(self):
         print('sent')
-        # message = self.name
-        # print("message send:"+message)
-        # message_bytes = message.encode('ascii')
-        # ser.write(message_bytes)
-        # while True:
-        #     text_mod = ser.readline()
-        #     text = text_mod.decode().strip()
-        #     print("message received:",text);
-        #     if text == 'cmd_end':
-        #         break
+        message = self.name
+        print("message send:"+message)
+        message_bytes = message.encode('ascii')
+        ser.write(message_bytes)
+        while True:
+            text_mod = ser.readline()
+            text = text_mod.decode().strip()
+            print("message received:",text);
+            if text == 'cmd_end':
+                break
 
 
 class App:

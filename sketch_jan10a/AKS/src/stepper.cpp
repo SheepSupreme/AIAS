@@ -44,9 +44,13 @@ void Stepper::change_profile(int speed, int accel)
 
 void Stepper::calibration_direction(int endstop_offset, int direction, double max_calibration_travel)
 {   
-    move_relative(direction*max_calibration_travel); //move towards the endstop
+    //1. Annäherungsphase
+    move_relative(direction*max_calibration_travel);
+    //2. Rückziehphase
     move_relative(-direction*1E3);
+    //3. Sicherheitsabstandeinstellung
     move_relative(-direction*endstop_offset);
+    //Einspeicherung der Position für die Grenzen
     if(direction == 1){
       endstop_position = _current_position;
     }
@@ -74,23 +78,24 @@ void Stepper::setup_move(double absolute_pos)
 {
     absolute_position = absolute_pos;
 
-    //Test if target position is in calibrated range
+    //Test ob sich Zielposition im kalibrierten Bereich befindet
     if(absolute_position < 0 || absolute_position > endstop_position){
       out_ofRange();
     }
     
-    this_move_period = 1000000.0/sqrt(2.0*_accel); // first period in US
-    running_period_US = 1000000.0/_speed;
-    deceleration_distance = (_speed*_speed)/(2.0*_accel);
+    this_move_period = 1000000.0/sqrt(2.0*_accel); // Erste Periode in US
+    running_period_US = 1000000.0/_speed; // Perioden nach Erreichen der Geschwindigkeit
+    deceleration_distance = (_speed*_speed)/(2.0*_accel); //Bremsdistanz
 
-    relative_distance = absolute_position - _current_position; //Investigate
+    //Vergabe des Wertes für die Richtung in die gefahren wird
+    relative_distance = absolute_position - _current_position; 
     if (relative_distance < 0){
         _dir = -1;
     }
     else if(relative_distance > 0){
         _dir = 1;
     }
-
+    //Umrechnung der Bremsdistanz falls nicht ausreichend
     if (abs(relative_distance)/2 < deceleration_distance){
         deceleration_distance = abs(relative_distance)/2;
     }
@@ -117,80 +122,94 @@ void Stepper::move_absolute(uint32_t position){
 }
 
 bool Stepper::buttonPressed(int btn_pin,bool &btn_state){
-  bool* last_state = &btn_state;
-  int endstop_pin = btn_pin;
-  int endstop_State = digitalRead(endstop_pin);
-  lastDebounceTime = millis();
+  bool* last_state = &btn_state;  // Übernahme des Letzten Endschalter Wertes
+  int endstop_pin = btn_pin;    // Übernahme des Letzten Endschalter PINs
+  int endstop_State = digitalRead(endstop_pin); //Lesen des aktuellen Wertes
+  lastDebounceTime = millis();  // Zeitmessung letzte Prellung
   if(endstop_State != *last_state){
+    // Erkennung ob die nötige Zeit ohne Prellung erreicht wurde
     while((millis() - lastDebounceTime) < DEBOUNCE_DELAY){
       int _read = digitalRead(endstop_pin);
       if(_read != *last_state){
+        //Wenn sich der Wert ändert wird die Zeit zurückgesetzt
         lastDebounceTime = millis();
         *last_state = _read;
       }
       *last_state = _read;
     }
-    return true;
+    return true; //Nötige Zeit ohne Prellung erreicht
   }
   return false;
 }
 
 bool Stepper::move()
 {
-    unsigned int period_last_step;
-    unsigned int current_time_US;
-    int distance_2_target;
+    unsigned int period_last_step;//Periodendauer des vorigen Schrittes
+    unsigned int current_time_US;//aktuelle Zeit in US
+    int distance_2_target;//Distanz zur Zielposition 
 
+    //Erreichen der Zielposition
     if(_current_position == absolute_position)
     {   
         return true;
     }
 
+    //Auslösen des Endschalters 1.
     if(buttonPressed(endstop1_pin, endstop1_lastState))
     {   
         return true;
     }
 
+    //Auslösen des Endschalters 2.
     if(buttonPressed(endstop2_pin, endstop2_lastState))
     {   
         return true;
     }
 
-    digitalWrite(direction_pin,abs(min(0,_dir)));
-
     if(new_move){
-        multiplier = 1;
-        last_move_time_US = micros();
-        new_move = false;
+        multiplier = 1; //Beschleunigung --> 1; Bremsvorgang -->0;
+        last_move_time_US = micros(); //Zeit des letzten Schrittes zurückgesetzt
+        new_move = false;  // if-statement soll nur 1. Mal durchgeführt werden
     }
-    current_time_US = micros();
-    period_last_step = current_time_US - last_move_time_US;
 
+    //Umwandlung der Richtungsvariable "_dir" in eine Boolean und Ausgabe dieses Zustandes am Ausgang des DIR PINS
+    digitalWrite(direction_pin,abs(min(0,_dir)));
+    
+    current_time_US = micros();
+    period_last_step = current_time_US - last_move_time_US; //Berechnung für Periodendauer seit letztem Schritt
+
+    //Falls die Periodenauer seit dem letzten Schritt kleiner als die Periodendauer ist, die benötigt wird um die Geschwindigkeit für den jetzigen Schritt zu erzielen, wird die Methode unterbrochen und von neu begonnen.
     if(period_last_step < this_move_period){
         return false;
     }
+    //Es ist Zeit für den nächsten Schritt
     last_move_time_US = micros();
 
+    //Berechnung der Distanz zu der Zielposition
     distance_2_target = abs(absolute_position - _current_position);
 
+    //Einleitung der Bremsphase
     if(distance_2_target == deceleration_distance){
         multiplier = -1;
     }
+
+    //Geschwindigkeit halten
     if(this_move_period < running_period_US){
         this_move_period = running_period_US;
-        multiplier = 0;
+        multiplier = 0; //Einhalten einer Gleichbleibenden Geschwindigkeit
     }
 
-    
-    digitalWrite(step_pin,HIGH);
-    delayMicroseconds(2);
-    this_move_period = this_move_period*(1.0-multiplier*(_accel/1E12)*this_move_period*this_move_period);
-    _current_position = _current_position + _dir;
+    digitalWrite(step_pin,HIGH);//Positive Taktflanke am STEP-PIN
+    delayMicroseconds(2); //Kurze Pause für Stabilisierung der Pinspannung
+    //Berechnung der Periodendauer für den nächsten Schritt
+    this_move_period = this_move_period*(1.0-multiplier*(_accel/1E12)*this_move_period*this_move_period); 
+    _current_position = _current_position + _dir;//Aktualisierung der Position
 
-    digitalWrite(step_pin,LOW);
+    digitalWrite(step_pin,LOW);//Negative Taktflanke am STEP-PIN
 
-    last_move_time_US = current_time_US;
+    last_move_time_US = current_time_US;//Aktualisierung der Variable für den Zeitpunkt des letzten Schrittes
 
+    //Erreichen der Zielposition
     if(_current_position == absolute_position)
     {   
         return true;
