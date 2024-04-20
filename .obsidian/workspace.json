@@ -16,15 +16,37 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "Beschreibung",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Beschreibung.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
+                },
+                {
+                  "title": "Software Dokumentation",
+                  "icon": "excalidraw-icon",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Software Dokumentation.md\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "range drawing",
+                  "icon": "excalidraw-icon",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/range drawing.md\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "Software Dokumentation",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"Dokumentationen/Software Dokumentation.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":0,\"ch\":0},\"to\":{\"line\":0,\"ch\":0}}}"
                 }
               ]
             },
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "Dokumentationen/Software Dokumentation.md",
-                "mode": "source",
-                "source": false
+                "file": "Dokumentationen/Software Dokumentation.md"
               }
             }
           }
@@ -106,8 +128,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "6fec7e96215ac6fe",
@@ -202,30 +223,14 @@
                 "file": "Dokumentationen/Software Dokumentation.md"
               }
             }
-          },
-          {
-            "id": "fb06650ca0964469",
-            "type": "leaf",
-            "pane-relief:history-v1": {
-              "pos": 0,
-              "stack": [
-                {
-                  "state": "{}",
-                  "eState": "{}"
-                }
-              ]
-            },
-            "state": {
-              "type": "git-view",
-              "state": {}
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -240,10 +245,14 @@
   },
   "active": "70265d3c7e36bf3a",
   "lastOpenFiles": [
+    "GUI/Logs/2024-03_date_time_picker.log",
+    "Dokumentationen/Projekttagebuch AKS.xlsx",
+    "Beschreibung.md",
+    "Dokumentationen/Software Dokumentation.md",
+    "Dokumentationen/range drawing.md",
     "Drawing 2024-03-08 15.14.39.excalidraw.md",
     "Dokumentationen/Diplomarbeit 2.docx",
     "Dokumentationen/lu21928xx6o7x.tmp",
-    "Dokumentationen/Software Dokumentation.md",
     "Dokumentationen/lu21928xx6o7u.tmp",
     "Dokumentationen/lu21928xx6o7r.tmp",
     "Dokumentationen/lu21928xx6o7o.tmp",
@@ -251,9 +260,7 @@
     "Dokumentationen/lu21928xx6o7i.tmp",
     "Dokumentationen/lu21928xx6o7e.tmp",
     "Dokumentationen/lu21928xx6o7b.tmp",
-    "Dokumentationen/lu21928xx6o78.tmp",
     "Dokumentationen/Programm Ablauf.md",
-    "Dokumentationen/range drawing.md",
     "Dokumentationen/Pflichtenheft.md",
     "Excalidraw/Scripts/Downloaded/GPT-Draw-a-UI.svg",
     "Excalidraw/Scripts/Downloaded/GPT-Draw-a-UI.md",
@@ -265,7 +272,6 @@
     "Dokumentationen/bin/Regalauslastung.md",
     "Dokumentationen/Ideen.md",
     "Dokumentationen/bin/Programm_Ablauf.png",
-    "Beschreibung.md",
     "conflict-files-obsidian-git.md",
     "Dokumentationen/bin/Pflichtenheft.png",
     "Dokumentation/bin/Programm.md",
