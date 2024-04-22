@@ -27,7 +27,7 @@
             }
           },
           {
-            "id": "486ef687846a23f1",
+            "id": "a67cb80234528822",
             "type": "leaf",
             "pane-relief:history-v1": {
               "pos": 0,
@@ -35,17 +35,30 @@
                 {
                   "state": "{}",
                   "eState": "{}"
+                },
+                {
+                  "title": "Programm Ablauf",
+                  "icon": "excalidraw-icon",
+                  "state": "{\"type\":\"excalidraw\",\"state\":{\"file\":\"Dokumentationen/Programm Ablauf.md\"}}",
+                  "eState": "{}"
+                },
+                {
+                  "title": "conflict-files-obsidian-git",
+                  "icon": "lucide-file",
+                  "state": "{\"type\":\"markdown\",\"state\":{\"file\":\"conflict-files-obsidian-git.md\",\"mode\":\"source\",\"source\":false}}",
+                  "eState": "{\"cursor\":{\"from\":{\"line\":6,\"ch\":10},\"to\":{\"line\":6,\"ch\":10}}}"
                 }
               ]
             },
             "state": {
-              "type": "release-notes",
+              "type": "excalidraw",
               "state": {
-                "currentVersion": "1.5.12"
+                "file": "Dokumentationen/Software Dokumentation.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -123,7 +136,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6fec7e96215ac6fe",
@@ -148,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Drawing 2024-04-16 21.37.46.excalidraw.md",
+                "file": "Dokumentationen/Software Dokumentation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -174,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Drawing 2024-04-16 21.37.46.excalidraw.md",
+                "file": "Dokumentationen/Software Dokumentation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -215,7 +229,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Drawing 2024-04-16 21.37.46.excalidraw.md"
+                "file": "Dokumentationen/Software Dokumentation.md"
               }
             }
           }
@@ -237,46 +251,47 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "42ef19939ab4a70e",
+  "active": "a67cb80234528822",
   "lastOpenFiles": [
-    "Dokumentationen/Projekttagebuch AKS.xlsx",
-    "Drawing 2024-04-16 21.37.46.excalidraw.md",
-    "Dokumentationen/bin/Regalauslastung.md",
+    "Concept Art/Bewegungssystem.png",
+    "Concept Art/Plattform3.png",
+    "Concept Art/Plattform2.png",
+    "Concept Art/Plattform.png",
+    "Dokumentationen/~$Projekttagebuch AKS.xlsx",
     "Dokumentationen/Programm Ablauf.md",
+    "Drawing 2024-04-16 21.37.46.excalidraw.md",
+    "conflict-files-obsidian-git.md",
+    "Excalidraw/Scripts/Downloaded/GPT-Draw-a-UI.svg",
+    "Excalidraw/Scripts/Downloaded/GPT-Draw-a-UI.md",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "Excalidraw",
+    "Eagle/AKS.s#8",
+    "Eagle/AKS.s#7",
+    "Eagle/AKS.s#6",
+    "Eagle/AKS.brd",
+    "Eagle/AKS.b#1",
+    "Dokumentationen/Software Dokumentation.md",
+    "Dokumentationen/Diplomarbeit.odt",
+    "Dokumentationen/bin/Regalauslastung.md",
     "Dokumentationen/Pflichtenheft.md",
     "Dokumentationen/Ideen.md",
     "Dokumentationen/GUI.md",
     "sketch_jan10a/AKS/TODO.md",
     "Beschreibung.md",
-    "Dokumentationen/~$plomarbeit 2.docx",
     "Dokumentationen/range drawing.md",
     "README.md",
-    "SQL/MySQL Server 8.1/server_config.xml",
-    "SQL/MySQL Server 8.1/my_2023-10-20T16-08-30.ini",
-    "SQL/MySQL Server 8.1/my_2023-10-20T16-04-32.ini",
-    "SQL/MySQL Server 8.1/my_2023-10-20T16-00-46.ini",
-    "SQL/MySQL Server 8.1/my.ini",
-    "SQL/MySQL Server 8.1/Data/undo_002",
-    "SQL/MySQL Server 8.1/Data/undo_001",
-    "SQL/MySQL Server 8.1/Data/performance_schema/variables_info_186.sdi",
-    "SQL/MySQL Server 8.1/Data/performance_schema/variables_by_thr_183.sdi",
     "GUI/password-icon.png",
     "GUI/Hintergrund_Login.jpg",
     "GUI/email-icon.png",
     "Dokumentationen/bin/Programm_Ablauf.png",
-    "conflict-files-obsidian-git.md",
     "Dokumentationen/bin/Pflichtenheft.png",
     "Dokumentation/bin/Programm.md",
     "Dokumentationen/bin/image.png",
-    "Dokumentationen/Software Dokumentation.md",
-    "Dokumentationen/bin/image-1.png",
     "Dokumentationen/PDFs.md",
     "Dokumentationen/Serial Com.md",
     "Dokumentationen/check points.md",
-    "Dokumentationen/bin/image-1.png",
     "sketch_jan10a/README 2024-02-06 17.34.43.excalidraw.md",
-    "assets/image.png",
-    "assets/image-1.png",
     "Drücker/README.md",
     "Tutorials/Eigene library machen.md",
     "sketch_jan10a/README.md",
@@ -284,7 +299,6 @@
     "Drawing 2024-02-06 17.33.30.excalidraw.md",
     "Drawing 2024-02-06 17.23.18.excalidraw.md",
     "Drawing 2024-02-06 17.23.05.excalidraw.md",
-    "Drawing 2024-02-06 13.19.45.excalidraw.md",
     "Untitled.canvas"
   ]
 }

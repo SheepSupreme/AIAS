@@ -2,9 +2,9 @@ import customtkinter
 import serial
 
 #Serial setup
-serial_port = 'COM3'
-baud_rate = 9600
-ser = serial.Serial(serial_port, baud_rate, timeout=2)
+# serial_port = 'COM3'
+# baud_rate = 9600
+# ser = serial.Serial(serial_port, baud_rate, timeout=2)
 
 #Customtkinter setup
 root = customtkinter.CTk()
@@ -48,11 +48,11 @@ class App:
 App(root)
 
 while True:
-    if ser.in_waiting > 0:
-        text_mod = ser.readline()
-        message = text_mod.decode().strip()
-        print("message received:",message);
-        App(root).label.configure(text = message)
+    # if ser.in_waiting > 0:
+    #     text_mod = ser.readline()
+    #     message = text_mod.decode().strip()
+    #     print("message received:",message);
+    #     App(root).label.configure(text = message)
 
     root.update_idletasks()
     root.update()

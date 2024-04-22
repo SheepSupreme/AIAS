@@ -42,17 +42,20 @@ void setup()
 
 }
 
+  Stepper Issue(10,11,12,13,14,15);
+
+  Issue.move_relative(2000);
+  Issue.move_relative(-2000);
+
 
 void loop(){
-  if(Serial.available() == 0){
-    String message = Serial.readString();
-    message.trim();
+  if(Serial.available() == 0){  //Informationen im Buffer erkannt
+    String message = Serial.readString(); //Nachricht lesen
+    message.trim(); //Verarbeitung der Nachricht
     if(message != 0){
-      int separatorIndex = message.indexOf(' ');
+      int separatorIndex = message.indexOf(' '); //Aufteilung
       String cmd = message.substring(0, separatorIndex);
       int value = message.substring(separatorIndex + 1).toInt();
-      Serial.println(cmd);
-      Serial.println(value);
       if(cmd == "blink"){
         digitalWrite(LED_BUILTIN,HIGH);
         delay(1000);
@@ -60,7 +63,7 @@ void loop(){
         Serial.println("cmd_end");
       }
       if(cmd == "calibration"){
-        NEMA17.calibration(value);
+        NEMA17.calibration(value); 
         Serial.println("cmd_end");
       }
       if(cmd == "pos_1"){
@@ -78,6 +81,15 @@ void loop(){
       if(cmd == "pos_4"){
         NEMA17.move_absolute(NEMA17.endstop_position);
         Serial.println("cmd_end");
+      }
+      if(cmd == "Issue"){
+        NEMA17.move_absolute(value*(1.0/3.0)*NEMA17.endstop_position);
+        Issue.move_relative(2000);
+        Issue.move_relative(-2000);
+        Serial.println("cmd_end");
+      }
+      else{
+        Serial.println(cmd);
       }
     }
   }
