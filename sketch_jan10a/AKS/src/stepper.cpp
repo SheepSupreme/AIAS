@@ -104,6 +104,7 @@ void Stepper::setup_move(double absolute_pos)
 
 void Stepper::out_ofRange(){
     absolute_position = _current_position;
+    Serial.println("outofrange"); 
 }
 
 void Stepper::move_relative(double relative_steps)

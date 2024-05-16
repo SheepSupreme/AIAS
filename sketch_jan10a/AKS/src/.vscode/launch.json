@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/domin/Documents/AKS/sketch_jan10a/AKS/src",
-      "program": "c:/Users/domin/Documents/AKS/sketch_jan10a/AKS/src/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": "/home/werk/AKS/AKS/sketch_jan10a/AKS/src",
+      "program": "/home/werk/AKS/AKS/sketch_jan10a/AKS/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

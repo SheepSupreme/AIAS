@@ -2,20 +2,32 @@
 #include "display.h"
 #include "stepper.h"
 
-Stepper NEMA17(2,3,4,5,6,7,8,9);
+Stepper Issue(1,0,6,22,22,22,14,15);
+Stepper NEMA17(3,2,7,22,22,22,14,15);
 display SSD1306;
 
 void setup()
 {
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(14,INPUT);
+  
 
   Serial.begin(9600);
+  SSD1306.begin();
   Serial.setTimeout(10);
-  pinMode(LED_BUILTIN,OUTPUT);
   NEMA17.change_microstep_resolution(1);
   NEMA17.change_profile(5000,30000);
 
-  SSD1306.begin();
+  Issue.change_microstep_resolution(1);
+  Issue.change_profile(1000,1000);
+
+
+
+  // Serial.println("start");
+  // SSD1306.update_display("Issue",15 ,10, 2);
+  // Issue.move_relative(2000);
+  // Serial.println("end");
+
  
   // NEMA17.calibration(50);
   // NEMA17.move_absolute(0);
@@ -42,13 +54,9 @@ void setup()
 
 }
 
-  Stepper Issue(10,11,12,13,14,15);
-
-  Issue.move_relative(2000);
-  Issue.move_relative(-2000);
-
 
 void loop(){
+  Serial.println(digitalRead(14));
   if(Serial.available() == 0){  //Informationen im Buffer erkannt
     String message = Serial.readString(); //Nachricht lesen
     message.trim(); //Verarbeitung der Nachricht
@@ -82,8 +90,8 @@ void loop(){
         NEMA17.move_absolute(NEMA17.endstop_position);
         Serial.println("cmd_end");
       }
-      if(cmd == "Issue"){
-        NEMA17.move_absolute(value*(1.0/3.0)*NEMA17.endstop_position);
+      if(cmd == "Issue"){ 
+        SSD1306.update_display("Issue",15 ,10, 2);
         Issue.move_relative(2000);
         Issue.move_relative(-2000);
         Serial.println("cmd_end");
