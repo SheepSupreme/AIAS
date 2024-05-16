@@ -1663,6 +1663,7 @@ design rules under a new name.</description>
 <element name="R2" library="rcl" package="R1206" value="10k" x="-1.27" y="-17.78"/>
 <element name="X4" library="HTL22_kontakte" package="1X04" value="" x="7.62" y="-48.895"/>
 <element name="X2" library="HTL22_kontakte" package="1X02" value="" x="5.08" y="-64.135"/>
+<element name="X1" library="HTL22_kontakte" package="1X04" value="" x="7.62" y="-79.375"/>
 </elements>
 <signals>
 <signal name="VCC">
@@ -1684,9 +1685,11 @@ design rules under a new name.</description>
 <contactref element="U$3" pad="5V"/>
 <contactref element="X4" pad="3"/>
 <contactref element="X4" pad="4"/>
+<contactref element="X1" pad="3"/>
 <wire x1="39.37" y1="3.81" x2="57.15" y2="59.69" width="0" layer="19" extent="1-1"/>
 <wire x1="11.43" y1="-48.895" x2="39.37" y2="3.81" width="0" layer="19" extent="1-1"/>
 <wire x1="8.89" y1="-48.895" x2="11.43" y2="-48.895" width="0" layer="19" extent="1-1"/>
+<wire x1="8.89" y1="-79.375" x2="8.89" y2="-48.895" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ENABLE">
 <contactref element="IC1" pad="1"/>
@@ -1752,11 +1755,13 @@ design rules under a new name.</description>
 <contactref element="U$3" pad="GND@2"/>
 <contactref element="R1" pad="1"/>
 <contactref element="R2" pad="1"/>
+<contactref element="X1" pad="4"/>
 <wire x1="64.77" y1="72.39" x2="101.6" y2="72.39" width="0" layer="19" extent="1-1"/>
 <wire x1="44.45" y1="3.81" x2="64.77" y2="72.39" width="0" layer="19" extent="1-1"/>
 <wire x1="41.91" y1="3.81" x2="44.45" y2="3.81" width="0" layer="19" extent="1-1"/>
 <wire x1="-2.692" y1="-11.43" x2="41.91" y2="3.81" width="0" layer="19" extent="1-1"/>
 <wire x1="-2.692" y1="-17.78" x2="-2.692" y2="-11.43" width="0" layer="19" extent="1-1"/>
+<wire x1="11.43" y1="-79.375" x2="-2.692" y2="-17.78" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+40V">
 <contactref element="IC1" pad="16"/>
@@ -1877,6 +1882,16 @@ design rules under a new name.</description>
 <contactref element="R1" pad="2"/>
 <contactref element="X4" pad="2"/>
 <wire x1="0.152" y1="-11.43" x2="6.35" y2="-48.895" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$13">
+<contactref element="X1" pad="1"/>
+<contactref element="U$3" pad="21"/>
+<wire x1="3.81" y1="-79.375" x2="87.63" y2="52.07" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$14">
+<contactref element="X1" pad="2"/>
+<contactref element="U$3" pad="20"/>
+<wire x1="6.35" y1="-79.375" x2="85.09" y2="52.07" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>

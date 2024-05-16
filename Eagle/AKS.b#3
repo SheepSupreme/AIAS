@@ -1788,22 +1788,22 @@ design rules under a new name.</description>
 <signal name="N$1">
 <contactref element="IC1" pad="14"/>
 <contactref element="NEMA17_PINS" pad="1"/>
-<wire x1="52.07" y1="72.39" x2="52.07" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="52.07" y1="72.39" x2="52.07" y2="76.835" width="0.8128" layer="1"/>
 </signal>
 <signal name="N$2">
 <contactref element="IC1" pad="13"/>
 <contactref element="NEMA17_PINS" pad="2"/>
-<wire x1="54.61" y1="72.39" x2="54.61" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="54.61" y1="72.39" x2="54.61" y2="76.835" width="0.8128" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="IC1" pad="12"/>
 <contactref element="NEMA17_PINS" pad="3"/>
-<wire x1="57.15" y1="72.39" x2="57.15" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="57.15" y1="72.39" x2="57.15" y2="76.835" width="0.8128" layer="1"/>
 </signal>
 <signal name="N$11">
 <contactref element="IC1" pad="11"/>
 <contactref element="NEMA17_PINS" pad="4"/>
-<wire x1="59.69" y1="72.39" x2="59.69" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="59.69" y1="72.39" x2="59.69" y2="76.835" width="0.8128" layer="1"/>
 </signal>
 <signal name="GND2">
 <contactref element="C1" pad="-"/>
@@ -1872,9 +1872,9 @@ design rules under a new name.</description>
 <contactref element="IC2" pad="9"/>
 <contactref element="U$3" pad="GND@3"/>
 <contactref element="U$3" pad="GND@2"/>
+<wire x1="41.91" y1="3.81" x2="44.45" y2="3.81" width="0.8128" layer="1"/>
 <wire x1="64.77" y1="72.39" x2="101.6" y2="72.39" width="0" layer="19" extent="1-1"/>
 <wire x1="44.45" y1="3.81" x2="64.77" y2="72.39" width="0" layer="19" extent="1-1"/>
-<wire x1="41.91" y1="3.81" x2="44.45" y2="3.81" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+40V">
 <contactref element="IC1" pad="16"/>
@@ -1897,22 +1897,22 @@ design rules under a new name.</description>
 <signal name="N$4">
 <contactref element="IC2" pad="14"/>
 <contactref element="NEMA17_PINS_2" pad="1"/>
-<wire x1="88.9" y1="72.39" x2="88.9" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="88.9" y1="76.835" x2="88.9" y2="72.39" width="0.8128" layer="1"/>
 </signal>
 <signal name="N$5">
 <contactref element="IC2" pad="13"/>
 <contactref element="NEMA17_PINS_2" pad="2"/>
-<wire x1="91.44" y1="72.39" x2="91.44" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="91.44" y1="76.835" x2="91.44" y2="72.39" width="0.8128" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="IC2" pad="12"/>
 <contactref element="NEMA17_PINS_2" pad="3"/>
-<wire x1="93.98" y1="72.39" x2="93.98" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="93.98" y1="76.835" x2="93.98" y2="72.39" width="0.8128" layer="1"/>
 </signal>
 <signal name="N$7">
 <contactref element="IC2" pad="11"/>
 <contactref element="NEMA17_PINS_2" pad="4"/>
-<wire x1="96.52" y1="72.39" x2="96.52" y2="76.835" width="0" layer="19" extent="1-1"/>
+<wire x1="96.52" y1="72.39" x2="96.52" y2="76.835" width="0.8128" layer="1"/>
 </signal>
 <signal name="N$12">
 <contactref element="U$3" pad="GND@1"/>
@@ -1920,8 +1920,8 @@ design rules under a new name.</description>
 <signal name="ENABLE_2">
 <contactref element="IC2" pad="1"/>
 <contactref element="U$3" pad="24"/>
-<wire x1="83.82" y1="59.69" x2="83.82" y2="58.42" width="0.508" layer="1"/>
-<wire x1="83.82" y1="58.42" x2="90.805" y2="51.435" width="0.508" layer="1"/>
+<wire x1="83.82" y1="59.69" x2="83.185" y2="59.055" width="0.508" layer="1"/>
+<wire x1="83.185" y1="59.055" x2="90.805" y2="51.435" width="0.508" layer="1"/>
 <wire x1="90.805" y1="51.435" x2="90.805" y2="48.26" width="0.508" layer="1"/>
 <wire x1="90.805" y1="48.26" x2="92.075" y2="46.99" width="0.508" layer="1"/>
 <wire x1="92.075" y1="46.99" x2="95.25" y2="46.99" width="0.508" layer="1"/>

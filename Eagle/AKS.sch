@@ -11299,6 +11299,7 @@ erstellt und gepflegt von
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="X4" library="HTL22_kontakte" deviceset="PINHD-1X4" device=""/>
 <part name="X2" library="HTL22_kontakte" deviceset="PINHD-1X2" device=""/>
+<part name="X1" library="HTL22_kontakte" deviceset="PINHD-1X4" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11357,6 +11358,7 @@ erstellt und gepflegt von
 </instance>
 <instance part="X4" gate="A" x="144.78" y="148.59"/>
 <instance part="X2" gate="G$1" x="257.81" y="144.78"/>
+<instance part="X1" gate="A" x="144.78" y="130.81"/>
 </instances>
 <busses>
 </busses>
@@ -11395,6 +11397,11 @@ erstellt und gepflegt von
 <wire x1="135.89" y1="146.05" x2="142.24" y2="146.05" width="0.1524" layer="91"/>
 <wire x1="135.89" y1="146.05" x2="129.54" y2="146.05" width="0.1524" layer="91"/>
 <label x="129.54" y="146.05" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X1" gate="A" pin="3"/>
+<wire x1="142.24" y1="130.81" x2="135.89" y2="130.81" width="0.1524" layer="91"/>
+<label x="135.89" y="130.81" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="ENABLE" class="0">
@@ -11515,6 +11522,11 @@ erstellt und gepflegt von
 <pinref part="GND4" gate="1" pin="GND"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="115.57" y1="139.7" x2="115.57" y2="140.97" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="X1" gate="A" pin="4"/>
+<wire x1="142.24" y1="128.27" x2="135.89" y2="128.27" width="0.1524" layer="91"/>
+<label x="135.89" y="128.27" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="+40V" class="0">
@@ -11710,6 +11722,22 @@ erstellt und gepflegt von
 <net name="N$12" class="0">
 <segment>
 <wire x1="71.12" y1="130.81" x2="71.12" y2="134.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="X1" gate="A" pin="1"/>
+<wire x1="142.24" y1="135.89" x2="111.76" y2="135.89" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="21"/>
+<wire x1="111.76" y1="135.89" x2="111.76" y2="125.73" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="X1" gate="A" pin="2"/>
+<wire x1="142.24" y1="133.35" x2="109.22" y2="133.35" width="0.1524" layer="91"/>
+<pinref part="U$3" gate="G$1" pin="20"/>
+<wire x1="109.22" y1="133.35" x2="109.22" y2="125.73" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
